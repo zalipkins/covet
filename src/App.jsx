@@ -2273,14 +2273,33 @@ function PortfolioTabs({ investor, isPaid, onUpgrade, catOrder, byCategory, tota
   const catLabels = { crypto: "Crypto", stock: "Stocks", preipo: "Pre-IPO", republic: "Equity" };
   const catColors = { crypto: "#6366f1", stock: "#3b82f6", preipo: "#f59e0b", republic: "#10b981" };
 
-  const tabStyle = (active) => ({
+  // Compute overlap for this investor's positions
+  const overlapData = (() => {
+    const counts = {};
+    ALL_FLAT.forEach(inv => {
+      if (inv.id === investor.id) return;
+      inv.portfolio.forEach(p => {
+        const key = p.name.toLowerCase().trim();
+        if (!counts[key]) counts[key] = { name: p.name, investors: [], btn: p.btn };
+        if (!counts[key].investors.includes(inv.name)) counts[key].investors.push(inv.name);
+      });
+    });
+    // Only show positions this investor actually holds
+    return investor.portfolio
+      .map(p => counts[p.name.toLowerCase().trim()])
+      .filter(c => c && c.investors.length >= 1)
+      .sort((a, b) => b.investors.length - a.investors.length)
+      .slice(0, 8);
+  })();
+
+  const tabStyle = (active, locked) => ({
     fontSize: 9, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase",
     padding: "6px 12px", background: "none", border: "none",
     borderBottom: active ? "2px solid #f5c842" : "2px solid transparent",
-    color: active ? "#f5c842" : "#2e2e2e", cursor: "pointer",
+    color: active ? "#f5c842" : locked ? "#1e1e1e" : "#2e2e2e",
+    cursor: "pointer",
   });
 
-  // Reordered for "all" tab — actionable first
   const allCatOrder = ["Crypto", "Public", "Private", "Founded", "Philanthropy"];
 
   return (
@@ -2292,6 +2311,9 @@ function PortfolioTabs({ investor, isPaid, onUpgrade, catOrder, byCategory, tota
         </button>
         <button style={tabStyle(tab === "tradeable")} onClick={() => setTab("tradeable")}>
           Tradeable <span style={{ opacity: 0.4, fontWeight: 400 }}>({tradeable.length})</span>
+        </button>
+        <button style={tabStyle(tab === "overlap", !isPaid)} onClick={() => isPaid ? setTab("overlap") : onUpgrade()}>
+          Overlap <span style={{ opacity: 0.4, fontWeight: 400 }}>({overlapData.length})</span>
         </button>
       </div>
 
@@ -2333,10 +2355,37 @@ function PortfolioTabs({ investor, isPaid, onUpgrade, catOrder, byCategory, tota
               );
             })
           )}
-          {!isPaid && tradeable.length > 0 && (
-            <div onClick={onUpgrade} style={{ marginTop: 4, padding: "10px 12px", background: "#0a0800", border: "1px solid #2a1500", borderRadius: 3, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <span style={{ fontSize: 10, color: "#4a3800" }}>Upgrade to unlock buy & trade links</span>
-              <span style={{ fontSize: 9, color: "#f5c842", fontWeight: 700 }}>Pro →</span>
+        </div>
+      )}
+
+      {tab === "overlap" && isPaid && (
+        <div>
+          {overlapData.length === 0 ? (
+            <div style={{ fontSize: 12, color: "#333", padding: "20px 0" }}>No overlapping positions found.</div>
+          ) : (
+            <div>
+              <div style={{ fontSize: 10, color: "#2a2a2a", marginBottom: 14, lineHeight: 1.6 }}>
+                Other tracked investors who hold the same positions as {investor.name.split(" ")[0]}.
+              </div>
+              {overlapData.map((item, i) => (
+                <div key={i} style={{
+                  display: "flex", alignItems: "flex-start", justifyContent: "space-between",
+                  padding: "10px 0", borderBottom: "1px solid #0d0d0d", gap: 12,
+                }}>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: 12, fontWeight: 600, color: "#ccc", marginBottom: 4 }}>{item.name}</div>
+                    <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+                      {item.investors.slice(0, 4).map((inv, j) => (
+                        <span key={j} style={{ fontSize: 8, color: "#f5c842", background: "#1a1000", border: "1px solid #2a1500", borderRadius: 2, padding: "1px 5px", fontFamily: "monospace" }}>
+                          {inv.split(" ")[0]}
+                        </span>
+                      ))}
+                      {item.investors.length > 4 && <span style={{ fontSize: 8, color: "#333", fontFamily: "monospace" }}>+{item.investors.length - 4}</span>}
+                    </div>
+                  </div>
+                  <InvestBtn btn={item.btn} small isPaid={isPaid} onUpgrade={onUpgrade} />
+                </div>
+              ))}
             </div>
           )}
         </div>
@@ -2762,10 +2811,12 @@ function Header({ navigate, isPaid, onUpgrade }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// HOMEPAGE — directory of all investors
+// HOMEPAGE — sidebar + detail panel layout
 // ─────────────────────────────────────────────────────────────────────────────
 function HomePage({ navigate, isPaid, onUpgrade }) {
   const [activeTab, setActiveTab] = useState("visionaries");
+  const [selectedId, setSelectedId] = useState("naval");
+  const [mobileShowDetail, setMobileShowDetail] = useState(false);
   const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth < 680 : false);
 
   useSEO({
@@ -2780,6 +2831,16 @@ function HomePage({ navigate, isPaid, onUpgrade }) {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  const investors = ALL[activeTab];
+  const selected = investors.find(i => i.id === selectedId) || investors[0];
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    setSelectedId(ALL[tab][0].id);
+    setMobileShowDetail(false);
+  };
+  const handleSelect = (id) => { setSelectedId(id); setMobileShowDetail(true); };
+
   const TABS = [
     { key: "visionaries", label: "Visionaries", count: 9 },
     { key: "icons", label: "Icons", count: 7 },
@@ -2793,7 +2854,7 @@ function HomePage({ navigate, isPaid, onUpgrade }) {
       {/* Tabs */}
       <div style={{ borderBottom: "1px solid #161616", display: "flex", flexShrink: 0, overflowX: "auto", WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}>
         {TABS.map(t => (
-          <button key={t.key} onClick={() => setActiveTab(t.key)} style={{
+          <button key={t.key} onClick={() => handleTabChange(t.key)} style={{
             padding: "10px 16px", fontSize: 9, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase",
             color: activeTab === t.key ? "#f5c842" : "#303030",
             background: "none", border: "none",
@@ -2805,34 +2866,42 @@ function HomePage({ navigate, isPaid, onUpgrade }) {
         ))}
       </div>
 
-      {/* Investor grid */}
-      <div style={{ flex: 1, overflowY: "auto", padding: isMobile ? "12px" : "20px 24px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(auto-fill, minmax(200px, 1fr))", gap: 10 }}>
-          {ALL[activeTab].map(inv => (
-            <div
-              key={inv.id}
-              onClick={() => navigate(`/investor/${SLUG_MAP[inv.id]}`)}
-              style={{
-                background: "#0a0a0a", border: "1px solid #1a1a1a", borderRadius: 4,
-                padding: "14px 14px", cursor: "pointer",
-                transition: "border-color 0.15s",
-              }}
-              onMouseEnter={e => e.currentTarget.style.borderColor = "#f5c842"}
-              onMouseLeave={e => e.currentTarget.style.borderColor = "#1a1a1a"}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 6 }}>
-                <div style={{ width: 6, height: 6, borderRadius: "50%", background: DOT[inv.tagColor], flexShrink: 0 }} />
-                <span style={{ fontSize: 9, color: DOT[inv.tagColor], fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>{inv.tag}</span>
-              </div>
-              <div style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 16, fontWeight: 700, color: "#f0f0f0", marginBottom: 4, lineHeight: 1.2 }}>{inv.name}</div>
-              <div style={{ fontSize: 10, color: "#444", marginBottom: 8, lineHeight: 1.4 }}>{inv.category}</div>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontSize: 10, color: "#2e2e2e", fontFamily: "monospace" }}>{inv.portfolio.length} positions</span>
-                <span style={{ fontSize: 9, color: "#f5c842", letterSpacing: "0.06em" }}>View →</span>
-              </div>
-            </div>
-          ))}
-        </div>
+      {/* Sidebar + Detail */}
+      <div style={{ display: "flex", flex: 1, overflow: "hidden", minHeight: 0 }}>
+        {/* Sidebar */}
+        {(!isMobile || !mobileShowDetail) && (
+          <div style={{ width: isMobile ? "100%" : 210, borderRight: isMobile ? "none" : "1px solid #161616", overflowY: "auto", flexShrink: 0 }}>
+            {investors.map(inv => (
+              <button key={inv.id} onClick={() => handleSelect(inv.id)} style={{
+                width: "100%", textAlign: "left", padding: "11px 14px",
+                background: !isMobile && selectedId === inv.id ? "#0d0d0d" : "transparent",
+                borderLeft: !isMobile && selectedId === inv.id ? "2px solid #f5c842" : !isMobile ? "2px solid transparent" : "none",
+                borderRight: "none", borderTop: "none", borderBottom: "1px solid #111",
+                cursor: "pointer",
+              }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 3 }}>
+                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: DOT[inv.tagColor], flexShrink: 0 }} />
+                  <span style={{ fontSize: 12, fontWeight: 600, color: !isMobile && selectedId === inv.id ? "#f5f5f5" : "#999" }}>{inv.name}</span>
+                </div>
+                <div style={{ fontSize: 9, color: "#222", marginLeft: 13, marginTop: 2 }}>{inv.portfolio.length} positions tracked</div>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Detail panel */}
+        {(!isMobile || mobileShowDetail) && (
+          <div style={{ flex: 1, overflowY: "auto", padding: isMobile ? "14px" : "20px 24px", minWidth: 0 }}>
+            {isMobile && mobileShowDetail && (
+              <button onClick={() => setMobileShowDetail(false)} style={{ background: "none", border: "none", color: "#444", fontSize: 10, cursor: "pointer", padding: "0 0 12px 0", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                ← Back
+              </button>
+            )}
+            <DetailPanel investor={selected} isPaid={isPaid} onUpgrade={onUpgrade} />
+            {isPaid && <SignalOverlapFeed />}
+            <NewsletterEmbed />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -2944,9 +3013,9 @@ export default function CovetApp() {
       ) : (
         <HomePage navigate={navigate} isPaid={isPaid} onUpgrade={handleUpgrade} />
       )}
-      <div style={{ borderTop: "1px solid #0d0d0d", padding: "14px 18px", marginTop: "auto" }}>
-        <p style={{ fontSize: 9, color: "#1e1e1e", lineHeight: 1.7, margin: 0, maxWidth: 740 }}>
-          Covet is for informational purposes only. Nothing on this site constitutes investment advice, a solicitation, or a recommendation to buy or sell any security or asset. Portfolio data is compiled from public sources and may be incomplete or out of date. Always do your own research. Covet is not affiliated with any investor profiled on this site.
+      <div style={{ borderTop: "1px solid #1a1a1a", padding: "14px 18px", marginTop: "auto" }}>
+        <p style={{ fontSize: 10, color: "#444", lineHeight: 1.7, margin: 0, maxWidth: 740 }}>
+          <span style={{ color: "#666", fontWeight: 600 }}>Disclaimer:</span> Covet is for informational purposes only. Nothing on this site constitutes investment advice, a solicitation, or a recommendation to buy or sell any security or asset. Portfolio data is compiled from public sources and may be incomplete or out of date. Always do your own research. Covet is not affiliated with any investor profiled on this site.
         </p>
       </div>
     </div>
