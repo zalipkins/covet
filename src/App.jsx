@@ -40,8 +40,8 @@ const DOT = {
   amber:"#f59e0b",pink:"#f472b6",teal:"#2dd4bf",neutral:"#9ca3af",
 };
 
-const BTN_BG = { crypto:"#92400e", stock:"#1e3a5f", preipo:"#3b1f6e", republic:"#064e3b", view:"#1c1c1c", exit:"#1a1a1a" };
-const BTN_FG = { crypto:"#fbbf24", stock:"#60a5fa", preipo:"#a78bfa", republic:"#34d399", view:"#888", exit:"#404040" };
+const BTN_BG = { crypto:"#1a1400", stock:"#1a1400", preipo:"#1a1400", republic:"#1a1400", view:"#1a1400", exit:"#1a1a1a" };
+const BTN_FG = { crypto:"#ffe033", stock:"#ffe033", preipo:"#ffe033", republic:"#ffe033", view:"#888", exit:"#404040" };
 
 // ─────────────────────────────────────────────────────────────────────────────
 // NAVAL RAVIKANT — complete portfolio
@@ -346,15 +346,15 @@ const toly = {
   portfolio:[
     {name:"Solana",cat:"Founded",detail:"Co-founded 2017. Invented Proof of History. Estimated 5-10% supply. $250M-$800M estimated value.",btn:CB("solana","SOL")},
     {name:"Solana Foundation",cat:"Founded",detail:"Non-profit supporting ecosystem development worldwide.",btn:null},
-    {name:"Jito Labs",cat:"Private",detail:"MEV infrastructure + liquid staking. Dominant market position in Solana MEV.",btn:null},
+    {name:"Jito (JTO)",cat:"Crypto",detail:"Invested in Jito Labs, the company behind the JTO governance token. Dominant Solana liquid staking and MEV protocol — largest liquid staking provider on Solana. JTO is live on Coinbase. Early investor token allocation confirmed via investment in Jito Labs. Confirmed Crunchbase.",btn:CB("jito","JTO")},
     {name:"Helius",cat:"Private",detail:"$9.5M Series A (Feb 2024, co-invested with Balaji). Premier Solana RPC provider.",btn:null},
     {name:"Chaos Labs",cat:"Private",detail:"$55M Series A. On-chain risk management for DeFi protocols.",btn:null},
-    {name:"Solayer",cat:"Private",detail:"Pre-seed + $12M seed. Solana restaking protocol.",btn:null},
+    {name:"Solayer (LAYER)",cat:"Crypto",detail:"Pre-seed + $12M seed investor. Dominant Solana restaking marketplace — $150M+ TVL. LAYER governance token live on Coinbase since September 11, 2025. Backed by Binance Labs. Confirmed investment and Coinbase listing.",btn:CB("solayer","LAYER")},
     {name:"Squads",cat:"Private",detail:"$5.7M. Smart account and multisig infrastructure for Solana.",btn:null},
     {name:"Zama",cat:"Private",detail:"$73M. Fully homomorphic encryption (FHE) for blockchain.",btn:FORGE},
-    {name:"io.net",cat:"Private",detail:"Decentralized GPU network. Significant Series A. Key Solana ecosystem pillar.",btn:FORGE},
+    {name:"io.net (IO)",cat:"Crypto",detail:"Series A investor. Decentralized GPU network assembling 1M+ GPUs for ML applications. IO token live on Coinbase since October 2024. Thesis: decentralized compute as AI infrastructure backbone. Confirmed Crunchbase and Coinbase.",btn:CB("io-net","IO")},
     {name:"Oobit",cat:"Private",detail:"$25M Series A. Led by Tether and Toly. Crypto payments.",btn:null},
-    {name:"Drift Protocol",cat:"Crypto",detail:"Solana-native perpetuals DEX. Major ecosystem position.",btn:null},
+    {name:"Drift Protocol (DRIFT)",cat:"Crypto",detail:"Solana-native perpetuals and spot DEX. DRIFT governance token live on Coinbase since September 2024. ⚠️ Protocol suffered a $280M security exploit April 1, 2026 via social engineering attack. Operations resumed, security remediation underway. Confirmed investment via Crunchbase.",btn:CB("drift","DRIFT")},
     {name:"Ellipsis Labs",cat:"Private",detail:"Solana AMM infrastructure. Phoenix DEX.",btn:null},
     {name:"Fragmetric",cat:"Crypto",detail:"Solana restaking protocol.",btn:null},
     {name:"Infinex",cat:"Crypto",detail:"Kain Warwick's non-custodial exchange frontend.",btn:null},
@@ -2074,13 +2074,610 @@ const chamath = {
   ],
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
+// SAM ALTMAN
+// ─────────────────────────────────────────────────────────────────────────────
+const altman = {
+  id:"altman", name:"Sam Altman", handle:"@sama",
+  title:"OpenAI · Hydrazine Capital · Apollo Projects",
+  netWorth:"~$2.8B portfolio", category:"AI · Longevity · Energy",
+  thesis:"I put essentially all my liquid net worth into nuclear fusion and anti-aging. The amount of intelligence in the universe is going to increase dramatically.",
+  keyNumber:{label:"Portfolio companies",value:"132+"},
+  tag:"AI Maximalist", tagColor:"indigo",
+  portfolio:[
+    {name:"Reddit (RDDT)",cat:"Public",detail:"Third-largest shareholder pre-IPO at ~9%. Backed in multiple rounds (2014, 2015, 2021). IPO'd March 2024. Confirmed Wikipedia and SEC filings.",btn:YF("RDDT")},
+    {name:"Oklo (OKLO)",cat:"Public",detail:"Nuclear microreactor company. Backed from 2014 seed round through IPO via SPAC (AltC Acquisition Corp, also Altman-backed). Went public May 2024. Board member. Confirmed CB Insights.",btn:YF("OKLO")},
+    {name:"Helion Energy",cat:"Private",detail:"Nuclear fusion startup. $375M personal investment in Series E (2021) — his largest ever. Additional $425M in Series F (2024). 'By far the most promising approach to fusion I've seen.' Microsoft signed agreement to buy Helion electricity. Confirmed Altman blog post and CB Insights.",btn:FORGE},
+    {name:"Retro Biosciences",cat:"Private",detail:"$180M total personal investment. Anti-aging via cellular reprogramming. Along with Helion, accounted for 'all my liquid net worth' per MIT Technology Review. Confirmed CB Insights.",btn:null},
+    {name:"Boom Supersonic",cat:"Private",detail:"Supersonic commercial flights. Board member. Personal investment confirmed PitchBook. $300M raised December 2025.",btn:FORGE},
+    {name:"Worldcoin (WLD)",cat:"Crypto",detail:"Co-founded Tools for Humanity which created Worldcoin. WLD is a live tradeable token on Coinbase and major exchanges. Iris-scan based crypto identity and UBI project. Confirmed Tools for Humanity founding documentation.",btn:CB("worldcoin","WLD")},
+    {name:"KoBold Metals",cat:"Private",detail:"AI-powered critical metals mining. $195M round in 2024 via Apollo Projects. Applies AI to finding cobalt, copper, nickel and lithium for EV batteries. Confirmed CB Insights.",btn:null},
+    {name:"Stripe",cat:"Private",detail:"Payments infrastructure. Early angel investor. One of the most anticipated IPOs. Actively traded on Forge secondary market. Confirmed multiple sources.",btn:FORGE},
+    {name:"Exowatt",cat:"Private",detail:"Solar energy startup providing clean power to data centers. Confirmed via Wikipedia — personal investment alongside nuclear and energy thesis.",btn:null},
+    {name:"Gusto",cat:"Private",detail:"HR and payroll software platform. Confirmed personal investment via Crunchbase reporting.",btn:null},
+    {name:"Humane",cat:"Private",detail:"AI wearable device company (Ai Pin). Confirmed 3 rounds from CB Insights research report.",btn:null},
+    {name:"Airbnb (ABNB)",cat:"Private",detail:"Early YC-era angel investment. IPO'd December 2020 at $47B valuation. Altman's early stake exited at or before IPO. Confirmed CB Insights exits list.",btn:EXITED},
+    {name:"Instacart (CART)",cat:"Private",detail:"Early angel investment. IPO'd September 2023. Altman's early stake exited. Confirmed CB Insights exits list.",btn:EXITED},
+    {name:"Uber (UBER)",cat:"Private",detail:"Early personal angel investment from YC era. IPO'd May 2019. Stake exited. Confirmed Fortune reporting on Altman early bets.",btn:EXITED},
+    {name:"Codecademy",cat:"Private",detail:"Online coding education. Backed 2011. Acquired by SkillSoft for $525M December 2021. Confirmed CB Insights.",btn:EXITED},
+    {name:"Cruise",cat:"Private",detail:"Autonomous vehicles. Early investment. Acquired by General Motors 2016. Confirmed CB Insights.",btn:EXITED},
+  ],
+  recent:[
+    {date:"Oct 2025",deal:"Arcadia Medicine — angel round",note:"Longevity biotech"},
+    {date:"Jan 2024",deal:"Helion Energy — $425M Series F",note:"Nuclear fusion"},
+    {date:"Mar 2024",deal:"Reddit (RDDT) IPO",note:"~9% stake"},
+    {date:"May 2024",deal:"Oklo (OKLO) IPO",note:"Board member"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// JACK DORSEY
+// ─────────────────────────────────────────────────────────────────────────────
+const dorsey = {
+  id:"dorsey", name:"Jack Dorsey", handle:"@jack",
+  title:"Block · Twitter co-founder · Bitcoin advocate",
+  netWorth:"~$4.3B", category:"Bitcoin · Fintech · Social",
+  thesis:"Bitcoin will be the native currency of the internet above all else. I own only Bitcoin — nothing else.",
+  keyNumber:{label:"Block BTC treasury",value:"8,027 BTC"},
+  tag:"Bitcoin Maximalist", tagColor:"blue",
+  portfolio:[
+    {name:"Bitcoin (BTC)",cat:"Crypto",detail:"Personal holding confirmed multiple times since 2021. 'I own Bitcoin, and it's much more Bitcoin than Ether or Doge.' Has not sold. Block (his company) holds additional 8,027 BTC on balance sheet. Confirmed The B Word conference July 2021 and multiple public statements.",btn:CB("bitcoin","BTC")},
+    {name:"Block (XYZ)",cat:"Public",detail:"Founder and CEO. Holds ~47.85M Class B shares (~79% voting control). Formerly Square. Rebranded 2021 to reflect broader Bitcoin mission. Cash App processes $10B+ in Bitcoin revenue annually. Confirmed SEC filings.",btn:YF("XYZ")},
+    {name:"Bluesky",cat:"Private",detail:"Decentralized social media protocol. Initiated by Dorsey in 2019 while still at Twitter. Launched publicly 2023. Now independent — Dorsey no longer on board as of 2024 but was founding backer. Confirmed multiple sources.",btn:null},
+    {name:"Mummolin / Ocean",cat:"Private",detail:"Decentralized Bitcoin mining pool. Led $6.2M investment November 2024. Mission: make mining more decentralized. Confirmed Decrypt.",btn:null},
+  ],
+  recent:[
+    {date:"Nov 2024",deal:"Led $6.2M investment in Mummolin/Ocean",note:"Bitcoin mining decentralization"},
+    {date:"May 2024",deal:"Donated $21M to OpenSats",note:"Bitcoin open source development"},
+    {date:"Nov 2024",deal:"Block $80M regulatory settlement",note:"AML compliance lapses"},
+    {date:"2025",deal:"Square Bitcoin payments rollout to merchants",note:"4M+ sellers"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// KOBE BRYANT (LEGACY)
+// ─────────────────────────────────────────────────────────────────────────────
+const kobe = {
+  id:"kobe", name:"Kobe Bryant", handle:"Bryant Stibel",
+  title:"Bryant Stibel · Kobe Inc. · NBA Legend",
+  netWorth:"Estate ~$600M+", category:"Tech · Media · Sports",
+  thesis:"What I do after basketball will be more impressive than what I did during. Apply the same obsession to business.",
+  keyNumber:{label:"Bryant Stibel AUM",value:"$2B+"},
+  tag:"The Mamba", tagColor:"purple",
+  portfolio:[
+    {name:"Alibaba (BABA)",cat:"Public",detail:"Bryant Stibel portfolio company. Chinese e-commerce giant. Confirmed Institutional Investor report on Bryant Stibel.",btn:YF("BABA")},
+    {name:"LegalZoom (LZ)",cat:"Public",detail:"Online legal services. Bryant Stibel portfolio. IPO'd 2021. Confirmed Bryant Stibel website and Institutional Investor.",btn:YF("LZ")},
+    {name:"Life360 (LIF)",cat:"Public",detail:"Family safety app. Bryant Stibel portfolio. Most recent confirmed Bryant Stibel investment (Post-IPO round). Confirmed Tracxn.",btn:YF("LIF")},
+    {name:"TeamViewer (TMVWY)",cat:"Public",detail:"Remote access software. Bryant Stibel portfolio. Primary listing Frankfurt (XETR:TMV). Trades US OTC as TMVWY on Yahoo Finance and Robinhood. Confirmed bryantstibel.com.",btn:YF("TMVWY")},
+    {name:"Klarna (KLAR)",cat:"Public",detail:"Buy-now-pay-later giant. Bryant Stibel portfolio. IPO'd September 10, 2025 on NYSE at $40/share, $15B valuation. Forge confirmed no longer tracking as pre-IPO. Confirmed Motley Fool, Capital.com, Forge Global.",btn:YF("KLAR")},
+    {name:"Epic Games",cat:"Private",detail:"Fortnite creator. Bryant Stibel portfolio company. Valued at $32B+. IPO eventual. Confirmed PYMNTS and bryantstibel.com.",btn:null},
+    {name:"Art of Sport",cat:"Private",detail:"Performance skincare brand. Co-founded with Brian Lee and Matthias Metternich. Bryant was equity partner. Confirmed Bryant Stibel website.",btn:null},
+    {name:"HouseCanary",cat:"Private",detail:"AI-powered real estate valuation platform. Personal angel investment January 2017. Confirmed PitchBook.",btn:null},
+    {name:"Body Armor",cat:"Private",detail:"Sports drink. Personal investment. Sold stake to Coca-Cola 2021 in deal valuing company at $5.6B. One of his highest-return personal bets. Confirmed CNN and multiple outlets.",btn:EXITED},
+    {name:"The Players' Tribune",cat:"Private",detail:"Athlete storytelling platform. Bryant Stibel investment. Acquired by Minute Media. Confirmed Institutional Investor.",btn:EXITED},
+    {name:"Scopely",cat:"Private",detail:"Mobile gaming. Bryant Stibel portfolio. Acquired for $4.9B by Savvy Games Group 2023. Confirmed bryantstibel.com.",btn:EXITED},
+  ],
+  recent:[
+    {date:"Jan 2020",deal:"Passed away January 26, 2020",note:"Estate continues Bryant Stibel"},
+    {date:"Jan 2017",deal:"HouseCanary — personal angel investment",note:"Real estate AI"},
+    {date:"2021",deal:"Body Armor sold to Coca-Cola at $5.6B",note:"Major personal exit"},
+    {date:"2023",deal:"Scopely acquired at $4.9B",note:"Bryant Stibel exit"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// LEOPOLD ASCHENBRENNER
+// ─────────────────────────────────────────────────────────────────────────────
+const leopold = {
+  id:"leopold", name:"Leopold Aschenbrenner", handle:"@leopoldasc",
+  title:"Situational Awareness LP · Former OpenAI",
+  netWorth:"~$383M AUM ($5.5B gross exposure)", category:"AI · Energy · Bitcoin Mining",
+  thesis:"The real bottleneck in the AGI race isn't algorithms — it's electricity and compute. Bet on the infrastructure, not the models.",
+  keyNumber:{label:"2025 fund return",value:"47%"},
+  tag:"AGI Realist", tagColor:"orange",
+  portfolio:[
+    {name:"Bloom Energy (BE)",cat:"Public",detail:"Fuel cell power generation. Top holding in Q4 2025 13F. AI data centers creating massive power demand aligns with Bloom's solid-oxide fuel cell technology. Confirmed SEC 13F filing February 2026.",btn:YF("BE")},
+    {name:"Intel (INTC)",cat:"Public",detail:"Contrarian semiconductor bet. Situational Awareness held significant Intel position amid AI chip boom. Confirmed SEC 13F filing.",btn:YF("INTC")},
+    {name:"Lumentum (LITE)",cat:"Public",detail:"Optical networking components critical for AI data center interconnects. Confirmed SEC 13F filing Q4 2025.",btn:YF("LITE")},
+    {name:"IREN (IREN)",cat:"Public",detail:"Bitcoin miner pivoting to AI compute hosting. Large Q4 2025 position. Thesis: Bitcoin miners have power infrastructure that can be repurposed for AI workloads. Confirmed SEC 13F filing.",btn:YF("IREN")},
+    {name:"Cipher Mining (CIFR)",cat:"Public",detail:"Bitcoin mining company. Part of the Bitcoin miner/AI infrastructure thesis. Confirmed SEC 13F filing Q4 2025.",btn:YF("CIFR")},
+    {name:"Riot Platforms (RIOT)",cat:"Public",detail:"Bitcoin miner with large-scale power infrastructure. Held in Q4 2025 13F. Confirmed SEC filing.",btn:YF("RIOT")},
+    {name:"Bitdeer (BTDR)",cat:"Public",detail:"Bitcoin mining and AI cloud computing. Situational Awareness position in Q4 2025. Confirmed SEC 13F filing.",btn:YF("BTDR")},
+    {name:"Applied Digital (APLD)",cat:"Public",detail:"Data center infrastructure for AI and Bitcoin. Confirmed Situational Awareness position. Confirmed SEC 13F filing.",btn:YF("APLD")},
+    {name:"Anthropic",cat:"Private",detail:"AI safety and research company. Situational Awareness has private exposure. Confirmed PYMNTS reporting. Backed by Stripe Collisons who also backed Leopold's fund.",btn:null},
+    {name:"VanEck Semiconductor ETF (SMH)",cat:"Public",detail:"Semiconductor sector ETF. Large Q2 2025 position. AI chip exposure via diversified semiconductor basket. Confirmed SEC 13F filing.",btn:YF("SMH")},
+  ],
+  recent:[
+    {date:"Feb 2026",deal:"Q4 2025 13F: $5.5B gross US equity exposure",note:"29 holdings filed with SEC"},
+    {date:"Oct 2025",deal:"47% return H1 2025 vs 6% S&P 500",note:"Fastest growing new hedge fund"},
+    {date:"2025",deal:"Exited Nvidia and Broadcom",note:"Pivoted to power/infrastructure from chips"},
+    {date:"2024",deal:"Launched Situational Awareness LP",note:"Backed by Stripe Collisons, Nat Friedman, Daniel Gross"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MICHAEL SAYLOR
+// ─────────────────────────────────────────────────────────────────────────────
+const saylor = {
+  id:"saylor", name:"Michael Saylor", handle:"@saylor",
+  title:"Strategy (MicroStrategy) · Bitcoin Maximalist",
+  netWorth:"~$4B+ (varies with BTC)", category:"Bitcoin · Enterprise Software",
+  thesis:"Bitcoin is the apex property of the human race. There is no second best. Everything else is a distraction.",
+  keyNumber:{label:"Strategy BTC treasury",value:"712,647 BTC"},
+  tag:"Bitcoin Maximalist", tagColor:"amber",
+  fundNote:"Strategy's Bitcoin holdings reflect Saylor's personal conviction expressed through corporate treasury. He has personally confirmed 17,732+ BTC in personal holdings.",
+  portfolio:[
+    {name:"Bitcoin (BTC)",cat:"Crypto",detail:"Personal holding confirmed. As of 2022 SEC disclosure, personally holds 17,732+ BTC. Has stated he will never sell. 'I intend to keep buying Bitcoin forever.' Confirmed multiple SEC filings and public statements.",btn:CB("bitcoin","BTC")},
+    {name:"Strategy (MSTR)",cat:"Public",detail:"Co-founded as MicroStrategy 1989. Rebranded to Strategy 2025. Holds 712,647 BTC as of January 2026 — purchased for ~$54.2B at avg $76,037/coin. ~3.4% of all Bitcoin that will ever exist. Largest corporate Bitcoin holder in the world. Confirmed SEC filings.",btn:YF("MSTR")},
+  ],
+  recent:[
+    {date:"Jan 2026",deal:"Strategy buys additional 2,932 BTC for $264M",note:"Total holdings reach 712,647 BTC"},
+    {date:"Dec 2025",deal:"Strategy buys 10,624 BTC for $962.7M",note:"Avg price $90,615"},
+    {date:"2025",deal:"MicroStrategy rebrands to Strategy",note:"Full identity shift to Bitcoin company"},
+    {date:"2025",deal:"Strategy added to S&P 500",note:"Landmark institutional validation"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CATHIE WOOD
+// ─────────────────────────────────────────────────────────────────────────────
+const cathie = {
+  id:"cathie", name:"Cathie Wood", handle:"@CathieDWood",
+  title:"ARK Investment Management · ARKK",
+  netWorth:"$15B+ AUM", category:"AI · Genomics · Fintech · EV",
+  thesis:"Innovation solves the world's greatest problems and creates enormous wealth. We invest in companies that are changing the world.",
+  keyNumber:{label:"ARK AUM",value:"$15B+"},
+  tag:"Innovation Investor", tagColor:"violet",
+  fundNote:"ARK publishes all holdings daily. Every position shown is a personal conviction call by Cathie — she is the portfolio manager of all ARK funds.",
+  portfolio:[
+    {name:"Tesla (TSLA)",cat:"Public",detail:"ARK's largest holding at ~9.8% of ARKK (Q1 2026). Cathie has called TSLA her highest conviction idea for years. Believes Tesla will reach $2,600/share driven by robotaxis and energy. Confirmed ARK daily filing.",btn:YF("TSLA")},
+    {name:"Coinbase (COIN)",cat:"Public",detail:"~8.2% of ARKK (Q1 2026). ARK thesis: Coinbase becomes the reserve currency exchange for the global crypto economy as institutional adoption accelerates. Confirmed ARK daily filing.",btn:YF("COIN")},
+    {name:"Roku (ROKU)",cat:"Public",detail:"~7.5% of ARKK (Q1 2026). ARK thesis: linear TV collapses, Roku captures the connected TV advertising market as the dominant OS. Confirmed ARK daily filing.",btn:YF("ROKU")},
+    {name:"CRISPR Therapeutics (CRSP)",cat:"Public",detail:"~5.3% of ARKK. ARK's lead genomics bet. CRISPR-based gene editing represents ARK's multi-decade therapeutic revolution thesis. Confirmed ARK daily filing.",btn:YF("CRSP")},
+    {name:"UiPath (PATH)",cat:"Public",detail:"~3.9% of ARKK. ARK thesis: software robots automate repetitive knowledge work at scale, comparable value creation to industrial robots. Confirmed ARK daily filing.",btn:YF("PATH")},
+    {name:"Exact Sciences (EXAS)",cat:"Public",detail:"~4.8% of ARKK. Cancer early detection diagnostics. ARK's molecular diagnostics play alongside genomics thesis. Confirmed ARK daily filing.",btn:YF("EXAS")},
+    {name:"Shopify (SHOP)",cat:"Public",detail:"ARKK holding. ARK thesis: Shopify becomes the operating system for global commerce, arming merchants against Amazon. Confirmed ARK daily filing.",btn:YF("SHOP")},
+    {name:"Robinhood (HOOD)",cat:"Public",detail:"ARKK holding. ARK thesis: democratization of finance, Robinhood becomes the primary financial account for the next generation. Confirmed ARK daily filing.",btn:YF("HOOD")},
+    {name:"Palantir (PLTR)",cat:"Public",detail:"ARKK holding. ARK thesis: Palantir's AI platform becomes essential government and enterprise infrastructure. Confirmed ARK daily filing.",btn:YF("PLTR")},
+    {name:"Tempus AI (TEM)",cat:"Public",detail:"ARKK holding. AI-powered precision medicine and cancer genomics data platform. Went public 2024. ARK early backer. Confirmed ARK daily filing.",btn:YF("TEM")},
+  ],
+  recent:[
+    {date:"Apr 2026",deal:"ARKK Q1 2026: Tesla, Coinbase, Roku remain top 3",note:"ARK publishes holdings daily at ark-funds.com"},
+    {date:"Feb 2026",deal:"Added Airbnb (ABNB) to ARKK",note:"New position opened"},
+    {date:"Feb 2026",deal:"Added DraftKings (DKNG)",note:"Sports betting as fintech play"},
+    {date:"Mar 2025",deal:"Added CoreWeave (CRWV)",note:"AI infrastructure exposure"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SHAQUILLE O'NEAL
+// ─────────────────────────────────────────────────────────────────────────────
+const shaq = {
+  id:"shaq", name:"Shaquille O'Neal", handle:"@SHAQ",
+  title:"Big Chicken · HartBeat · TNT Analyst",
+  netWorth:"~$500M", category:"Franchises · Tech · Food",
+  thesis:"If it's in my hand or on my kitchen counter, it might end up in my portfolio. Invest in what you know and actually use.",
+  keyNumber:{label:"Franchise locations",value:"550+"},
+  tag:"The Franchise King", tagColor:"blue",
+  portfolio:[
+    {name:"Papa John's (PZZA)",cat:"Public",detail:"Board member since 2019. Owns 9 Papa John's franchises in Atlanta. Sold likeness rights to the company for $8.5M. Major brand ambassador role instrumental in the company's turnaround. Confirmed multiple sources.",btn:YF("PZZA")},
+    {name:"Lyft (LYFT)",cat:"Public",detail:"Early personal investor in Lyft. Confirmed CNBC reporting on Shaq's tech investment portfolio.",btn:YF("LYFT")},
+    {name:"Krispy Kreme (DNUT)",cat:"Public",detail:"Franchise owner. Personal investment and operator. Confirmed multiple sources.",btn:YF("DNUT")},
+    {name:"Big Chicken",cat:"Founded",detail:"Co-founded fast-casual chicken brand 2018. 40+ locations open, 350+ in development as of 2025. 234% year-over-year unit growth. Zero franchise failures in 3 years. Confirmed bryantstibel.com and multiple outlets.",btn:null},
+    {name:"Car Washes",cat:"Founded",detail:"Owns ~150 car wash locations. Generates estimated $30-60M gross revenue annually. Confirmed multiple sources.",btn:null},
+    {name:"Ring",cat:"Private",detail:"Early investor in Ring smart doorbell. Amazon acquired Ring for ~$1B in 2018. One of his best-timed tech exits. Confirmed CNBC.",btn:EXITED},
+    {name:"Google",cat:"Private",detail:"Early pre-IPO personal investment. 'I accidentally invested $250,000 in Google' — accredited the early bet to luck and a Jeff Bezos tip. IPO'd 2004. Confirmed multiple outlets.",btn:EXITED},
+    {name:"Five Guys",cat:"Founded",detail:"Owned 155 Five Guys franchises (10% of total chain). Sold entire portfolio 2016 for estimated $80-100M+. Largest single franchise exit by a celebrity athlete. Confirmed multiple sources.",btn:EXITED},
+    {name:"Auntie Anne's",cat:"Founded",detail:"Owned 17 Auntie Anne's pretzel franchises. Sold. Confirmed multiple sources.",btn:EXITED},
+    {name:"24-Hour Fitness",cat:"Founded",detail:"Owned 40 24-Hour Fitness gym locations. Sold. Confirmed multiple sources.",btn:EXITED},
+  ],
+  recent:[
+    {date:"2025",deal:"Big Chicken reaches 350+ locations in development",note:"Crown jewel franchise"},
+    {date:"2019",deal:"Joined Papa John's board, bought 9 franchises",note:"Major brand turnaround role"},
+    {date:"2018",deal:"Ring acquired by Amazon ~$1B",note:"Early investor exit"},
+    {date:"2016",deal:"Sold all 155 Five Guys franchises",note:"Est. $80-100M+ exit"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// BRIAN ARMSTRONG
+// ─────────────────────────────────────────────────────────────────────────────
+const armstrong = {
+  id:"armstrong", name:"Brian Armstrong", handle:"@brian_armstrong",
+  title:"Coinbase · NewLimit · ResearchHub",
+  netWorth:"~$9.6B", category:"Crypto · Biotech · Open Science",
+  thesis:"The legacy financial system is broken. Blockchain provides the open, global infrastructure to fix it. Own the infrastructure, not the apps on top of it.",
+  keyNumber:{label:"Coinbase stake",value:"~14%"},
+  tag:"Open Finance", tagColor:"blue",
+  fundNote:"Coinbase Ventures (550+ investments) reflects institutional capital. Positions shown are personal direct investments and co-founded companies.",
+  portfolio:[
+    {name:"Coinbase (COIN)",cat:"Public",detail:"Co-founded 2012. Holds ~33.1M shares (~14% stake) as of early 2025. Went public via direct listing April 2021. Joined S&P 500 May 2025. SEC lawsuit dismissed 2025. Confirmed SEC filings.",btn:YF("COIN")},
+    {name:"Bitcoin (BTC)",cat:"Crypto",detail:"Personal holder since ~2012 when BTC was ~$6. 'Bitcoin is going to be a reserve currency for the internet.' Confirmed Bloomberg reporting and public statements.",btn:CB("bitcoin","BTC")},
+    {name:"Ethereum (ETH)",cat:"Crypto",detail:"Personal holder. Confirmed public statements. Also co-founded Base, Coinbase's L2 network built on Ethereum. Confirmed multiple sources.",btn:CB("ethereum","ETH")},
+    {name:"NewLimit",cat:"Private",detail:"Co-founded 2021 with Blake Byers. Anti-aging biotech via epigenetic reprogramming. Armstrong and Byers committed $110M of personal funds. Raised $40M Series A May 2023. Confirmed Wikipedia and multiple reporting.",btn:null},
+    {name:"ResearchHub",cat:"Private",detail:"Self-funded open science platform modeled on GitHub for research papers. Armstrong committed personal capital. Confirmed Wikipedia.",btn:null},
+  ],
+  recent:[
+    {date:"May 2025",deal:"Coinbase joins S&P 500",note:"Landmark institutional validation"},
+    {date:"2025",deal:"SEC ends lawsuit against Coinbase",note:"Regulatory clarity achieved"},
+    {date:"May 2023",deal:"NewLimit raises $40M Series A",note:"Anti-aging research milestone"},
+    {date:"Aug 2024",deal:"Base L2 hits record on-chain activity",note:"Coinbase's Ethereum L2"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RIHANNA
+// ─────────────────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// KIM KARDASHIAN
+// ─────────────────────────────────────────────────────────────────────────────
+const kimk = {
+  id:"kimk", name:"Kim Kardashian", handle:"@KimKardashian",
+  title:"SKIMS · SKKY Partners · SKKN by Kim",
+  netWorth:"~$1.7B", category:"Fashion · Beauty · Private Equity",
+  thesis:"I've built brands from the ground up. I know what founders need better than most investors because I've lived it.",
+  keyNumber:{label:"SKIMS valuation",value:"$4B+"},
+  tag:"Brand Builder", tagColor:"neutral",
+  fundNote:"SKKY Partners positions shown reflect co-managed PE fund investments alongside Jay Sammons (former Carlyle). Kardashian is senior operating advisor.",
+  portfolio:[
+    {name:"SKIMS",cat:"Private",detail:"Co-founded 2019 with Emma and Jens Grede. Shapewear and apparel brand. $4B+ valuation. IPO widely anticipated — Saks Fifth Avenue partnership 2024, flagship NYC store opened December 2024. Confirmed multiple sources.",btn:FORGE},
+    {name:"SKKN by Kim",cat:"Private",detail:"Skincare line launched 2022. Premium multi-step skincare system. Private. Confirmed multiple sources.",btn:null},
+    {name:"TRUFF",cat:"Private",detail:"SKKY Partners first investment (Q1 2024). Truffle-infused hot sauces and condiments. Luxury food brand. Minority stake. Confirmed SKKY Partners announcement.",btn:null},
+    {name:"111Skin",cat:"Private",detail:"SKKY Partners second investment (January 2025). UK-based luxury skincare. Significant minority stake. £20.3M revenue 2023. Available at Nordstrom and Sephora. Confirmed Business of Fashion.",btn:null},
+  ],
+  recent:[
+    {date:"Jan 2025",deal:"SKKY Partners invests in 111Skin",note:"Luxury skincare UK brand"},
+    {date:"Dec 2024",deal:"SKIMS flagship store opens NYC Fifth Avenue",note:"Retail expansion milestone"},
+    {date:"Q1 2024",deal:"SKKY Partners invests in TRUFF",note:"First PE deal: luxury condiments"},
+    {date:"2022",deal:"SKKY Partners launches with Jay Sammons",note:"Former Carlyle Group executive"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// KEVIN HART
+// ─────────────────────────────────────────────────────────────────────────────
+const kevinhart = {
+  id:"kevinhart", name:"Kevin Hart", handle:"@KevinHart4real",
+  title:"HartBeat Ventures · HartBeat Productions",
+  netWorth:"~$400M", category:"Health · Consumer · Tech",
+  thesis:"I invest in things I believe in and use. Health, wellness, people — not just ideas.",
+  keyNumber:{label:"HartBeat portfolio",value:"28 companies"},
+  tag:"Comedy Capitalist", tagColor:"green",
+  fundNote:"HartBeat Ventures is Kevin's institutionally-backed VC firm (J.P. Morgan investor). Positions shown are HartBeat fund investments that reflect his personal conviction.",
+  portfolio:[
+    {name:"Function Health",cat:"Private",detail:"Comprehensive lab testing and health analytics platform. HartBeat participated in $298M Series B November 2025 (Redpoint led). Kevin's flagship health investment. Confirmed PitchBook and Tracxn.",btn:null},
+    {name:"Simple (App)",cat:"Private",detail:"AI-powered health coaching and weight loss app. $35M Series B October 2025 led by HartBeat. 700,000+ subscribers, $160M ARR. Confirmed TechCrunch.",btn:null},
+    {name:"MoonPay",cat:"Private",detail:"Crypto payments infrastructure. HartBeat portfolio unicorn. Primary on/off ramp for NFT purchases. Confirmed Tracxn (7 unicorns in HartBeat portfolio).",btn:null},
+    {name:"Yuga Labs",cat:"Private",detail:"Creator of Bored Ape Yacht Club NFT collection. HartBeat portfolio unicorn. Confirmed Tracxn.",btn:null},
+    {name:"Therabody",cat:"Private",detail:"Theragun massage therapy devices. HartBeat portfolio. Premium recovery tech brand. Confirmed TechCrunch HartBeat announcement.",btn:null},
+    {name:"Alice Mushrooms",cat:"Private",detail:"Functional mushroom supplements and wellness. HartBeat portfolio. Confirmed PitchBook.",btn:null},
+    {name:"Cleancult",cat:"Private",detail:"Sustainable home cleaning products. HartBeat portfolio. Confirmed PitchBook.",btn:null},
+    {name:"BrightFox",cat:"Private",detail:"Electrolyte performance beverage brand. HartBeat early portfolio. Confirmed TechCrunch.",btn:null},
+  ],
+  recent:[
+    {date:"Nov 2025",deal:"HartBeat invests in Function Health $298M Series B",note:"Flagship health bet"},
+    {date:"Oct 2025",deal:"HartBeat leads Simple App $35M Series B",note:"AI health coaching"},
+    {date:"2023",deal:"J.P. Morgan becomes first institutional investor in HartBeat Ventures",note:"Legitimization milestone"},
+    {date:"2022",deal:"HartBeat Ventures launched with focus on health and consumer",note:"VC fund established"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ALEXIS OHANIAN
+// ─────────────────────────────────────────────────────────────────────────────
+const ohanian = {
+  id:"ohanian", name:"Alexis Ohanian", handle:"@alexisohanian",
+  title:"Reddit Co-Founder · Seven Seven Six",
+  netWorth:"~$200M", category:"Tech · Crypto · Women's Sports",
+  thesis:"Community is the internet's most durable moat. The next wave of social will be built on crypto rails. Bet on women's sports before the valuation gap closes.",
+  keyNumber:{label:"Reddit IPO (2024)",value:"$34 → $228"},
+  tag:"Internet Builder", tagColor:"indigo",
+  fundNote:"Seven Seven Six is Ohanian's institutional fund (228+ investments). Positions shown are personal direct investments and co-founded companies.",
+  portfolio:[
+    {name:"Reddit (RDDT)",cat:"Public",detail:"Co-founded 2005. IPO'd NYSE March 2024 at $34/share. Ohanian retains equity stake. Beat analyst estimates every quarter since IPO. Confirmed SEC filings.",btn:YF("RDDT")},
+    {name:"Solana (SOL)",cat:"Crypto",detail:"Seven Seven Six and the Solana Foundation partnered for $100M investment in Solana-native social media. Ohanian personally bullish on SOL and has spoken publicly about the investment thesis. Confirmed Solana Foundation announcement.",btn:CB("solana","SOL")},
+    {name:"Angel City FC",cat:"Private",detail:"Co-owner of NWSL women's soccer club. One of multiple high-profile investors in women's sports. Valuation has grown significantly since 2020 acquisition. Confirmed Yahoo Finance.",btn:null},
+    {name:"Chelsea FC Women",cat:"Private",detail:"Partial ownership stake in Chelsea FC Women. Part of Ohanian's thesis that women's sports valuations are dramatically undervalued. Confirmed Yahoo Finance.",btn:null},
+    {name:"Digg",cat:"Founded",detail:"Acquired March 2025 via leveraged buyout with co-founder Kevin Rose. Relaunching as AI-native community platform. Direct Reddit competitor. Confirmed Benzinga/TechCrunch.",btn:null},
+    {name:"Mantel",cat:"Founded",detail:"Sports media and content platform. Ohanian helped launch, partnered with Yahoo Sports. Private. Confirmed Yahoo Finance.",btn:null},
+  ],
+  recent:[
+    {date:"Jan 2026",deal:"Digg relaunches in public beta",note:"AI-first community platform acquired March 2025"},
+    {date:"Nov 2025",deal:"Ohanian on women's sports valuations at Yahoo Finance Invest",note:"Angel City + Chelsea FC Women stakes"},
+    {date:"Mar 2024",deal:"Reddit IPO on NYSE at $34/share",note:"Now trades at $228+"},
+    {date:"2021",deal:"$100M Solana social media fund",note:"With Solana Foundation"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PARIS HILTON
+// ─────────────────────────────────────────────────────────────────────────────
+const paris = {
+  id:"paris", name:"Paris Hilton", handle:"@ParisHilton",
+  title:"11:11 Media · Original Crypto Celebrity",
+  netWorth:"~$300M", category:"Crypto · Media · Consumer",
+  thesis:"I've been investing in Bitcoin and Ethereum since 2016. I believe in the future of digital assets.",
+  keyNumber:{label:"Crypto investor since",value:"2016"},
+  tag:"Crypto OG", tagColor:"pink",
+  portfolio:[
+    {name:"Bitcoin (BTC)",cat:"Crypto",detail:"Investing since 2016 when BTC was ~$1,000. One of the earliest celebrity crypto investors. 'I see digital currencies definitely rising.' Confirmed CNBC and multiple outlets.",btn:CB("bitcoin","BTC")},
+    {name:"Ethereum (ETH)",cat:"Crypto",detail:"Investing since 2016 when ETH was ~$10. Became interested after befriending Ethereum co-founders. Still holds. Confirmed CNBC.",btn:CB("ethereum","ETH")},
+    {name:"11:11 Media",cat:"Founded",detail:"Founded 2021. Media and entertainment company overseeing all Paris Hilton brands, content, and investments. Private.",btn:null},
+    {name:"Paris World (Roblox)",cat:"Founded",detail:"Metaverse experience on Roblox. New Year's Eve party drew more virtual attendees than Times Square. Brand-building in Web3. Confirmed multiple outlets.",btn:null},
+    {name:"NFT Portfolio",cat:"Crypto",detail:"Over 150 NFTs acquired. 'Iconic Crypto Queen' series raised $1.5M in 2021. Sold her first digital artwork for 40 ETH in 2020. Active collector. Confirmed CoinPaper.",btn:null},
+  ],
+  recent:[
+    {date:"2025",deal:"Scaled back BTC holdings amid market uncertainty",note:"Rebalancing after years of holding"},
+    {date:"2021",deal:"'Iconic Crypto Queen' NFT series raises $1.5M",note:"Won Best Charity NFT at NFT Awards"},
+    {date:"2021",deal:"11:11 Media founded",note:"Unified media platform for all Hilton IP"},
+    {date:"2016",deal:"First crypto investment in BTC and ETH",note:"One of the earliest celebrity crypto investors"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DR. DRE
+// ─────────────────────────────────────────────────────────────────────────────
+const dre = {
+  id:"dre", name:"Dr. Dre", handle:"@drdre",
+  title:"Aftermath Entertainment · Beats · Still G.I.N.",
+  netWorth:"~$1B (Forbes 2026)", category:"Music · Consumer · Tech",
+  thesis:"If it's going to be great, it has to sound great. Quality over everything.",
+  keyNumber:{label:"Beats exit (2014)",value:"~$750M"},
+  tag:"West Coast Mogul", tagColor:"slate",
+  portfolio:[
+    {name:"Beats Electronics",cat:"Private",detail:"Co-founded with Jimmy Iovine 2006. Apple acquired 2014 for $3B — the largest acquisition in Apple history at the time. Dre held ~25% stake = ~$750M pre-tax. The blueprint for music industry brand exits. Confirmed Celebrity Net Worth.",btn:EXITED},
+    {name:"Apple (AAPL)",cat:"Public",detail:"Received $400M in Apple stock as part of the Beats acquisition. Court filings from 2021 confirmed he sold $73M in AAPL shares that year. May still hold partial position. Confirmed divorce court filings.",btn:YF("AAPL")},
+    {name:"Aftermath Entertainment",cat:"Founded",detail:"Founded 1996 after leaving Death Row. Signed Eminem, 50 Cent, Kendrick Lamar. Sold stake to Interscope/Universal for $52M in 2001. Still actively involved. Distributed through Universal Music Group.",btn:null},
+    {name:"Still G.I.N.",cat:"Founded",detail:"Ultra-premium gin brand co-founded with Snoop Dogg 2024. Citrus tangerine notes. Diamond-shaped bottle. 'Surprisingly sippable' — The Guardian. Confirmed TheStreet.",btn:null},
+    {name:"Death Row Records",cat:"Founded",detail:"Co-founded 1991 with Suge Knight. Left 1996 walking away from estimated $50M. The label that launched Snoop, Tupac, and West Coast hip-hop. Dre's exit defined his subsequent career.",btn:EXITED},
+  ],
+  recent:[
+    {date:"Apr 2026",deal:"Forbes estimates net worth $1B",note:"5th wealthiest musician alive"},
+    {date:"2024",deal:"Still G.I.N. launches with Snoop Dogg",note:"Second venture together"},
+    {date:"Jan 2023",deal:"Sold $200M in music rights",note:"Generates ~$10M annual income"},
+    {date:"2014",deal:"Beats acquired by Apple for $3B",note:"Dre received ~$750M pre-tax"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// TIGER WOODS
+// ─────────────────────────────────────────────────────────────────────────────
+const tiger = {
+  id:"tiger", name:"Tiger Woods", handle:"@TigerWoods",
+  title:"Sun Day Red · PopStroke · TGR Design",
+  netWorth:"~$1.5B (Forbes 2026)", category:"Sports · Apparel · Entertainment",
+  thesis:"I've spent my entire career growing the game of golf. Everything I build is about bringing more people to a sport I love.",
+  keyNumber:{label:"PopStroke valuation",value:"$650M"},
+  tag:"Golf GOAT", tagColor:"red",
+  portfolio:[
+    {name:"Sun Day Red",cat:"Founded",detail:"Premium golf apparel brand launched February 2024 with TaylorMade. Tiger holds equity stake ('full partnership, not an endorsement'). First apparel without Nike since his entire career. Launched May 2024. Confirmed ESPN and ABC News.",btn:null},
+    {name:"PopStroke Entertainment",cat:"Founded",detail:"Co-founded with Greg Bartoli 2018. Upscale putting entertainment with full-service restaurants. 17 US locations as of March 2026. TaylorMade invested at $650M valuation. Confirmed Front Office Sports and PopStroke.com.",btn:null},
+    {name:"TGR Design",cat:"Founded",detail:"Golf course design and consulting firm. 30+ course projects globally. Part of Tiger's TGR Ventures business family. Private. Confirmed TGR Ventures.",btn:null},
+    {name:"TMRW Sports / TGL",cat:"Founded",detail:"Co-founded tech-focused golf league with Rory McIlroy and Mike McCarley. SoFi Stadium tech arena. Full TV deal. Tiger won the inaugural TGL title in 2025. Confirmed GolfMagic.",btn:null},
+    {name:"The Woods Jupiter",cat:"Founded",detail:"Upscale sports and dining restaurant in Jupiter, Florida. Opened 2015. Part of the TGR hospitality business. Private. Confirmed GolfMagic.",btn:null},
+  ],
+  recent:[
+    {date:"Mar 2026",deal:"PopStroke reaches 17 US locations",note:"Aggressive national expansion"},
+    {date:"2025",deal:"Tiger wins inaugural TGL title",note:"TMRW Sports tech league"},
+    {date:"Feb 2024",deal:"Sun Day Red launches at Genesis Invitational",note:"First Nike-free apparel in career"},
+    {date:"Jan 2023",deal:"TaylorMade invests in PopStroke at $650M",note:"Material investment, Abeles joins board"},
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PHARRELL WILLIAMS
+// ─────────────────────────────────────────────────────────────────────────────
+const pharrell = {
+  id:"pharrell", name:"Pharrell Williams", handle:"@Pharrell",
+  title:"Humanrace · BBC · Louis Vuitton · Joopiter",
+  netWorth:"~$250M", category:"Fashion · Beauty · Culture",
+  thesis:"Culture is the currency. I build things at the intersection of music, fashion, and the future.",
+  keyNumber:{label:"BBC founded",value:"2003"},
+  tag:"Culture Architect", tagColor:"yellow",
+  portfolio:[
+    {name:"Humanrace",cat:"Founded",detail:"Skincare and lifestyle brand launched 2020. Distributed through partnership with Chanel for luxury retail access. Premium wellness positioning. Private. Confirmed multiple sources.",btn:null},
+    {name:"Billionaire Boys Club (BBC)",cat:"Founded",detail:"Streetwear brand co-founded with NIGO in 2003. Sister brand ICECREAM. Growing global retail presence including flagship stores. Over 20 years of brand equity. Private. Confirmed multiple outlets.",btn:null},
+    {name:"Joopiter",cat:"Founded",detail:"Digital auction house for collectibles and cultural artifacts. Launched 2022. Positions Pharrell at intersection of NFTs and physical collectibles. Private. Confirmed multiple outlets.",btn:null},
+    {name:"i am OTHER",cat:"Founded",detail:"Creative collective, record label, and production company. Umbrella for Pharrell's creative ventures beyond his own music. Private. Confirmed multiple outlets.",btn:null},
+    {name:"Louis Vuitton / LVMH (LVMUY)",cat:"Public",detail:"Creative Director of LV Men's since 2023. While a role rather than direct equity, Pharrell's appointment drives brand value and he holds a strategic stake in the relationship. LVMH ADR trades on OTC markets as LVMUY.",btn:YF("LVMUY")},
+  ],
+  recent:[
+    {date:"2023",deal:"Named Creative Director of Louis Vuitton Men's",note:"First non-Virgil Abloh appointment"},
+    {date:"2022",deal:"Joopiter auction platform launches",note:"Digital and physical collectibles"},
+    {date:"2020",deal:"Humanrace launches with Chanel partnership",note:"Premium wellness brand"},
+    {date:"2003",deal:"Billionaire Boys Club co-founded with NIGO",note:"20+ years of streetwear dominance"},
+  ],
+};
+
 const ALL = {
-  visionaries: [naval, balaji, vitalik, toly, thiel, bryan, ferriss, eladgil, chamath],
-  icons: [lebron, jayz, reynolds, ronaldo, serena, snoop, kutcher],
-  boomers: [cuban, nas, oprah, robbins, magic, bono, martha],
-  athletes: [durant, curry, melo, mahomes, osaka],
+  visionaries: [naval, balaji, vitalik, toly, thiel, bryan, ferriss, eladgil, chamath, altman, dorsey, leopold, saylor, cathie, armstrong, ohanian],
+  icons: [lebron, jayz, reynolds, ronaldo, serena, snoop, kutcher, rihanna, kimk, kevinhart, paris, pharrell],
+  boomers: [cuban, nas, oprah, robbins, magic, bono, martha, dre],
+  athletes: [durant, curry, melo, mahomes, osaka, kobe, shaq, tiger],
   health: [sinclair],
 };
+
+// ─────────────────────────────────────────────────────────────────────────────
+// THEMES — cross-investor conviction by sector
+// Sorted by number of backing investors. Includes tradeable + non-tradeable.
+// ─────────────────────────────────────────────────────────────────────────────
+const THEMES = [
+  {
+    id: "bitcoin-digital-assets",
+    label: "Bitcoin & Digital Assets",
+    color: "#f59e0b",
+    description: "The most backed theme on Covet — 7 investors with documented Bitcoin or crypto positions. Saylor put his entire company treasury here. Dorsey built Block around it. Toly built the second-biggest L1.",
+    backers: ["Saylor","Dorsey","Armstrong","Toly","Balaji","Vitalik","Naval"],
+    positions: [
+      {name:"Bitcoin (BTC)", investor:"Saylor", detail:"'The apex property of the human race.' 17,732+ personal BTC + 712,647 BTC in Strategy treasury.", btn:CB("bitcoin","BTC")},
+      {name:"Strategy (MSTR)", investor:"Saylor", detail:"The original Bitcoin treasury company. Leveraged BTC play. S&P 500 member 2025.", btn:YF("MSTR")},
+      {name:"Block (XYZ)", investor:"Dorsey", detail:"Dorsey's fintech company. Cash App processes $10B+ in BTC annually. Square for merchants.", btn:YF("XYZ")},
+      {name:"Coinbase (COIN)", investor:"Armstrong", detail:"Armstrong co-founded it. S&P 500 since May 2025. Custodian for 90% of Bitcoin ETF assets.", btn:YF("COIN")},
+      {name:"Ethereum (ETH)", investor:"Vitalik", detail:"Vitalik co-founded it. The programmable layer for decentralized applications.", btn:CB("ethereum","ETH")},
+      {name:"Solana (SOL)", investor:"Toly", detail:"Toly co-founded it. Proof of History. 65,000+ TPS. The high-speed L1 for DeFi and consumer apps.", btn:CB("solana","SOL")},
+      {name:"Worldcoin (WLD)", investor:"Altman", detail:"Altman co-founded. Global identity and financial network using iris biometrics.", btn:CB("worldcoin-wld","WLD")},
+      {name:"Jito (JTO)", investor:"Toly", detail:"Dominant Solana liquid staking + MEV protocol. Toly invested in Jito Labs.", btn:CB("jito","JTO")},
+    ]
+  },
+  {
+    id: "health-longevity",
+    label: "Health & Longevity",
+    color: "#10b981",
+    description: "6 investors putting serious personal capital into living longer. Altman committed $180M of personal net worth to Retro Biosciences alone. Armstrong $110M to NewLimit. Bryan Johnson runs the most documented human longevity experiment alive.",
+    backers: ["Altman","Armstrong","Sinclair","Bryan Johnson","Cathie Wood","Kevin Hart","Ferriss"],
+    positions: [
+      {name:"Retro Biosciences", investor:"Altman", detail:"$180M personal bet — 'all my liquid net worth.' Cellular reprogramming to extend human lifespan. Altman's highest-conviction personal investment.", btn:null},
+      {name:"NewLimit", investor:"Armstrong", detail:"Co-founded with Blake Byers. $110M personal commitment. Epigenetic reprogramming to extend healthspan. Raised $40M Series A May 2023.", btn:null},
+      {name:"Function Health", investor:"Kevin Hart", detail:"Comprehensive lab testing and health analytics. HartBeat participated in $298M Series B Nov 2025.", btn:null},
+      {name:"CRISPR Therapeutics (CRSP)", investor:"Cathie Wood", detail:"ARK's lead genomics bet. Gene editing therapeutics. Cathie calls it a multi-decade thesis.", btn:YF("CRSP")},
+      {name:"Exact Sciences (EXAS)", investor:"Cathie Wood", detail:"Cancer early detection via molecular diagnostics. ARK ARKG core position.", btn:YF("EXAS")},
+      {name:"Simple (App)", investor:"Kevin Hart", detail:"AI health coaching for weight loss. HartBeat led $35M Series B Oct 2025. 700K+ subscribers.", btn:null},
+      {name:"Kernel", investor:"Bryan Johnson", detail:"Brain-computer interface measuring neural activity. Bryan invested personally.", btn:null},
+      {name:"Therabody", investor:"Kevin Hart", detail:"Theragun massage therapy devices. HartBeat portfolio.", btn:null},
+    ]
+  },
+  {
+    id: "ai-compute-infrastructure",
+    label: "AI & Compute Infrastructure",
+    color: "#6366f1",
+    description: "Leopold Aschenbrenner's thesis in one line: the AI bottleneck isn't algorithms, it's electricity and compute. His Q4 2025 13F showed $5.5B in gross exposure across power and data center stocks. All publicly tradeable.",
+    backers: ["Leopold","Altman","Cathie Wood","Thiel","Toly","Armstrong"],
+    positions: [
+      {name:"IREN (IREN)", investor:"Leopold", detail:"Bitcoin miner pivoting to AI compute hosting. One of Leopold's largest 13F positions.", btn:YF("IREN")},
+      {name:"Applied Digital (APLD)", investor:"Leopold", detail:"Data center infrastructure for AI and Bitcoin. Leopold Q4 2025 13F.", btn:YF("APLD")},
+      {name:"Bloom Energy (BE)", investor:"Leopold", detail:"Fuel cell power generation. Top holding Q4 2025 13F. AI data center demand thesis.", btn:YF("BE")},
+      {name:"Riot Platforms (RIOT)", investor:"Leopold", detail:"Bitcoin miner with large-scale power infrastructure. AI hosting pivot.", btn:YF("RIOT")},
+      {name:"Palantir (PLTR)", investor:"Thiel", detail:"Thiel co-founded Palantir. AI platform for government and enterprise intelligence.", btn:YF("PLTR")},
+      {name:"UiPath (PATH)", investor:"Cathie Wood", detail:"AI-powered software automation. ARK thesis: replaces knowledge work at industrial scale.", btn:YF("PATH")},
+      {name:"io.net (IO)", investor:"Toly", detail:"Decentralized GPU network for ML. Toly backed Series A. IO live on Coinbase.", btn:CB("io-net","IO")},
+      {name:"Anthropic", investor:"Leopold", detail:"AI safety and research company. Leopold's fund has private exposure. Maker of Claude.", btn:null},
+    ]
+  },
+  {
+    id: "nuclear-clean-energy",
+    label: "Nuclear & Clean Energy",
+    color: "#fb923c",
+    description: "Altman described this as \"literally all my liquid net worth.\" His $800M+ personal bet on Helion Energy is the single most concentrated individual bet on this entire site. One public stock, the rest still private.",
+    backers: ["Altman","Leopold"],
+    positions: [
+      {name:"Helion Energy", investor:"Altman", detail:"Nuclear fusion. $375M (2021) + $425M (2024) = $800M+ from Altman personally. Microsoft power purchase agreement for 2028.", btn:FORGE},
+      {name:"Oklo (OKLO)", investor:"Altman", detail:"Nuclear microreactors. Altman backed from 2014. IPO'd May 2024 via SPAC. Altman was board chair.", btn:YF("OKLO")},
+      {name:"Bloom Energy (BE)", investor:"Leopold", detail:"Solid-oxide fuel cell power generation. Leopold's top holding Q4 2025 13F.", btn:YF("BE")},
+      {name:"Exowatt", investor:"Altman", detail:"Solar energy startup providing clean power to data centers. Personal investment.", btn:null},
+    ]
+  },
+  {
+    id: "fintech-payments",
+    label: "Fintech & Payments",
+    color: "#60a5fa",
+    description: "Dorsey built his entire post-Twitter career around open financial infrastructure. Armstrong founded the company that became the S&P 500's crypto gateway. Altman's Stripe investment was one of his earliest.",
+    backers: ["Dorsey","Armstrong","Altman","Naval"],
+    positions: [
+      {name:"Block (XYZ)", investor:"Dorsey", detail:"Dorsey's company. Square for merchants + Cash App. Bitcoin payments for 4M+ merchants.", btn:YF("XYZ")},
+      {name:"Coinbase (COIN)", investor:"Armstrong", detail:"Armstrong co-founded. S&P 500 since May 2025. 90% of $36B Bitcoin ETF custody.", btn:YF("COIN")},
+      {name:"Stripe", investor:"Altman", detail:"Early personal angel in Stripe. One of the most anticipated IPOs. Available on Forge secondary market.", btn:FORGE},
+      {name:"MoonPay", investor:"Kevin Hart", detail:"Crypto on/off ramp. HartBeat portfolio unicorn. Primary gateway for NFT purchases.", btn:null},
+    ]
+  },
+  {
+    id: "sports-media-empires",
+    label: "Sports & Media Empires",
+    color: "#f87171",
+    description: "Athletes and icons building ownership stakes in teams, leagues, and entertainment. LeBron owns pieces of the Red Sox and Liverpool. Ryan Reynolds bought Wrexham out of the fourth tier. Shaq owns 550+ franchises.",
+    backers: ["LeBron","Shaq","Jay-Z","Ryan Reynolds","Durant","Kobe Bryant","Nas","Snoop"],
+    positions: [
+      {name:"Fenway Sports Group (Red Sox / Liverpool)", investor:"LeBron", detail:"LeBron holds a small equity stake in FSG, the parent of Boston Red Sox and Liverpool FC. Joined 2011.", btn:null},
+      {name:"Wrexham AFC", investor:"Ryan Reynolds", detail:"Reynolds and Rob McElhenney bought Wrexham out of the fifth tier in 2020. Welcome to Wrexham docuseries. Promoted to the Championship.", btn:null},
+      {name:"Alpine F1 Team", investor:"Ryan Reynolds", detail:"Reynolds acquired equity in Alpine F1 in 2023. Part of a celebrity-led investor group.", btn:null},
+      {name:"Papa John's (PZZA)", investor:"Shaq", detail:"Board member since 2019. 9 franchise locations in Atlanta. Instrumental in brand turnaround.", btn:YF("PZZA")},
+      {name:"Big Chicken", investor:"Shaq", detail:"Co-founded 2018. 40+ locations, 350+ in development. 234% unit growth, zero failures.", btn:null},
+      {name:"Roc Nation Sports", investor:"Jay-Z", detail:"Jay-Z's sports management agency. Represents NFL, NBA, MLB players. Partnerships with NFL.", btn:null},
+      {name:"Lyft (LYFT)", investor:"Shaq", detail:"Early personal investor in Lyft. Confirmed public investment.", btn:YF("LYFT")},
+    ]
+  },
+  {
+    id: "solana-ecosystem",
+    label: "Solana Ecosystem",
+    color: "#a78bfa",
+    description: "Toly built it — and kept investing in it. With 24+ confirmed positions, his portfolio is the deepest single-investor thesis on the site. Four tokens are live on Coinbase today.",
+    backers: ["Toly","Balaji","Naval"],
+    positions: [
+      {name:"Solana (SOL)", investor:"Toly", detail:"Co-founded. Invented Proof of History. 65,000+ TPS. The foundation.", btn:CB("solana","SOL")},
+      {name:"Jito (JTO)", investor:"Toly", detail:"Dominant Solana liquid staking + MEV. Largest liquid staking provider on Solana.", btn:CB("jito","JTO")},
+      {name:"io.net (IO)", investor:"Toly", detail:"Decentralized GPU network for ML. Series A investment. IO live on Coinbase.", btn:CB("io-net","IO")},
+      {name:"Solayer (LAYER)", investor:"Toly", detail:"Solana restaking protocol. $150M+ TVL. Listed on Coinbase September 2025.", btn:CB("solayer","LAYER")},
+      {name:"Drift Protocol (DRIFT)", investor:"Toly", detail:"Solana perpetuals DEX. ⚠️ $280M exploit April 1, 2026. Remediation underway. DRIFT on Coinbase.", btn:CB("drift","DRIFT")},
+      {name:"Helius", investor:"Toly", detail:"Premier Solana RPC provider. $9.5M Series A. Infrastructure layer for Solana builders.", btn:null},
+      {name:"Chaos Labs", investor:"Toly", detail:"$55M Series A. On-chain risk management for DeFi protocols.", btn:null},
+    ]
+  },
+];
+
+
+const TRACKING = [
+  {
+    id: "andrew-huberman", name: "Andrew Huberman", tag: "Scientist", tagColor: "teal",
+    category: "Health · Longevity · Biotech",
+    why: "Huberman Lab podcast reaches 5M+ listeners. His endorsements move product. His investments will move markets in the longevity space.",
+    companies: [
+      { name: "Momentous", detail: "Official supplement partner since 2021. Equity stake rumored but unconfirmed. Premium performance supplements." },
+      { name: "Eight Sleep", detail: "Official partner. Temperature-regulating sleep technology. Equity unconfirmed." },
+      { name: "ROKA", detail: "Official eyewear partner. Performance sunglasses and eyeglasses." },
+    ],
+  },
+  {
+    id: "mrbeast", name: "MrBeast", tag: "Creator", tagColor: "amber",
+    category: "YouTube · Food · Philanthropy",
+    why: "300M+ subscribers. The most watched person on the internet. When these brands go public it will be one of the biggest creator IPOs ever.",
+    companies: [
+      { name: "Feastables", detail: "Chocolate and snack brand. $10M+ in first month. Sold in Walmart and Target." },
+      { name: "MrBeast Burger", detail: "Virtual restaurant chain. 1,700+ locations via delivery apps." },
+      { name: "Beast Philanthropy", detail: "Non-profit arm. Feeds millions. Not investable but tracked." },
+      { name: "Lunchly", detail: "Lunch kit brand launched 2024 with KSI and Logan Paul." },
+    ],
+  },
+  {
+    id: "emma-chamberlain", name: "Emma Chamberlain", tag: "Creator", tagColor: "violet",
+    category: "Fashion · Coffee · Lifestyle",
+    why: "Gen Z's most influential creator. Chamberlain Coffee is one of the strongest creator-brand plays in the market.",
+    companies: [
+      { name: "Chamberlain Coffee", detail: "Founded 2020. Specialty coffee and matcha. Available in Whole Foods and Target nationwide." },
+    ],
+  },
+  {
+    id: "diplo", name: "Diplo", tag: "Creator", tagColor: "blue",
+    category: "Music · Tech · Wellness",
+    why: "One of the most active investor-artists alive. LP in Torch Capital. Confirmed positions in music tech and crypto.",
+    companies: [
+      { name: "Mad Decent", detail: "Record label founded 2006. Independent, globally distributed." },
+      { name: "Stationhead", detail: "Social music platform. Confirmed $12M Series A investor (2022)." },
+      { name: "HIFI", detail: "Music business and financial management platform. Confirmed eight-figure round investor (2022)." },
+      { name: "MoonPay", detail: "Crypto payments platform. Confirmed angel investor (2021)." },
+      { name: "Torch Capital", detail: "Consumer VC fund. Confirmed LP in $200M raise (2023)." },
+    ],
+  },
+  {
+    id: "ksi", name: "KSI", tag: "Creator", tagColor: "green",
+    category: "Boxing · Music · Beverages",
+    why: "Prime is one of the fastest growing beverage brands in history. Sides restaurant chain expanding across UK.",
+    companies: [
+      { name: "Prime Hydration", detail: "Co-founded with Logan Paul 2022. $250M+ revenue in first year. Available in Walmart, Costco, ALDI." },
+      { name: "Sides", detail: "Fast food restaurant chain founded 2020. 10+ UK locations." },
+      { name: "Lunchly", detail: "Lunch kit brand launched 2024 with MrBeast and Logan Paul." },
+    ],
+  },
+  {
+    id: "logan-paul", name: "Logan Paul", tag: "Creator", tagColor: "red",
+    category: "Boxing · Beverages · Wrestling",
+    why: "Prime is a generational beverage brand. Co-founder with KSI. Serious capital to deploy beyond his own brands.",
+    companies: [
+      { name: "Prime Hydration", detail: "Co-founded with KSI 2022. $250M+ revenue in first year. One of the fastest growing sports drinks ever." },
+      { name: "Maverick Clothing", detail: "Merchandise and apparel brand. Direct-to-consumer." },
+      { name: "Lunchly", detail: "Lunch kit brand launched 2024 with MrBeast and KSI." },
+    ],
+  },
+];
+
 
 // ─────────────────────────────────────────────────────────────────────────────
 // COMPONENTS
@@ -2097,14 +2694,16 @@ function InvestBtn({ btn, small, isPaid, onUpgrade }) {
     }
     return null;
   }
+  const fg = BTN_FG[btn.t] || BTN_FG.view;
+  const bg = BTN_BG[btn.t] || BTN_BG.view;
   if (!isPaid && onUpgrade) {
     return (
       <button onClick={onUpgrade} style={{
-        display: "inline-block", background: "#1a1000", color: "#f5c842",
-        border: "1px solid #f5c842", borderRadius: 3,
+        display: "inline-block", background: bg, color: fg,
+        border: `1px solid ${fg}`, borderRadius: 3,
         padding: small ? "3px 8px" : "4px 10px",
         fontSize: small ? 9 : 10, fontWeight: 700, letterSpacing: "0.08em",
-        whiteSpace: "nowrap", cursor: "pointer", flexShrink: 0, opacity: 0.5,
+        whiteSpace: "nowrap", cursor: "pointer", flexShrink: 0, opacity: 0.4,
       }}>
         {btn.label} ↗
       </button>
@@ -2112,8 +2711,8 @@ function InvestBtn({ btn, small, isPaid, onUpgrade }) {
   }
   return (
     <a href={btn.url} target="_blank" rel="noopener noreferrer" style={{
-      display: "inline-block", background: "#1a1000", color: "#f5c842",
-      border: "1px solid #f5c842", borderRadius: 3,
+      display: "inline-block", background: bg, color: fg,
+      border: `1px solid ${fg}`, borderRadius: 3,
       padding: small ? "3px 8px" : "4px 10px",
       fontSize: small ? 9 : 10, fontWeight: 700, letterSpacing: "0.08em",
       textDecoration: "none", whiteSpace: "nowrap", cursor: "pointer", flexShrink: 0,
@@ -2123,12 +2722,105 @@ function InvestBtn({ btn, small, isPaid, onUpgrade }) {
   );
 }
 
+function WatchButton({ positionName, investorName }) {
+  const [state, setState] = useState("idle"); // idle | open | saving | done
+  const [email, setEmail] = useState("");
+  const [count, setCount] = useState(null);
+
+  const storageKey = `watch:${positionName.toLowerCase().replace(/\s+/g,"-")}`;
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const r = await window.storage.get(storageKey, true);
+        if (r) {
+          const data = JSON.parse(r.value);
+          setCount(data.count || 0);
+        }
+      } catch(e) {}
+    })();
+  }, []);
+
+  const handleSubmit = async () => {
+    if (!email || !email.includes("@")) return;
+    setState("saving");
+    try {
+      let current = { count: 0, emails: [] };
+      try {
+        const r = await window.storage.get(storageKey, true);
+        if (r) current = JSON.parse(r.value);
+      } catch(e) {}
+      if (!current.emails.includes(email)) {
+        current.emails.push(email);
+        current.count = current.emails.length;
+      }
+      await window.storage.set(storageKey, JSON.stringify(current), true);
+      setCount(current.count);
+      setState("done");
+    } catch(e) {
+      setState("done");
+    }
+  };
+
+  if (state === "done") return (
+    <div style={{ fontSize: 9, color: "#4ade80", fontFamily: "monospace", whiteSpace: "nowrap" }}>
+      ✓ Watching
+    </div>
+  );
+
+  if (state === "open" || state === "saving") return (
+    <div style={{ display: "flex", alignItems: "center", gap: 6 }} onClick={e => e.stopPropagation()}>
+      <input
+        autoFocus
+        type="email"
+        placeholder="your@email.com"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        onKeyDown={e => e.key === "Enter" && handleSubmit()}
+        style={{
+          fontSize: 10, padding: "4px 8px", background: "#111", border: "1px solid #333",
+          borderRadius: 3, color: "#ccc", width: 150, outline: "none",
+        }}
+      />
+      <button
+        onClick={handleSubmit}
+        disabled={state === "saving"}
+        style={{
+          fontSize: 9, padding: "4px 8px", background: "#f5c842", border: "none",
+          borderRadius: 3, cursor: "pointer", color: "#000", fontWeight: 700,
+          opacity: state === "saving" ? 0.6 : 1,
+        }}>
+        {state === "saving" ? "..." : "Notify me"}
+      </button>
+      <button onClick={() => setState("idle")} style={{ background: "none", border: "none", color: "#444", cursor: "pointer", fontSize: 12 }}>✕</button>
+    </div>
+  );
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 3 }}>
+      <button
+        onClick={() => setState("open")}
+        style={{
+          fontSize: 9, color: "#2dd4bf", border: "1px solid #0f3d38", background: "#020f0e",
+          padding: "3px 8px", borderRadius: 3, cursor: "pointer", whiteSpace: "nowrap",
+          letterSpacing: "0.04em", fontWeight: 600,
+        }}>
+        Notify when investable
+      </button>
+      {count > 0 && (
+        <span style={{ fontSize: 8, color: "#2a2a2a", fontFamily: "monospace" }}>{count} watching</span>
+      )}
+    </div>
+  );
+}
+
 function CategoryGroup({ cat, items, defaultOpen, isPaid, onUpgrade }) {
-  const [open, setOpen] = useState(defaultOpen);
+  const [open, setOpen] = useState(true);
   if (!items || items.length === 0) return null;
   const catColors = {
-    Founded: "#f59e0b", Crypto: "#6366f1", Private: "#64748b",
-    Philanthropy: "#10b981", Public: "#3b82f6",
+    Founded: "#f97316", Crypto: "#6366f1", Private: "#64748b",
+    Philanthropy: "#10b981", Public: "#3b82f6", Exited: "#374151",
+    "Pre-IPO": "#f59e0b", Equity: "#8b5cf6",
   };
   const color = catColors[cat] || "#64748b";
   return (
@@ -2157,7 +2849,13 @@ function CategoryGroup({ cat, items, defaultOpen, isPaid, onUpgrade }) {
                 <div style={{ fontSize: 12, fontWeight: 600, color: "#ddd", marginBottom: 2 }}>{item.name}</div>
                 <div style={{ fontSize: 11, color: "#585858", lineHeight: 1.5 }}>{item.detail}</div>
               </div>
-              <InvestBtn btn={item.btn} small isPaid={isPaid} onUpgrade={onUpgrade} />
+              {item.btn && item.btn.t === "exit" ? (
+                <InvestBtn btn={item.btn} small isPaid={isPaid} onUpgrade={onUpgrade} />
+              ) : (!item.btn || !item.btn.url) ? (
+                <WatchButton positionName={item.name} investorName={""} />
+              ) : (
+                <InvestBtn btn={item.btn} small isPaid={isPaid} onUpgrade={onUpgrade} />
+              )}
             </div>
           ))}
         </div>
@@ -2443,6 +3141,22 @@ function DetailPanel({ investor, isPaid, onUpgrade }) {
         <p style={{ fontSize: 12, color: "#888", lineHeight: 1.65, margin: 0, fontStyle: "italic" }}>"{investor.thesis}"</p>
       </div>
 
+      {investor.fundNote && (
+        <div style={{ marginBottom: 14, padding: "9px 12px", background: "#0d0a00", border: "1px solid #2a1e00", borderRadius: 3 }}>
+          <span style={{ fontSize: 9, color: "#7a5a10", lineHeight: 1.6 }}>
+            ⓘ {investor.fundNote}
+          </span>
+        </div>
+      )}
+
+      {!investor.fundNote && (
+        <div style={{ marginBottom: 14, padding: "7px 12px", background: "#060606", borderRadius: 3 }}>
+          <span style={{ fontSize: 8, color: "#222", lineHeight: 1.5 }}>
+            Personal & direct investments shown. Institutional fund positions excluded.
+          </span>
+        </div>
+      )}
+
       {/* PORTFOLIO CART BUTTON */}
       <div style={{ marginBottom: 14 }}>
         <button
@@ -2529,7 +3243,6 @@ function SignalPreview() {
   const borderColors = ["#3d2b00","#1e3a5f","#0d2e14","#3d0e2a"];
   return (
     <div style={{ margin: "18px 0", background: "#050505", border: "1px solid #1a1a1a", borderRadius: 4, overflow: "hidden" }}>
-      {/* Header */}
       <div style={{ padding: "10px 14px", borderBottom: "1px solid #111", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#4ade80", boxShadow: "0 0 6px #4ade80" }} />
@@ -2537,7 +3250,6 @@ function SignalPreview() {
         </div>
         <span style={{ fontSize: 8, color: "#222", fontFamily: "monospace" }}>REAL-TIME · {overlaps.length} ACTIVE</span>
       </div>
-      {/* Convergence rows */}
       {overlaps.map((item, i) => (
         <div key={i} style={{ padding: "10px 14px", borderBottom: i < overlaps.length - 1 ? "1px solid #0d0d0d" : "none", background: bgColors[i] + "44" }}>
           <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 6, gap: 8 }}>
@@ -2559,15 +3271,14 @@ function SignalPreview() {
               <div style={{ fontSize: 7, color: "#333", letterSpacing: "0.1em" }}>INVESTORS</div>
             </div>
           </div>
-          {/* Convergence bar */}
           <div style={{ height: 2, background: "#111", borderRadius: 1 }}>
             <div style={{ height: 2, borderRadius: 1, background: colors[i], width: `${Math.min(100, (item.investors.length / 6) * 100)}%`, opacity: 0.7 }} />
           </div>
         </div>
       ))}
       <div style={{ padding: "10px 14px", background: "#061408", borderTop: "1px solid #0d2e14" }}>
-        <div style={{ fontSize: 9, color: "#4ade80", fontFamily: "monospace", letterSpacing: "0.08em" }}>
-          ⚡ Pro members get alerted when a new convergence is detected
+        <div style={{ fontSize: 9, color: "#1a5c1a", fontFamily: "monospace", letterSpacing: "0.08em" }}>
+          Pro members see the full convergence map across all 29 investors
         </div>
       </div>
     </div>
@@ -2591,41 +3302,36 @@ function PaywallModal({ onClose, onUpgrade }) {
         <div style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 21, fontWeight: 700, color: "#f5f5f5", marginBottom: 8, lineHeight: 1.3, textAlign: "center" }}>
           See the full picture.
         </div>
-        <div style={{ fontSize: 12, color: "#888", lineHeight: 1.75, marginBottom: 4, textAlign: "center" }}>
-          Free members see 3 positions per investor. Pro unlocks every confirmed holding — and the signal feed below.
+        <div style={{ fontSize: 12, color: "#555", lineHeight: 1.75, marginBottom: 4, textAlign: "center" }}>
+          Where the most iconic investors in the world are converging right now.
         </div>
 
-        {/* Live signal preview */}
         <SignalPreview />
 
-        <div style={{ fontSize: 11, color: "#555", marginBottom: 16, textAlign: "center", lineHeight: 1.6 }}>
-          When Naval, LeBron, and Chamath all own the same thing — that's a signal. Pro members see every convergence across all 29 investors.
-        </div>
-
         {[
-          "⚡ Alerts — notified when investors converge on a new asset",
-          "Full buy & trade links — act on every position",
           "Signal overlap — where 3+ investors converge",
+          "Full buy & trade links — act on every position",
+          "Complete portfolios — every confirmed holding",
         ].map((f, i) => (
           <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 7 }}>
             <div style={{ width: 4, height: 4, borderRadius: "50%", background: "#f5c842", flexShrink: 0 }} />
-            <span style={{ fontSize: 11, color: "#aaa" }}>{f}</span>
+            <span style={{ fontSize: 11, color: "#666" }}>{f}</span>
           </div>
         ))}
 
-        <button
-          onClick={onUpgrade}
-          style={{
-            width: "100%", marginTop: 20, padding: "14px", background: "#f5c842",
-            border: "none", borderRadius: 4, cursor: "pointer",
-            fontSize: 13, fontWeight: 700, color: "#000", letterSpacing: "0.04em",
-          }}>
+        <button onClick={onUpgrade} style={{
+          width: "100%", marginTop: 20, padding: "14px", background: "#f5c842",
+          border: "none", borderRadius: 4, cursor: "pointer",
+          fontSize: 13, fontWeight: 700, color: "#000", letterSpacing: "0.04em",
+        }}>
           Upgrade — $12/month
         </button>
-        <button
-          onClick={onClose}
-          style={{ display: "block", width: "100%", background: "none", border: "none", color: "#444", fontSize: 10, cursor: "pointer", marginTop: 12, letterSpacing: "0.08em", textAlign: "center" }}>
-          Continue with free
+        <button onClick={onClose} style={{
+          display: "block", width: "100%", background: "none", border: "none",
+          color: "#333", fontSize: 10, cursor: "pointer", marginTop: 12,
+          letterSpacing: "0.08em", textAlign: "center",
+        }}>
+          Continue with free access
         </button>
       </div>
     </div>
@@ -2810,6 +3516,151 @@ function Header({ navigate, isPaid, onUpgrade }) {
   );
 }
 
+function ThemeCard({ theme, isPaid, onUpgrade }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ marginBottom: 1 }}>
+      <button onClick={() => setOpen(!open)} style={{
+        width:"100%", textAlign:"left", padding:"14px 16px",
+        background:"#080808", border:"none", borderLeft:`3px solid ${theme.color}`,
+        cursor:"pointer", borderBottom:"1px solid #111",
+      }}>
+        <div style={{ display:"flex", alignItems:"baseline", gap:10, marginBottom:7 }}>
+          <span style={{ fontSize:13, fontWeight:700, color:"#e0e0e0", fontFamily:"'Playfair Display',Georgia,serif" }}>{theme.label}</span>
+          <span style={{ fontSize:9, color:"#2a2a2a", fontFamily:"monospace" }}>
+            {theme.backers.length} investors · {theme.positions.length} positions {open ? "▾" : "▸"}
+          </span>
+        </div>
+        <div style={{ display:"flex", gap:5, flexWrap:"wrap" }}>
+          {theme.backers.map((b,i) => (
+            <span key={i} style={{
+              fontSize:8, color:theme.color, background:`${theme.color}18`,
+              padding:"2px 7px", borderRadius:2, fontFamily:"monospace", fontWeight:600,
+              letterSpacing:"0.03em",
+            }}>{b}</span>
+          ))}
+        </div>
+      </button>
+      {open && (
+        <div style={{ background:"#060606", borderLeft:`3px solid ${theme.color}22` }}>
+          <div style={{ padding:"10px 16px 8px", borderBottom:"1px solid #0d0d0d" }}>
+            <p style={{ fontSize:10, color:"#3a3a3a", lineHeight:1.7, margin:0 }}>{theme.description}</p>
+          </div>
+          {theme.positions.map((pos,i) => (
+            <div key={i} style={{ display:"flex", alignItems:"flex-start", gap:10, padding:"9px 16px", borderBottom:"1px solid #0d0d0d", background: i%2===0?"#060606":"#070707" }}>
+              <div style={{ flex:1, minWidth:0 }}>
+                <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:2 }}>
+                  <span style={{ fontSize:11, fontWeight:600, color:"#ccc" }}>{pos.name}</span>
+                  <span style={{ fontSize:8, color:theme.color, background:`${theme.color}15`, padding:"1px 5px", borderRadius:2, fontFamily:"monospace" }}>{pos.investor}</span>
+                </div>
+                <div style={{ fontSize:10, color:"#363636", lineHeight:1.5 }}>{pos.detail}</div>
+              </div>
+              {pos.btn && pos.btn.t === "exit" ? (
+                <span style={{ fontSize:9, color:"#404040", background:"#141414", padding:"3px 8px", borderRadius:3, whiteSpace:"nowrap", border:"1px solid #222" }}>EXITED</span>
+              ) : pos.btn && pos.btn.url ? (
+                <InvestBtn btn={pos.btn} small isPaid={isPaid} onUpgrade={onUpgrade} />
+              ) : (
+                <WatchButton positionName={pos.name} investorName={pos.investor} />
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+function TrackingCard({ person }) {
+  const [notifyState, setNotifyState] = useState("idle");
+  const [email, setEmail] = useState("");
+  const [count, setCount] = useState(null);
+  const storageKey = `track:${person.id}`;
+  const accent = DOT[person.tagColor] || DOT.neutral;
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const r = await window.storage.get(storageKey, true);
+        if (r) setCount(JSON.parse(r.value).count || 0);
+      } catch(e) {}
+    })();
+  }, []);
+
+  const handleSubmit = async () => {
+    if (!email || !email.includes("@")) return;
+    setNotifyState("saving");
+    try {
+      let current = { count: 0, emails: [] };
+      try { const r = await window.storage.get(storageKey, true); if (r) current = JSON.parse(r.value); } catch(e) {}
+      if (!current.emails.includes(email)) { current.emails.push(email); current.count = current.emails.length; }
+      await window.storage.set(storageKey, JSON.stringify(current), true);
+      setCount(current.count);
+      setNotifyState("done");
+    } catch(e) { setNotifyState("done"); }
+  };
+
+  return (
+    <div style={{ background: "#080808", padding: "18px 18px 16px", borderBottom: "1px solid #111", borderLeft: `2px solid ${accent}22` }}>
+      {/* Header */}
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12, marginBottom: 10 }}>
+        <div>
+          <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 4 }}>
+            <div style={{ width: 6, height: 6, borderRadius: "50%", background: accent, flexShrink: 0 }} />
+            <span style={{ fontSize: 8, color: accent, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", fontFamily: "monospace" }}>{person.tag}</span>
+          </div>
+          <div style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 16, fontWeight: 700, color: "#e0e0e0", marginBottom: 3 }}>{person.name}</div>
+          <div style={{ fontSize: 9, color: "#333", fontFamily: "monospace", letterSpacing: "0.08em" }}>{person.category}</div>
+        </div>
+        <div style={{ fontSize: 8, color: accent, background: "#050505", border: `1px solid ${accent}44`, padding: "2px 7px", borderRadius: 2, fontFamily: "monospace", letterSpacing: "0.1em", whiteSpace: "nowrap", flexShrink: 0 }}>
+          TRACKING
+        </div>
+      </div>
+
+      <div style={{ fontSize: 10, color: "#444", lineHeight: 1.65, marginBottom: 12 }}>{person.why}</div>
+
+      {/* Companies */}
+      {person.companies && person.companies.length > 0 && (
+        <div style={{ marginBottom: 12 }}>
+          <div style={{ fontSize: 8, color: accent, letterSpacing: "0.14em", textTransform: "uppercase", fontFamily: "monospace", marginBottom: 8, opacity: 0.7 }}>Known Companies</div>
+          {person.companies.map((co, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 10, padding: "8px 0", borderBottom: "1px solid #0d0d0d" }}>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: 11, fontWeight: 600, color: "#ccc", marginBottom: 2 }}>{co.name}</div>
+                <div style={{ fontSize: 10, color: "#383838", lineHeight: 1.5 }}>{co.detail}</div>
+              </div>
+              <WatchButton positionName={co.name} investorName={person.name} />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Person-level notify */}
+      <div>
+        {notifyState === "done" ? (
+          <span style={{ fontSize: 9, color: "#4ade80", fontFamily: "monospace" }}>✓ You'll be notified when they invest</span>
+        ) : notifyState === "open" || notifyState === "saving" ? (
+          <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+            <input autoFocus type="email" placeholder="your@email.com" value={email} onChange={e => setEmail(e.target.value)} onKeyDown={e => e.key === "Enter" && handleSubmit()}
+              style={{ fontSize: 10, padding: "4px 8px", background: "#111", border: "1px solid #333", borderRadius: 3, color: "#ccc", width: 160, outline: "none" }} />
+            <button onClick={handleSubmit} disabled={notifyState === "saving"}
+              style={{ fontSize: 9, padding: "4px 8px", background: "#f5c842", border: "none", borderRadius: 3, cursor: "pointer", color: "#000", fontWeight: 700, opacity: notifyState === "saving" ? 0.6 : 1 }}>
+              {notifyState === "saving" ? "..." : "Notify me"}
+            </button>
+            <button onClick={() => setNotifyState("idle")} style={{ background: "none", border: "none", color: "#444", cursor: "pointer", fontSize: 12 }}>✕</button>
+          </div>
+        ) : (
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <button onClick={() => setNotifyState("open")}
+              style={{ fontSize: 9, color: accent, border: `1px solid ${accent}44`, background: "#050505", padding: "3px 8px", borderRadius: 3, cursor: "pointer", fontWeight: 600, letterSpacing: "0.04em" }}>
+              Notify when they invest
+            </button>
+            {count > 0 && <span style={{ fontSize: 8, color: "#2a2a2a", fontFamily: "monospace" }}>{count} watching</span>}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // HOMEPAGE — sidebar + detail panel layout
 // ─────────────────────────────────────────────────────────────────────────────
@@ -2831,22 +3682,26 @@ function HomePage({ navigate, isPaid, onUpgrade }) {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  const investors = ALL[activeTab];
+  const isTracking = activeTab === "tracking";
+  const isThemes = activeTab === "themes";
+  const investors = (isTracking || isThemes) ? [] : (ALL[activeTab] || []);
   const selected = investors.find(i => i.id === selectedId) || investors[0];
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
-    setSelectedId(ALL[tab][0].id);
+    if (tab !== "tracking" && tab !== "themes" && ALL[tab]) setSelectedId(ALL[tab][0].id);
     setMobileShowDetail(false);
   };
   const handleSelect = (id) => { setSelectedId(id); setMobileShowDetail(true); };
 
   const TABS = [
-    { key: "visionaries", label: "Visionaries", count: 9 },
-    { key: "icons", label: "Icons", count: 7 },
-    { key: "boomers", label: "Boomers", count: 7 },
-    { key: "athletes", label: "Athletes", count: 5 },
+    { key: "visionaries", label: "Visionaries", count: 16 },
+    { key: "icons", label: "Icons", count: 12 },
+    { key: "boomers", label: "Boomers", count: 8 },
+    { key: "athletes", label: "Athletes", count: 8 },
     { key: "health", label: "Health & Longevity", count: 1 },
+    { key: "tracking", label: "Tracking", count: TRACKING.length },
+    { key: "themes", label: "Themes", count: THEMES.length },
   ];
 
   return (
@@ -2866,41 +3721,73 @@ function HomePage({ navigate, isPaid, onUpgrade }) {
         ))}
       </div>
 
-      {/* Sidebar + Detail */}
+      {/* Sidebar + Detail or Tracking Grid */}
       <div style={{ display: "flex", flex: 1, overflow: "hidden", minHeight: 0 }}>
-        {/* Sidebar */}
-        {(!isMobile || !mobileShowDetail) && (
-          <div style={{ width: isMobile ? "100%" : 210, borderRight: isMobile ? "none" : "1px solid #161616", overflowY: "auto", flexShrink: 0 }}>
-            {investors.map(inv => (
-              <button key={inv.id} onClick={() => handleSelect(inv.id)} style={{
-                width: "100%", textAlign: "left", padding: "11px 14px",
-                background: !isMobile && selectedId === inv.id ? "#0d0d0d" : "transparent",
-                borderLeft: !isMobile && selectedId === inv.id ? "2px solid #f5c842" : !isMobile ? "2px solid transparent" : "none",
-                borderRight: "none", borderTop: "none", borderBottom: "1px solid #111",
-                cursor: "pointer",
-              }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 3 }}>
-                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: DOT[inv.tagColor], flexShrink: 0 }} />
-                  <span style={{ fontSize: 12, fontWeight: 600, color: !isMobile && selectedId === inv.id ? "#f5f5f5" : "#999" }}>{inv.name}</span>
-                </div>
-                <div style={{ fontSize: 9, color: "#222", marginLeft: 13, marginTop: 2 }}>{inv.portfolio.length} positions tracked</div>
-              </button>
-            ))}
+        {isThemes ? (
+          <div style={{ flex: 1, overflowY: "auto", padding: isMobile ? "14px" : "24px" }}>
+            <div style={{ marginBottom: 20 }}>
+              <div style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 18, fontWeight: 700, color: "#f0f0f0", marginBottom: 6 }}>Investment Themes</div>
+              <div style={{ fontSize: 11, color: "#444", lineHeight: 1.7, maxWidth: 540 }}>
+                Where are the smartest investors concentrating? Ranked by number of backers. Includes both investable and not-yet-investable positions — use Notify to get alerted when private positions open up.
+              </div>
+            </div>
+            {(() => {
+              const allNames = Object.values(ALL).flat().map(inv => inv.name); // kept for future use
+              return THEMES.map(theme => (
+                <ThemeCard key={theme.id} theme={theme} isPaid={isPaid} onUpgrade={onUpgrade} />
+              ));
+            })()}
           </div>
-        )}
-
-        {/* Detail panel */}
-        {(!isMobile || mobileShowDetail) && (
-          <div style={{ flex: 1, overflowY: "auto", padding: isMobile ? "14px" : "20px 24px", minWidth: 0 }}>
-            {isMobile && mobileShowDetail && (
-              <button onClick={() => setMobileShowDetail(false)} style={{ background: "none", border: "none", color: "#444", fontSize: 10, cursor: "pointer", padding: "0 0 12px 0", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-                ← Back
-              </button>
+        ) : isTracking ? (
+          <div style={{ flex: 1, overflowY: "auto", padding: isMobile ? "14px" : "24px" }}>
+            <div style={{ marginBottom: 20 }}>
+              <div style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 18, fontWeight: 700, color: "#f0f0f0", marginBottom: 6 }}>Being Tracked</div>
+              <div style={{ fontSize: 11, color: "#444", lineHeight: 1.7, maxWidth: 540 }}>
+                These are notable people with thin or no confirmed investment portfolios yet. We are watching them. Get notified the moment they make their first confirmed investment.
+              </div>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: 1, border: "1px solid #111", borderRadius: 4, overflow: "hidden" }}>
+              {TRACKING.map((person, i) => (
+                <TrackingCard key={person.id} person={person} />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <>
+            {/* Sidebar */}
+            {(!isMobile || !mobileShowDetail) && (
+              <div style={{ width: isMobile ? "100%" : 210, borderRight: isMobile ? "none" : "1px solid #161616", overflowY: "auto", flexShrink: 0 }}>
+                {investors.map(inv => (
+                  <button key={inv.id} onClick={() => handleSelect(inv.id)} style={{
+                    width: "100%", textAlign: "left", padding: "11px 14px",
+                    background: !isMobile && selectedId === inv.id ? "#0d0d0d" : "transparent",
+                    borderLeft: !isMobile && selectedId === inv.id ? "2px solid #f5c842" : !isMobile ? "2px solid transparent" : "none",
+                    borderRight: "none", borderTop: "none", borderBottom: "1px solid #111",
+                    cursor: "pointer",
+                  }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 3 }}>
+                      <div style={{ width: 6, height: 6, borderRadius: "50%", background: DOT[inv.tagColor], flexShrink: 0 }} />
+                      <span style={{ fontSize: 12, fontWeight: 600, color: !isMobile && selectedId === inv.id ? "#f5f5f5" : "#999" }}>{inv.name}</span>
+                    </div>
+                    <div style={{ fontSize: 9, color: "#222", marginLeft: 13, marginTop: 2 }}>{inv.portfolio.length} positions tracked</div>
+                  </button>
+                ))}
+              </div>
             )}
-            <DetailPanel investor={selected} isPaid={isPaid} onUpgrade={onUpgrade} />
-            {isPaid && <SignalOverlapFeed />}
-            <NewsletterEmbed />
-          </div>
+            {/* Detail panel */}
+            {(!isMobile || mobileShowDetail) && (
+              <div style={{ flex: 1, overflowY: "auto", padding: isMobile ? "14px" : "20px 24px", minWidth: 0 }}>
+                {isMobile && mobileShowDetail && (
+                  <button onClick={() => setMobileShowDetail(false)} style={{ background: "none", border: "none", color: "#444", fontSize: 10, cursor: "pointer", padding: "0 0 12px 0", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                    ← Back
+                  </button>
+                )}
+                <DetailPanel investor={selected} isPaid={isPaid} onUpgrade={onUpgrade} />
+                {isPaid && <SignalOverlapFeed />}
+                <NewsletterEmbed />
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>
