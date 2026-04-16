@@ -3306,9 +3306,11 @@ function PaywallModal({ onClose, onUpgrade }) {
 
         {[
           { name:"Radar", color:"#f5c842", desc:"Top investable positions ranked by conviction strength — plus a full convergence map showing where 45 investors overlap." },
-          { name:"Portfolio Builder", color:"#f472b6", desc:"Pick your investors, choose equal or intelligence weighting, get a real allocation you can execute today. Set alerts when positions change." },
-          { name:"Horizon", color:"#a78bfa", desc:"Forward-looking plays built from documented thesis patterns. Where this money is going next — before it gets there." },
-          { name:"Themes", color:"#10b981", desc:"6 locked investment theses across Bitcoin, AI, Nuclear, Sports, Solana, and Fintech — with full position lists and buy buttons." },
+          { name:"Portfolio Builder", color:"#f472b6", desc:"Pick your investors or a theme. Get a full actionable allocation with buy buttons. Set alerts when positions change." },
+          { name:"Horizon", color:"#a78bfa", desc:"Forward-looking plays built from documented thesis patterns — full investment thesis and specific positions to act on." },
+          { name:"Watchlist", color:"#2dd4bf", desc:"Every uninvestable position across all 45 investors. Get notified the moment any private company, pre-token protocol, or founded brand opens to retail." },
+          { name:"Themes", color:"#10b981", desc:"6 investment theses across Bitcoin, AI, Nuclear, Sports, Solana, and Fintech — full position lists and buy buttons." },
+          { name:"Watchlist", color:"#2dd4bf", desc:"Every non-investable position across all 45 investors — private companies, pre-token projects, brands yet to IPO — with notifications when they open up." },
         ].map((f,i) => (
           <div key={i} style={{ display:"flex", alignItems:"flex-start", gap:12, marginBottom:8, padding:"10px 12px", background:"#080808", borderRadius:3, borderLeft:`2px solid ${f.color}55` }}>
             <div>
@@ -4207,18 +4209,11 @@ function PortfolioBuilderPage({ isPaid, onUpgrade, isMobile }) {
                   borderBottom:"1px solid #0f0f0f", gap:10,
                   borderLeft: isOverlap ? "2px solid #f472b6" : "2px solid transparent",
                 }}>
-                  <div style={{ flex:1, minWidth:0 }}>
-                    <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:3 }}>
-                      <span style={{ fontSize:12, fontWeight:600, color:"#ccc" }}>{pos.name}</span>
-                      {isOverlap && (
-                        <span style={{ fontSize:7, color:"#f472b6", background:"#1a0812", border:"1px solid #3d0a28", padding:"0px 5px", borderRadius:2, fontFamily:"monospace" }}>overlap</span>
-                      )}
-                    </div>
-                    <div style={{ display:"flex", gap:4, flexWrap:"wrap" }}>
-                      {pos.backers.map((b,j) => (
-                        <span key={j} style={{ fontSize:7, color:"#f472b6", background:"#1a0812", border:"1px solid #3d0a28", padding:"0px 5px", borderRadius:2, fontFamily:"monospace" }}>{b.split(" ")[0]}</span>
-                      ))}
-                    </div>
+                  <div style={{ flex:1, minWidth:0, display:"flex", alignItems:"center", gap:8 }}>
+                    <span style={{ fontSize:12, fontWeight:600, color:"#ccc" }}>{pos.name}</span>
+                    {isOverlap && (
+                      <span style={{ fontSize:8, color:"#f472b6", background:"#1a0812", border:"1px solid #3d0a28", padding:"1px 6px", borderRadius:2, fontFamily:"monospace", flexShrink:0 }}>×{pos.backers.length}</span>
+                    )}
                   </div>
                   <InvestBtn btn={pos.btn} small isPaid={isPaid} onUpgrade={onUpgrade} />
                 </div>
@@ -4269,6 +4264,133 @@ function PortfolioBuilderPage({ isPaid, onUpgrade, isMobile }) {
   );
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// WATCHLIST — all non-investable positions across all investors, ranked by conviction
+// ─────────────────────────────────────────────────────────────────────────────
+function WatchlistPage({ isPaid, onUpgrade, isMobile }) {
+  const [filter, setFilter] = useState("all");
+
+  const computeWatchlist = () => {
+    const posMap = {};
+    ALL_FLAT.forEach(inv => {
+      const cat = Object.entries(ALL).find(([c,invs]) => invs.some(i => i.id === inv.id))?.[0] || "other";
+      inv.portfolio.forEach(p => {
+        if (p.btn && (p.btn.url || p.btn.t === "exit")) return; // skip investable + exited
+        const key = p.name.toLowerCase().trim();
+        if (!posMap[key]) posMap[key] = { name:p.name, backers:[], cat:p.cat, detail:p.detail, investorCats:new Set() };
+        if (!posMap[key].backers.includes(inv.name)) {
+          posMap[key].backers.push(inv.name);
+          posMap[key].investorCats.add(cat);
+        }
+      });
+    });
+    return Object.values(posMap)
+      .map(p => ({ ...p, investorCats:Array.from(p.investorCats) }))
+      .sort((a,b) => b.backers.length - a.backers.length);
+  };
+
+  const all = computeWatchlist();
+
+  const CAT_FILTERS = [
+    { key:"all", label:"All" },
+    { key:"Founded", label:"Founded" },
+    { key:"Private", label:"Private" },
+    { key:"Crypto", label:"Crypto" },
+    { key:"Philanthropy", label:"Philanthropy" },
+  ];
+
+  const filtered = filter === "all" ? all : all.filter(p => p.cat === filter);
+
+  const filterBtn = (key, label) => (
+    <button key={key} onClick={() => setFilter(key)} style={{
+      fontSize:9, fontWeight:700, letterSpacing:"0.1em", textTransform:"uppercase",
+      padding:"4px 10px", background:filter===key?"#f5c842":"#0d0d0d",
+      color:filter===key?"#000":"#444", border:filter===key?"none":"1px solid #1a1a1a",
+      borderRadius:3, cursor:"pointer",
+    }}>{label}</button>
+  );
+
+  return (
+    <div style={{ flex:1, overflowY:"auto", padding: isMobile ? "14px" : "24px" }}>
+      <div style={{ maxWidth:740 }}>
+        <div style={{ marginBottom:16 }}>
+          <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:6 }}>
+            <div style={{ width:6, height:6, borderRadius:"50%", background:"#2dd4bf" }} />
+            <div style={{ fontFamily:"'Playfair Display',Georgia,serif", fontSize:18, fontWeight:700, color:"#f0f0f0" }}>Watchlist</div>
+          </div>
+          <div style={{ fontSize:11, color:"#444", lineHeight:1.7, maxWidth:560 }}>
+            Every position across all 45 investors that isn't investable yet — private companies, pre-token projects, and brands yet to IPO. Set notifications and be first when they open up.
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div style={{ display:"flex", gap:10, marginBottom:16 }}>
+          <div style={{ padding:"7px 12px", background:"#0a0a0a", border:"1px solid #1a1a1a", borderRadius:3 }}>
+            <div style={{ fontSize:15, fontWeight:700, color:"#2dd4bf", fontFamily:"monospace" }}>{all.length}</div>
+            <div style={{ fontSize:8, color:"#333", letterSpacing:"0.08em" }}>positions watching</div>
+          </div>
+          <div style={{ padding:"7px 12px", background:"#0a0a0a", border:"1px solid #1a1a1a", borderRadius:3 }}>
+            <div style={{ fontSize:15, fontWeight:700, color:"#2dd4bf", fontFamily:"monospace" }}>{all.filter(p=>p.backers.length>1).length}</div>
+            <div style={{ fontSize:8, color:"#333", letterSpacing:"0.08em" }}>multi-investor</div>
+          </div>
+        </div>
+
+        {/* Filters */}
+        <div style={{ display:"flex", gap:6, flexWrap:"wrap", marginBottom:20 }}>
+          {CAT_FILTERS.map(f => filterBtn(f.key, f.label))}
+        </div>
+
+        {/* Position list */}
+        <div style={{ position:"relative" }}>
+          {filtered.map((pos,i) => {
+            const isBlurred = !isPaid && i >= 30;
+            return (
+              <div key={i} style={{
+                display:"flex", alignItems:"flex-start", justifyContent:"space-between",
+                padding:"11px 14px", background:i%2===0?"#080808":"#070707",
+                borderBottom:"1px solid #0f0f0f", gap:12,
+                borderLeft: pos.backers.length > 1 ? "2px solid #2dd4bf44" : "2px solid transparent",
+                filter: isBlurred ? "blur(4px)" : "none",
+                userSelect: isBlurred ? "none" : "auto",
+                pointerEvents: isBlurred ? "none" : "auto",
+              }}>
+                <div style={{ flex:1, minWidth:0 }}>
+                  <div style={{ display:"flex", alignItems:"center", gap:7, marginBottom:4 }}>
+                    <span style={{ fontSize:12, fontWeight:600, color:"#ccc" }}>{pos.name}</span>
+                    {pos.backers.length > 1 && (
+                      <span style={{ fontSize:7, color:"#2dd4bf", background:"#041a18", border:"1px solid #0d3d38", padding:"1px 5px", borderRadius:2, fontFamily:"monospace" }}>×{pos.backers.length}</span>
+                    )}
+                    <span style={{ fontSize:7, color:"#2a2a2a", background:"#111", border:"1px solid #1a1a1a", padding:"1px 5px", borderRadius:2, fontFamily:"monospace", textTransform:"uppercase" }}>{pos.cat}</span>
+                  </div>
+                  {pos.detail && (
+                    <div style={{ fontSize:10, color:"#363636", lineHeight:1.5, marginBottom:4 }}>{pos.detail}</div>
+                  )}
+                  <div style={{ display:"flex", gap:4, flexWrap:"wrap" }}>
+                    {pos.backers.map((b,j) => (
+                      <span key={j} style={{ fontSize:7, color:"#444", fontFamily:"monospace" }}>{b.split(" ")[0]}{j < pos.backers.length-1 ? " ·" : ""}</span>
+                    ))}
+                  </div>
+                </div>
+                <div style={{ flexShrink:0 }}>
+                  <WatchButton positionName={pos.name} investorName={pos.backers[0] || "Multiple"} />
+                </div>
+              </div>
+            );
+          })}
+          {!isPaid && filtered.length > 30 && (
+            <div style={{ padding:"24px 16px", textAlign:"center", background:"#060606", borderTop:"1px solid #111" }}>
+              <div style={{ fontSize:11, color:"#444", marginBottom:6 }}>{filtered.length - 30} more positions — private companies, pre-token projects, upcoming IPOs</div>
+              <div style={{ fontSize:9, color:"#2a2a2a", marginBottom:14 }}>Set notifications on all of them · be first when they open up</div>
+              <button onClick={onUpgrade} style={{ padding:"10px 22px", background:"#2dd4bf", border:"none", borderRadius:3, cursor:"pointer", fontSize:11, fontWeight:700, color:"#000", letterSpacing:"0.04em" }}>
+                Unlock Full Watchlist — $12/mo
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function HorizonCard({ play, isPaid, onUpgrade }) {
   const [open, setOpen] = useState(false);
@@ -4400,7 +4522,8 @@ function HomePage({ navigate, isPaid, onUpgrade }) {
   const isRadar = activeTab === "radar";
   const isHorizon = activeTab === "horizon";
   const isPortfolio = activeTab === "portfolio";
-  const isFullPage = isTracking || isThemes || isRadar || isHorizon || isPortfolio;
+  const isWatchlist = activeTab === "watchlist";
+  const isFullPage = isTracking || isThemes || isRadar || isHorizon || isPortfolio || isWatchlist;
   const investors = isFullPage ? [] : (ALL[activeTab] || []);
   const selected = investors.find(i => i.id === selectedId) || investors[0];
 
@@ -4422,6 +4545,7 @@ function HomePage({ navigate, isPaid, onUpgrade }) {
     { key:"portfolio", label:"Portfolio Builder", count:null, pro:true },
     { key:"radar", label:"Radar", count:null, pro:true },
     { key:"horizon", label:"Horizon", count:null, pro:true },
+    { key:"watchlist", label:"Watchlist", count:null, pro:true },
   ];
 
   return (
@@ -4455,6 +4579,8 @@ function HomePage({ navigate, isPaid, onUpgrade }) {
           <HorizonPage isPaid={isPaid} onUpgrade={onUpgrade} isMobile={isMobile} />
         ) : isPortfolio ? (
           <PortfolioBuilderPage isPaid={isPaid} onUpgrade={onUpgrade} isMobile={isMobile} />
+        ) : isWatchlist ? (
+          <WatchlistPage isPaid={isPaid} onUpgrade={onUpgrade} isMobile={isMobile} />
         ) : isThemes ? (
           <div style={{ flex: 1, overflowY: "auto", padding: isMobile ? "14px" : "24px" }}>
             <div style={{ marginBottom: 20 }}>
