@@ -2937,31 +2937,13 @@ function PortfolioTabs({ investor, isPaid, onUpgrade, catOrder, byCategory, tota
   const catLabels = { crypto: "Crypto", stock: "Stocks", preipo: "Pre-IPO", republic: "Equity" };
   const catColors = { crypto: "#6366f1", stock: "#3b82f6", preipo: "#f59e0b", republic: "#10b981" };
 
-  // Compute overlap for this investor's positions
-  const overlapData = (() => {
-    const counts = {};
-    ALL_FLAT.forEach(inv => {
-      if (inv.id === investor.id) return;
-      inv.portfolio.forEach(p => {
-        const key = p.name.toLowerCase().trim();
-        if (!counts[key]) counts[key] = { name: p.name, investors: [], btn: p.btn };
-        if (!counts[key].investors.includes(inv.name)) counts[key].investors.push(inv.name);
-      });
-    });
-    // Only show positions this investor actually holds
-    return investor.portfolio
-      .map(p => counts[p.name.toLowerCase().trim()])
-      .filter(c => c && c.investors.length >= 1)
-      .sort((a, b) => b.investors.length - a.investors.length)
-      .slice(0, 8);
-  })();
-
-  const tabStyle = (active, locked) => ({
+  const tabStyle = (active) => ({
     fontSize: 9, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase",
-    padding: "6px 12px", background: "none", border: "none",
+    padding: "6px 14px", background: "none", border: "none",
     borderBottom: active ? "2px solid #f5c842" : "2px solid transparent",
-    color: active ? "#f5c842" : locked ? "#1e1e1e" : "#2e2e2e",
+    color: active ? "#f5c842" : "#2e2e2e",
     cursor: "pointer",
+    whiteSpace: "nowrap",
   });
 
   const allCatOrder = ["Crypto", "Public", "Private", "Founded", "Philanthropy"];
@@ -2975,9 +2957,6 @@ function PortfolioTabs({ investor, isPaid, onUpgrade, catOrder, byCategory, tota
         </button>
         <button style={tabStyle(tab === "tradeable")} onClick={() => setTab("tradeable")}>
           Tradeable <span style={{ opacity: 0.4, fontWeight: 400 }}>({tradeable.length})</span>
-        </button>
-        <button style={tabStyle(tab === "overlap", !isPaid)} onClick={() => isPaid ? setTab("overlap") : onUpgrade()}>
-          Overlap <span style={{ opacity: 0.4, fontWeight: 400 }}>({overlapData.length})</span>
         </button>
       </div>
 
@@ -3022,38 +3001,6 @@ function PortfolioTabs({ investor, isPaid, onUpgrade, catOrder, byCategory, tota
         </div>
       )}
 
-      {tab === "overlap" && isPaid && (
-        <div>
-          {overlapData.length === 0 ? (
-            <div style={{ fontSize: 12, color: "#333", padding: "20px 0" }}>No overlapping positions found.</div>
-          ) : (
-            <div>
-              <div style={{ fontSize: 10, color: "#2a2a2a", marginBottom: 14, lineHeight: 1.6 }}>
-                Other tracked investors who hold the same positions as {investor.name.split(" ")[0]}.
-              </div>
-              {overlapData.map((item, i) => (
-                <div key={i} style={{
-                  display: "flex", alignItems: "flex-start", justifyContent: "space-between",
-                  padding: "10px 0", borderBottom: "1px solid #0d0d0d", gap: 12,
-                }}>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 12, fontWeight: 600, color: "#ccc", marginBottom: 4 }}>{item.name}</div>
-                    <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
-                      {item.investors.slice(0, 4).map((inv, j) => (
-                        <span key={j} style={{ fontSize: 8, color: "#f5c842", background: "#1a1000", border: "1px solid #2a1500", borderRadius: 2, padding: "1px 5px", fontFamily: "monospace" }}>
-                          {inv.split(" ")[0]}
-                        </span>
-                      ))}
-                      {item.investors.length > 4 && <span style={{ fontSize: 8, color: "#333", fontFamily: "monospace" }}>+{item.investors.length - 4}</span>}
-                    </div>
-                  </div>
-                  <InvestBtn btn={item.btn} small isPaid={isPaid} onUpgrade={onUpgrade} />
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
     </div>
   );
 }
