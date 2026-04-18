@@ -56,13 +56,13 @@ const naval = {
   portfolio:[
     // FOUNDED / CO-FOUNDED
     {name:"Epinions",cat:"Founded",detail:"Co-founded 1999. Consumer product reviews. Merged with DealTime → Shopping.com. IPO Oct 2004 at $750M. Naval's first major company.",btn:EXITED},
-    {name:"Vast.com",cat:"Founded",detail:"Co-founded. Auto shopping network and classified ads platform.",btn:null},
+    {name:"Vast.com",cat:"Founded",detail:"Co-founded. Auto shopping network. Defunct.",btn:EXITED},
     {name:"The Hit Forge",cat:"Founded",detail:"$20M early-stage VC fund (2007). Naval as Managing Partner. Invested in Twitter, Uber, Stack Overflow. His first investment vehicle.",btn:null},
     {name:"AngelList",cat:"Founded",detail:"Co-founded 2010 with Babak Nivi. $4B+ valuation (2022). Supports $170B+ in assets. Participated in ~28% of all high-quality early-stage VC deals.",btn:null},
     {name:"MetaStable Capital",cat:"Founded",detail:"Crypto hedge fund (2014) with Lucas Ryan and Joshua Seims. $69M AUM by 2017. 500%+ returns by 2017. Backed by a16z, Sequoia, USV, Founders Fund, Bessemer. Holds BTC, ETH, Monero, Zcash.",btn:null},
     {name:"CoinList",cat:"Founded",detail:"Co-founded 2017 with Protocol Labs. ICO compliance platform and token launch platform spun from AngelList.",btn:null},
     {name:"Spearhead",cat:"Founded",detail:"$100M fund (2017) giving founders $1M each to angel invest. Third cohort: $100M. Spearhead founders have backed Neuralink, Opendoor, Rippling, Scale AI, PillPack.",btn:null},
-    {name:"Airchat",cat:"Founded",detail:"Voice-first social app (2023). Described himself as 'a big investor.'",btn:null},
+    {name:"Airchat",cat:"Founded",detail:"Voice-first social app (2023). Shut down 2024.",btn:EXITED},
     // CRYPTO (personal + MetaStable fund holdings)
     {name:"Ethereum (ETH)",cat:"Crypto",detail:"Personal holding at ~$0.30 (2015-2016 range post-launch). Never sold. Advisor to Ethereum Foundation.",btn:CB("ethereum","ETH")},
     {name:"Bitcoin (BTC)",cat:"Crypto",detail:"Via MetaStable Capital fund. MetaStable owns BTC as primary holding.",btn:CB("bitcoin","BTC")},
@@ -70,33 +70,29 @@ const naval = {
     {name:"Zcash (ZEC)",cat:"Crypto",detail:"Via MetaStable Capital. Confirmed per multiple sources including line from Wikipedia.",btn:CB("zcash","ZEC")},
     // ADVISOR ROLES (confirmed PitchBook / official bios)
     {name:"StarkWare",cat:"Private",detail:"Advisor. ZK-proof layer 2 company. Confirmed in PitchBook bio.",btn:FORGE},
-    {name:"Stellar Development Foundation",cat:"Private",detail:"Advisor. Non-profit supporting Stellar blockchain network. Confirmed PitchBook.",btn:null},
-    {name:"bloXroute Labs",cat:"Private",detail:"Advisor. Blockchain distribution network — faster transaction propagation. Confirmed PitchBook.",btn:null},
     {name:"Republic",cat:"Private",detail:"Advisor. Equity crowdfunding platform. Confirmed PitchBook.",btn:REP},
-    {name:"HireAthena",cat:"Private",detail:"Advisor. Confirmed PitchBook.",btn:null},
-    {name:"IdeaFlow",cat:"Private",detail:"Advisor. Confirmed PitchBook.",btn:null},
-    {name:"BranchOut",cat:"Private",detail:"Advisor. Professional networking on Facebook.",btn:null},
+    {name:"BranchOut",cat:"Private",detail:"Professional networking on Facebook. Defunct.",btn:EXITED},
     // CANONICAL PORTFOLIO (Almanack bio + 50+ sources)
     {name:"Uber",cat:"Private",detail:"Pre-seed via The Hit Forge fund (2007). One of the greatest angel bets in VC history.",btn:YF("UBER")},
-    {name:"Twitter / X",cat:"Private",detail:"Pre-IPO angel via The Hit Forge fund.",btn:null},
-    {name:"Foursquare",cat:"Private",detail:"Location check-in pioneer. Pivoted to enterprise location intelligence.",btn:FORGE},
+    {name:"Twitter / X",cat:"Private",detail:"Pre-IPO angel. Cashed out at $54.20/share when Elon took Twitter private Oct 2022.",btn:EXITED},
+    {name:"Foursquare",cat:"Private",detail:"Location intelligence. City Guide consumer app shut Dec 2024 (25% layoffs May 2024). Enterprise location data platform still operating.",btn:FORGE},
     {name:"Poshmark",cat:"Private",detail:"Secondhand fashion marketplace. IPO'd then acquired by Naver.",btn:EXITED},
     {name:"Postmates",cat:"Private",detail:"Food delivery. Acquired by Uber (2020) for $2.65B.",btn:EXITED},
     {name:"Thumbtack",cat:"Private",detail:"Marketplace for local services.",btn:FORGE},
     {name:"Notion",cat:"Private",detail:"All-in-one workspace. $10B+ valuation.",btn:FORGE},
     {name:"SnapLogic",cat:"Private",detail:"Enterprise AI integration platform. Naval is current board member.",btn:FORGE},
     {name:"Opendoor",cat:"Private",detail:"iBuying pioneer. Public company (OPEN).",btn:YF("OPEN")},
-    {name:"Clubhouse",cat:"Private",detail:"Audio social. Early. Still operating.",btn:null},
+    {name:"Clubhouse",cat:"Private",detail:"Audio social. Peaked 2021, rapidly declined.",btn:EXITED},
     {name:"Stack Overflow",cat:"Private",detail:"Developer Q&A platform. Acquired by Prosus (2021) for $1.8B.",btn:EXITED},
     {name:"Bolt",cat:"Private",detail:"Checkout and payments unicorn.",btn:FORGE},
     {name:"OpenDNS",cat:"Private",detail:"Internet security. Acquired by Cisco (2015) for $635M.",btn:EXITED},
     {name:"Yammer",cat:"Private",detail:"Enterprise social. Acquired by Microsoft (2012) for $1.2B.",btn:EXITED},
-    {name:"Clearview AI",cat:"Private",detail:"Facial recognition company. Confirmed position.",btn:null},
-    {name:"Wanelo",cat:"Private",detail:"Social shopping platform. Naval is board member.",btn:null},
-    {name:"Wish.com",cat:"Private",detail:"E-commerce platform.",btn:null},
+    {name:"Clearview AI",cat:"Private",detail:"Facial recognition. $51.75M class action settlement 2025 (23% equity to class). Barred from selling to private entities. Still operating for law enforcement.",btn:null},
+    {name:"Wanelo",cat:"Private",detail:"Social shopping platform. Shut down 2019.",btn:EXITED},
+    {name:"Wish.com",cat:"Private",detail:"E-commerce platform. Major decline since 2022.",btn:EXITED},
     // ADDITIONAL CONFIRMED
     {name:"Perplexity",cat:"Private",detail:"Early investor across multiple rounds. AI search unicorn challenging Google.",btn:FORGE},
-    {name:"OpenSea",cat:"Private",detail:"Early investor. NFT marketplace. $13.3B peak valuation.",btn:FORGE},
+    {name:"OpenSea",cat:"Private",detail:"NFT marketplace. $13.3B peak valuation (2022). 50%+ staff cuts 2023. SEC dropped investigation Feb 2025. OS2 relaunched 2024. NFT market down 90%+.",btn:FORGE},
     {name:"Eight Sleep",cat:"Private",detail:"Smart sleep system. Health-focused consumer hardware. Unicorn.",btn:FORGE},
     {name:"Anchorage Digital",cat:"Private",detail:"First federally chartered crypto bank. Advisor/investor.",btn:FORGE},
     {name:"HoneyBook",cat:"Private",detail:"Series A investor (2014 confirmed, $10M round). SMB client management. $2.4B valuation by 2021.",btn:FORGE},
@@ -105,16 +101,16 @@ const naval = {
     {name:"Primer",cat:"Private",detail:"AI-powered workflows. Enterprise automation.",btn:FORGE},
     {name:"NexHealth",cat:"Private",detail:"Healthcare SaaS connecting patients and providers.",btn:FORGE},
     {name:"Hebbia",cat:"Private",detail:"AI research tool for finance and legal.",btn:FORGE},
-    {name:"Stonks",cat:"Private",detail:"Social investing platform.",btn:null},
+    {name:"Stonks",cat:"Private",detail:"Social investing/demo day platform. No longer active.",btn:EXITED},
     {name:"Magic",cat:"Private",detail:"On-demand personal assistant service.",btn:null},
     {name:"Flipagram",cat:"Private",detail:"Short video app. Acquired by Toutiao (ByteDance predecessor) (2017).",btn:EXITED},
     {name:"Descript",cat:"Private",detail:"AI-powered podcast and video editing.",btn:FORGE},
     {name:"Shef",cat:"Private",detail:"Home chef marketplace. March 1, 2023 investment (confirmed).",btn:null},
-    {name:"Zaarly",cat:"Private",detail:"Proximity-based local services marketplace. Crunchbase confirmed.",btn:null},
+    {name:"Zaarly",cat:"Private",detail:"Proximity-based local services marketplace. Shut down 2016.",btn:EXITED},
     {name:"Wheels",cat:"Private",detail:"Shared electric mobility platform. Crunchbase confirmed. $37M raised.",btn:null},
-    {name:"Vurb",cat:"Private",detail:"Local discovery app. Crunchbase confirmed.",btn:null},
-    {name:"Visually",cat:"Private",detail:"Content creation platform for businesses. Crunchbase confirmed.",btn:null},
-    {name:"Unsplash",cat:"Private",detail:"Copyright-free photography platform. Crunchbase confirmed.",btn:null},
+    {name:"Vurb",cat:"Private",detail:"Local discovery app. Acquired by Snapchat 2016, shut down.",btn:EXITED},
+    {name:"Visually",cat:"Private",detail:"Content creation platform. Acquired by Percolate, shut down.",btn:EXITED},
+    {name:"Unsplash",cat:"Private",detail:"Copyright-free photography platform. Acquired by Getty Images March 2021.",btn:EXITED},
     // EXITS (named in transcript exits list)
     {name:"Udemy",cat:"Private",detail:"Online learning platform. Portfolio exit via IPO (UDMY). Crunchbase confirmed.",btn:EXITED},
     {name:"Teachable",cat:"Private",detail:"Course creator platform. Portfolio exit. Transcript confirmed.",btn:EXITED},
@@ -128,7 +124,6 @@ const naval = {
     {name:"Tako",cat:"Private",detail:"AI-powered social discovery. $5.75M seed (Oct 2024).",btn:null},
     {name:"The ePlane Company",cat:"Private",detail:"Indian air taxi startup. Series B (Nov 2024).",btn:FORGE},
     {name:"Mystiko Network",cat:"Private",detail:"ZK-proof privacy layer for blockchain (Mar 2024).",btn:null},
-    {name:"Belfort",cat:"Private",detail:"Sep 2025. Undisclosed.",btn:null},
     // 2025 active (Harmonic data)
     {name:"Extropic",cat:"Private",detail:"AI hardware / thermodynamic computing. 2025 active.",btn:null},
     {name:"Cal.com",cat:"Private",detail:"Open-source scheduling infrastructure. 2025 active.",btn:null},
@@ -140,7 +135,6 @@ const naval = {
     {name:"dWallet Labs",cat:"Private",detail:"Decentralized key management. 2025 active.",btn:null},
     {name:"Vibe Bio",cat:"Private",detail:"Community-funded rare disease biotech. 2025 active.",btn:null},
     {name:"Pylon",cat:"Private",detail:"B2B customer support platform. 2025 active.",btn:null},
-    {name:"The Coterie",cat:"Private",detail:"2025 active.",btn:null},
     {name:"Darwinium",cat:"Private",detail:"Cybersecurity / fraud prevention. 2025 active.",btn:null},
     {name:"Andalusia Labs",cat:"Private",detail:"Crypto security infrastructure. 2025 active.",btn:null},
     {name:"Webstudio",cat:"Private",detail:"Open-source website builder. 2025 active.",btn:null},
@@ -193,12 +187,12 @@ const balaji = {
     {name:"Digital Ocean",cat:"Private",detail:"Cloud infrastructure for developers. Public (DOCN).",btn:YF("DOCN")},
     {name:"Luma",cat:"Private",detail:"AI 3D model generation / event platform.",btn:FORGE},
     {name:"OpenGov",cat:"Private",detail:"Cloud software for government. Acquired by Cox Enterprises.",btn:EXITED},
-    {name:"OpenSea",cat:"Private",detail:"NFT marketplace. $13.3B peak valuation.",btn:FORGE},
+    {name:"OpenSea",cat:"Private",detail:"NFT marketplace. $13.3B peak valuation (2022). 50%+ staff cuts 2023. OS2 relaunched. SEC dropped investigation Feb 2025.",btn:FORGE},
     {name:"Orchid Health",cat:"Private",detail:"Reproductive genomics. Official bio.",btn:null},
     {name:"Paradigm",cat:"Private",detail:"Crypto-focused VC. One of the top crypto investment firms.",btn:null},
     {name:"Perplexity",cat:"Private",detail:"AI search engine. $20B valuation. Multiple rounds.",btn:FORGE},
     {name:"Polychain Capital",cat:"Private",detail:"Crypto hedge fund. Top-tier crypto-native VC.",btn:null},
-    {name:"Polymarket",cat:"Private",detail:"Prediction markets. Multiple rounds.",btn:FORGE},
+    {name:"Polymarket",cat:"Private",detail:"Prediction markets. ICE invested $2B Oct 2025 ($9B valuation). CFTC-approved return to US market Nov 2025. Acquired CFTC-licensed exchange QCEX for $112M. US app launched Dec 2025. DOJ/CFTC probes closed Jul 2025.",btn:FORGE},
     {name:"Prospera",cat:"Private",detail:"Special economic zone in Honduras. Charter city experiment.",btn:null},
     {name:"Replit",cat:"Private",detail:"Online IDE / AI coding platform. Unicorn.",btn:FORGE},
     {name:"StarkWare",cat:"Private",detail:"ZK-proof L2. Pioneer of ZK technology. Early position.",btn:FORGE},
@@ -210,8 +204,8 @@ const balaji = {
     // EXTENDED SPEAKING BIO (Bitcoin Asia 2025 + others)
     {name:"Celestia (TIA)",cat:"Crypto",detail:"Modular data availability layer for blockchains. TIA on Coinbase.",btn:CB("celestia","TIA")},
     {name:"Culdesac",cat:"Private",detail:"Car-free neighborhoods. Urban development.",btn:FORGE},
-    {name:"Dapper Labs",cat:"Crypto",detail:"NBA Top Shot, CryptoKitties, Flow blockchain.",btn:FORGE},
-    {name:"Deel",cat:"Private",detail:"Global HR and payroll platform. $12B+ valuation.",btn:FORGE},
+    {name:"Dapper Labs",cat:"Crypto",detail:"NBA Top Shot, CryptoKitties, Flow blockchain. 70%+ staff cuts 2022-24. NFT volume down 95%+. SEC investigation closed Sep 2023. Class action ongoing.",btn:FORGE},
+    {name:"Deel",cat:"Private",detail:"Global HR and payroll platform. $17.3B valuation (Oct 2025). $1B+ ARR, profitable 3 years. DOJ opened criminal investigation re: corporate espionage vs Rippling (Jan 2026). IPO planned.",btn:FORGE},
     {name:"Espresso Systems",cat:"Crypto",detail:"Rollup confirmation layer / ZK infrastructure.",btn:null},
     {name:"Farcaster / DEGEN",cat:"Crypto",detail:"Decentralized social protocol on Ethereum. DEGEN is the primary Farcaster ecosystem token — on Coinbase.",btn:CB("degen-base","DEGEN")},
     {name:"Hadrian",cat:"Private",detail:"CNC machining for aerospace and defense.",btn:FORGE},
@@ -220,27 +214,27 @@ const balaji = {
     {name:"Minicircle",cat:"Private",detail:"Gene therapy / longevity. Startup in Próspera.",btn:null},
     {name:"Mirror",cat:"Crypto",detail:"Decentralized publishing on Ethereum.",btn:null},
     {name:"Nucleus Genomics",cat:"Private",detail:"Genomics and ancestry.",btn:null},
-    {name:"Omada Health",cat:"Private",detail:"Digital chronic disease management. IPO candidate.",btn:FORGE},
+    {name:"Omada Health (OMDA)",cat:"Public",detail:"Digital chronic disease management. IPO'd Nasdaq Jun 6 2025 at $19/share. Ticker: OMDA.",btn:YF("OMDA")},
     {name:"Republic",cat:"Private",detail:"Equity crowdfunding platform.",btn:REP},
     {name:"Roam Research",cat:"Private",detail:"Networked note-taking tool.",btn:null},
     {name:"Synthesis",cat:"Private",detail:"Accelerated learning for kids (spun out of SpaceX school).",btn:FORGE},
     {name:"Vitalia",cat:"Private",detail:"Longevity city / network state in Honduras.",btn:null},
     {name:"VoteAgora",cat:"Private",detail:"Crypto governance tooling.",btn:null},
     // OLDER CONFIRMED (from bios + reports)
-    {name:"Cameo",cat:"Private",detail:"Celebrity video messages. Former unicorn.",btn:FORGE},
+    {name:"Cameo",cat:"Private",detail:"Celebrity video messages. Once a $1B unicorn; valuation crashed 90%+ to ~$50-100M. FTC fined for undisclosed endorsements; couldn't afford $600K penalty. Still operating with <50 staff.",btn:FORGE},
     {name:"Eight Sleep",cat:"Private",detail:"Smart sleep system. Health tech.",btn:FORGE},
     {name:"Push Protocol (PUSH)",cat:"Crypto",detail:"Decentralized notifications for Web3. PUSH on Coinbase.",btn:CB("push-protocol","PUSH")},
     {name:"Gitcoin (GTC)",cat:"Crypto",detail:"Open source funding via quadratic funding. GTC on Coinbase.",btn:CB("gitcoin","GTC")},
-    {name:"Golden",cat:"Private",detail:"Decentralized knowledge graph.",btn:null},
-    {name:"Lambda School (Bloom Institute)",cat:"Private",detail:"Income share agreement coding bootcamp. Rebranded.",btn:null},
+    {name:"Golden",cat:"Private",detail:"Decentralized knowledge graph. Shut down 2024.",btn:EXITED},
+    {name:"Lambda School (Bloom Institute)",cat:"Private",detail:"Coding bootcamp. CFPB enforcement action 2024 — fraud, predatory lending findings. CEO banned from student lending.",btn:EXITED},
     {name:"Levels Health",cat:"Private",detail:"Continuous glucose monitoring for metabolic health.",btn:FORGE},
     {name:"Messari",cat:"Private",detail:"Crypto research and data platform.",btn:FORGE},
     {name:"OnDeck",cat:"Private",detail:"Network for ambitious builders.",btn:null},
     {name:"Skiff",cat:"Private",detail:"Privacy-first collaborative docs. Acquired by Notion (2024).",btn:EXITED},
-    {name:"Soylent",cat:"Private",detail:"Nutritionally complete food products.",btn:null},
+    {name:"Soylent",cat:"Private",detail:"Nutritionally complete food. Acquired by Starco Brands (STCB) Feb 2023.",btn:EXITED},
     {name:"Stability AI",cat:"Private",detail:"Open-source AI / Stable Diffusion.",btn:FORGE},
     {name:"Enhanced Games",cat:"Private",detail:"Olympic-style athletics competition allowing performance-enhancing drugs. Confirmed in Bitcoin Asia 2025 extended speaking bio.",btn:null},
-    {name:"Clubhouse",cat:"Private",detail:"Audio social network.",btn:null},
+    {name:"Clubhouse",cat:"Private",detail:"Audio social network. Peaked 2021, rapidly declined.",btn:EXITED},
     // PRESS-RELEASE CONFIRMED RECENT (all verified by The Block, CoinDesk, Bloomberg, Fortune, etc.)
     {name:"ZODL / Zcash Open Dev Lab",cat:"Crypto",detail:"$25M seed (Mar 2026). Paradigm, a16z, Winklevoss. ZK-proof Zcash ecosystem. Most recent investment.",btn:null},
     {name:"Project Eleven",cat:"Private",detail:"$20M Series A (Jan 2026). Castle Island led. Post-quantum cryptography security for Bitcoin.",btn:null},
@@ -250,8 +244,6 @@ const balaji = {
     {name:"NOICE",cat:"Crypto",detail:"Undisclosed (Oct 2025). Social network on Base. Coinbase Ventures + Balaji. Crypto-Fundraising confirmed.",btn:null},
     {name:"Notch",cat:"Private",detail:"Oct 23, 2025. Crunchbase confirmed.",btn:null},
     {name:"fomo",cat:"Private",detail:"$17M Series A (Nov 2025). Crunchbase confirmed.",btn:null},
-    {name:"Emergent",cat:"Private",detail:"Series A (Aug 11, 2025). Crunchbase confirmed.",btn:null},
-    {name:"Trepa",cat:"Private",detail:"$420K pre-seed (Aug 2025). CoinCarp confirmed.",btn:null},
     {name:"Blueprint / Bryan Johnson",cat:"Private",detail:"Longevity protocol company (Oct 2025). Crunchbase confirmed.",btn:null},
     {name:"Inversion Capital",cat:"Private",detail:"$26.5M seed (Sep 2025). Dragonfly led. Blockchain PE firm acquiring telecoms/financial services.",btn:null},
     {name:"ZAR",cat:"Private",detail:"$7M seed (Apr 2025). CoinCarp confirmed. CeFi payments.",btn:null},
@@ -298,7 +290,7 @@ const vitalik = {
     {name:"Ethereum",cat:"Founded",detail:"Whitepaper 2013. Launched 2015. ~240,042 ETH (~$1B+). Has not sold for personal gain since 2018. $12.33M in Aave V3.",btn:CB("ethereum","ETH")},
     {name:"Bitcoin Magazine",cat:"Founded",detail:"Co-founded 2011 at age 17. First serious Bitcoin journalism.",btn:null},
     {name:"Balvi Philanthropic Fund",cat:"Founded",detail:"$1.14B SHIB → India COVID relief. $665M → Future of Life Institute. Multiple $10-15M science grants.",btn:null},
-    {name:"Polymarket",cat:"Private",detail:"$45M Series B (May 2024). His largest single investment. Prediction markets as information infrastructure.",btn:FORGE},
+    {name:"Polymarket",cat:"Private",detail:"Series B investor (May 2024). Platform now valued at $9B (ICE $2B investment Oct 2025). CFTC-cleared to operate in US as of Nov 2025. Prediction markets as information infrastructure.",btn:FORGE},
     {name:"StarkWare",cat:"Private",detail:"$6M seed (May 2018). ZK-proof L2 pioneer. Long-held position since founding.",btn:FORGE},
     {name:"Aztec Labs",cat:"Private",detail:"$17M Series A (Oct 2021). Privacy-first ZK rollup.",btn:null},
     {name:"Nomic Foundation / Hardhat",cat:"Private",detail:"$15M (Feb 2022). Core Ethereum developer tooling infrastructure.",btn:null},
@@ -365,11 +357,9 @@ const toly = {
     {name:"Tab",cat:"Crypto",detail:"Jan 2024. Crypto financial product, Solana-native. Confirmed by Crunchbase investment timeline.",btn:null},
     {name:"Slingshot Finance",cat:"Crypto",detail:"Solana-native trading aggregator.",btn:null},
     {name:"worm.wtf",cat:"Crypto",detail:"$4.5M (Dec 2025). Most recent confirmed (CryptoRank).",btn:null},
-    {name:"Asgard Finance",cat:"Crypto",detail:"$2.2M (Dec 2025).",btn:null},
     {name:"Ryder",cat:"Private",detail:"$3.2M (Oct 2025). Hardware wallet / security device.",btn:null},
     {name:"Inference / Kuzco",cat:"Private",detail:"$11.8M (Oct 2025). Distributed AI inference on Solana.",btn:null},
     {name:"BULK",cat:"Crypto",detail:"$8M (Sep 2025). Solana ecosystem.",btn:null},
-    {name:"Pulse",cat:"Crypto",detail:"Nov 2024.",btn:null},
     {name:"USDO / OpenDelta",cat:"Crypto",detail:"Nov 2024. Decentralized stablecoin.",btn:null},
   ],
   recent:[
@@ -427,30 +417,28 @@ const thiel = {
     {name:"Cognition AI",cat:"Private",detail:"AI coding agent 'Devin'. 2024 unicorn. FF.",btn:FORGE},
     {name:"SentientAGI",cat:"Private",detail:"$85M UAE seed (2024). Open-source sovereign AI for Gulf nations. FF led.",btn:null},
     {name:"Netic",cat:"Private",detail:"AI for SMBs. FF led $23M Series B (late 2025).",btn:null},
-    {name:"Wish.com",cat:"Private",detail:"E-commerce platform. FF position.",btn:null},
-    {name:"Valinor",cat:"Private",detail:"FF portfolio company.",btn:null},
-    {name:"General Matter",cat:"Private",detail:"Nuclear fuel company. FF portfolio.",btn:null},
+    {name:"Wish.com",cat:"Private",detail:"E-commerce platform. Major decline since 2022.",btn:EXITED},
     {name:"ZocDoc",cat:"Private",detail:"Doctor appointment booking platform. FF.",btn:FORGE},
-    {name:"Flexport",cat:"Private",detail:"Digital freight / logistics. Unicorn. FF.",btn:FORGE},
+    {name:"Flexport",cat:"Private",detail:"Digital freight/logistics. ~$3.5B valuation (down from $8B peak). Multiple layoff rounds. Ryan Petersen returned as CEO 2023. $2.1B revenue 2024. Still operating.",btn:FORGE},
     {name:"Asana",cat:"Private",detail:"Work management. Public (ASAN). FF and Thiel personal.",btn:YF("ASAN")},
     // MITHRIL CAPITAL portfolio (confirmed)
     {name:"Helion Energy",cat:"Private",detail:"Fusion energy. $425M round (Jan 2025). Mithril board member.",btn:FORGE},
     {name:"Oklo",cat:"Private",detail:"Nuclear microreactor. Public (OKLO). Mithril board member.",btn:YF("OKLO")},
-    {name:"BlackSky",cat:"Private",detail:"Dual-use satellite geospatial intelligence. Public (BKSY). Mithril.",btn:YF("BKSY")},
-    {name:"Invivyd",cat:"Private",detail:"Monoclonal antibody therapies. Mithril.",btn:null},
+    {name:"BlackSky (BKSY)",cat:"Public",detail:"Space-based geospatial intelligence. NYSE: BKSY. Mithril investment. $106M revenue 2025.",btn:YF("BKSY")},
+    {name:"Invivyd (IVVD)",cat:"Private",detail:"Monoclonal antibody COVID therapies. EUA approved. Public on Nasdaq.",btn:YF("IVVD")},
     {name:"Forsight Robotics",cat:"Private",detail:"Israeli eye surgery robotics. Mithril.",btn:null},
     {name:"Fractyl Health",cat:"Private",detail:"Metabolic disease (GLP-1 alternative). IPO 2024. Mithril.",btn:YF("GUTS")},
     {name:"Paxos",cat:"Crypto",detail:"Blockchain infrastructure and stablecoin issuer. Mithril and FF.",btn:FORGE},
     {name:"Auris Health",cat:"Private",detail:"Surgical robotics — considered one of Mithril's best deals. Acquired by J&J.",btn:EXITED},
     // VALAR VENTURES portfolio (full confirmed list)
-    {name:"Wise (TransferWise)",cat:"Private",detail:"Global money transfer. $11B+ valuation. Valar flagship.",btn:FORGE},
-    {name:"N26",cat:"Private",detail:"German neobank. $9B+ valuation. Valar.",btn:FORGE},
+    {name:"Wise (TransferWise)",cat:"Public",detail:"Global money transfer platform. Listed on London Stock Exchange Jul 7 2021 via direct listing. Ticker: WISE on LSE. Valar flagship investment.",btn:YF("WISE.L")},
+    {name:"N26",cat:"Private",detail:"German neobank. ~$6B valuation (down from $9B peak). BaFin regulatory issues. Co-founders stepped back H2 2025. IPO unlikely before 2027.",btn:FORGE},
     {name:"Qonto",cat:"Private",detail:"French business banking. Unicorn. Valar.",btn:FORGE},
     {name:"Bitpanda",cat:"Private",detail:"Austrian crypto/investment platform. Valar.",btn:FORGE},
     {name:"Xero",cat:"Private",detail:"Cloud accounting software. Public in Australia. Valar.",btn:null},
     {name:"Kuda Bank",cat:"Private",detail:"Nigerian neobank. Valar.",btn:null},
     {name:"Novo",cat:"Private",detail:"US small business banking. Valar.",btn:null},
-    {name:"Treecard",cat:"Private",detail:"Green debit card — plants trees. Valar.",btn:null},
+    {name:"Treecard",cat:"Private",detail:"Green debit card. Shutting down April 16, 2026 — unable to operate sustainably.",btn:EXITED},
     {name:"Fortú",cat:"Private",detail:"Latin American fintech. Valar.",btn:null},
     {name:"Bukuwarung",cat:"Private",detail:"Indonesian SMB bookkeeping app. Valar.",btn:null},
     {name:"Maplerad",cat:"Private",detail:"African fintech payments infrastructure. Valar.",btn:null},
@@ -469,7 +457,7 @@ const thiel = {
     {name:"Vauld",cat:"Private",detail:"Crypto lending platform. Valar. Bankrupt 2022.",btn:EXITED},
     {name:"BlockFi",cat:"Private",detail:"Crypto lending. Valar held 19%. Bankrupt Nov 2022.",btn:EXITED},
     // 1517 FUND portfolio (Thiel-backed fund)
-    {name:"Luminar Technologies",cat:"Private",detail:"LiDAR for autonomous vehicles. 1517 Fund. Austin Russell — Thiel Fellow. Public (LAZR).",btn:YF("LAZR")},
+    {name:"Luminar Technologies",cat:"Private",detail:"LiDAR for autonomous vehicles. Filed Chapter 11 bankruptcy Dec 15 2025. Delisted from Nasdaq Dec 24 2025.",btn:EXITED},
     {name:"Loom",cat:"Private",detail:"Screen recording and video messaging. 1517 Fund. Acquired by Atlassian for $975M.",btn:EXITED},
     {name:"Atom Computing",cat:"Private",detail:"Quantum computing. 1517 Fund.",btn:null},
     {name:"Durin Mining Technologies",cat:"Private",detail:"Critical minerals. 1517 Fund.",btn:null},
@@ -477,7 +465,7 @@ const thiel = {
     {name:"Facebook / Meta",cat:"Private",detail:"$500K for 10.2% → sold $1.1B+ post-IPO. Most famous angel bet ever. Now holds ~10K shares.",btn:YF("META")},
     {name:"LinkedIn",cat:"Private",detail:"Early investor (Founders Fund bio). Acquired by Microsoft $26B (2016).",btn:EXITED},
     {name:"Yelp",cat:"Private",detail:"Early investor. Confirmed multiple sources.",btn:YF("YELP")},
-    {name:"Clearview AI",cat:"Private",detail:"Facial recognition. 2017, one of its first outside investors.",btn:null},
+    {name:"Clearview AI",cat:"Private",detail:"Facial recognition. Early investor 2017. $51.75M class action settlement 2025. Barred from private entity sales. Active w/law enforcement.",btn:null},
     {name:"AbCellera Biologics (ABCL)",cat:"Private",detail:"14.36M shares (SEC filing). AI antibody discovery. Board member.",btn:YF("ABCL")},
     {name:"Etched",cat:"Private",detail:"Transformer-specific ASIC chip. $5B valuation ($500M raise). Named in press release alongside Bryan Johnson and Balaji Srinivasan.",btn:FORGE},
     {name:"Panacea Financial",cat:"Private",detail:"Arkansas-based fintech for medical practitioners (doctors). Thiel Capital. Wikipedia confirmed.",btn:null},
@@ -491,7 +479,7 @@ const thiel = {
     {name:"Praxis",cat:"Private",detail:"City-state company exploring Greenland as a possible location. Backed through Pronomos Capital.",btn:null},
     {name:"BitPay",cat:"Crypto",detail:"Bitcoin payment processing. Led $2M round in 2014 — his first crypto investment.",btn:EXITED},
     {name:"Block.one / EOS",cat:"Crypto",detail:"Blockchain platform. Confirmed PANews. EOS on Coinbase.",btn:CB("eos","EOS")},
-    {name:"Bullish",cat:"Crypto",detail:"Institutional crypto exchange. Pre-IPO backer. Public via SPAC.",btn:null},
+    {name:"Bullish (BULL)",cat:"Crypto",detail:"Institutional crypto exchange. Went public via SPAC on NYSE. Thiel pre-IPO backer.",btn:YF("BULL")},
     {name:"BitMine Immersion Technologies (BMNR)",cat:"Crypto",detail:"Thiel disclosed 9.1% stake mid-2025. Company became the largest corporate ETH holder with 1.2M+ Ethereum tokens.",btn:YF("BMNR")},
     {name:"Bitcoin (BTC)",cat:"Crypto",detail:"FF bought $15-20M BTC (2017). Sold $1.8B worth (Mar 2022) ahead of crash. Re-entered $200M+ in BTC+ETH (Summer 2023) below $30K.",btn:CB("bitcoin","BTC")},
   ],
@@ -522,7 +510,7 @@ const bryan = {
     // OS FUND portfolio (confirmed)
     {name:"Ginkgo Bioworks (DNA)",cat:"Private",detail:"Synthetic biology platform. Now publicly traded on NYSE (DNA).",btn:YF("DNA")},
     {name:"Atomwise",cat:"Private",detail:"AI-powered drug discovery. Raised $174M total.",btn:FORGE},
-    {name:"twoXAR / Aria",cat:"Private",detail:"AI drug discovery. Acquired/pivoted.",btn:null},
+    {name:"twoXAR / Aria",cat:"Private",detail:"AI drug discovery. Acquired and absorbed.",btn:EXITED},
     {name:"Catalog",cat:"Private",detail:"DNA data storage — trillion bits per gram capacity.",btn:null},
     {name:"Matternet",cat:"Private",detail:"Medical drone delivery in Switzerland.",btn:null},
     {name:"Synthego",cat:"Private",detail:"CRISPR genomics tools company. Acquired by Perceptive Biosciences (Jun 2025).",btn:EXITED},
@@ -530,20 +518,19 @@ const bryan = {
     {name:"Arzeda",cat:"Private",detail:"Computational protein design / enzyme engineering.",btn:null},
     {name:"NuMat Technologies",cat:"Private",detail:"Metal-organic framework materials for gas storage.",btn:null},
     {name:"Vicarious",cat:"Private",detail:"AI robotics. Acquired by Alphabet (SoftBank intermediary).",btn:EXITED},
-    {name:"JUST Egg / Eat Just",cat:"Private",detail:"Plant-based eggs. Unicorn. First cultivated meat product approval.",btn:FORGE},
+    {name:"JUST Egg / Eat Just",cat:"Private",detail:"Plant-based eggs. ~$1.2B valuation. Serious financial issues — unpaid bills, multiple lawsuits, layoffs 2023. ABEC suit settled Mar 2025. Still operating.",btn:FORGE},
     {name:"Human Longevity Inc.",cat:"Private",detail:"Genomics and longevity data platform.",btn:FORGE},
     {name:"Planetary Resources",cat:"Private",detail:"Asteroid mining. Acquired by ConsenSys.",btn:EXITED},
-    {name:"Synthetic Genomics",cat:"Private",detail:"J. Craig Venter's synthetic biology company.",btn:null},
+    {name:"Synthetic Genomics (Viridos)",cat:"Private",detail:"J. Craig Venter's synthetic biology company. Renamed Viridos. Filed for bankruptcy April 2025.",btn:EXITED},
     {name:"Emerald Therapeutics",cat:"Private",detail:"Drug discovery platform. OS Fund confirmed via Wikipedia and Golden.",btn:null},
-    {name:"uBiome",cat:"Private",detail:"Human microbiome sequencing database. OS Fund. Confirmed by SynBioBeta and CB Insights.",btn:null},
+    {name:"uBiome",cat:"Private",detail:"Human microbiome sequencing. Shut down 2019 amid fraud investigation.",btn:EXITED},
     {name:"Verge Genomics",cat:"Private",detail:"AI-powered neurodegenerative disease drug discovery.",btn:FORGE},
     {name:"Truvian Health",cat:"Private",detail:"Automated blood testing at patient scale.",btn:FORGE},
     {name:"Elysium Health",cat:"Private",detail:"Longevity supplements (NAD+ via Basis). Science-backed.",btn:null},
-    {name:"Tempo Automation",cat:"Private",detail:"PCB manufacturing automation. IPO Nov 2022.",btn:EXITED},
+    {name:"Tempo Automation",cat:"Private",detail:"PCB manufacturing automation. IPO Nov 2022, delisted Oct 2023, filed Chapter 7 bankruptcy Dec 2023.",btn:EXITED},
     // Personal angel
     {name:"Etched",cat:"Private",detail:"$5B valuation. Transformer-specific ASIC chip. Co-invested with Thiel and Balaji (confirmed press release).",btn:FORGE},
     {name:"Apollo Research",cat:"Private",detail:"Jan 2026. AI safety research organization.",btn:null},
-    {name:"Stable",cat:"Private",detail:"Seed (Jul 2025). Undisclosed sector.",btn:null},
     {name:"Steven.com",cat:"Private",detail:"AI/media company. Confirmed by PitchBook as Bryan Johnson portfolio company.",btn:null},
   ],
   recent:[
@@ -569,14 +556,14 @@ const ferriss = {
     {name:"Saisei Foundation",cat:"Founded",detail:"Psychedelic research philanthropy. $3M+ personal. Organized $17M for Johns Hopkins (US first). $1M to MAPS Capstone Challenge. Founded Imperial College London program.",btn:null},
     {name:"Uber",cat:"Private",detail:"Pre-seed advisor when ~10 employees. One of the greatest advisor equity positions in VC history.",btn:YF("UBER")},
     {name:"Facebook / Meta",cat:"Private",detail:"Early investment. Massive return.",btn:YF("META")},
-    {name:"Twitter / X",cat:"Private",detail:"Early investment. Published portfolio.",btn:null},
+    {name:"Twitter / X",cat:"Private",detail:"Early investment. Cashed out at $54.20/share when Elon took Twitter private Oct 2022.",btn:EXITED},
     {name:"Shopify",cat:"Private",detail:"First advisor with ~5 employees. Now $150B+ company.",btn:YF("SHOP")},
     {name:"Duolingo",cat:"Private",detail:"Led Series A. IPO'd at $11B+. ~50x+ return.",btn:YF("DUOL")},
     {name:"Airbnb",cat:"Private",detail:"Early angel.",btn:YF("ABNB")},
     {name:"Alibaba",cat:"Private",detail:"Early. Published portfolio.",btn:YF("BABA")},
     {name:"SpaceX",cat:"Private",detail:"Investor. Published portfolio.",btn:FORGE},
     {name:"AngelList",cat:"Private",detail:"Early investor. Published portfolio. Frequent co-investor with Naval.",btn:null},
-    {name:"Wealthfront",cat:"Private",detail:"Robo-advisor. Early investor. Published portfolio.",btn:FORGE},
+    {name:"Wealthfront",cat:"Private",detail:"Robo-advisor. Early investor. UBS acquired Wealthfront 2022.",btn:EXITED},
     {name:"Nextdoor",cat:"Private",detail:"Neighborhood social. Public (KIND). Published portfolio.",btn:YF("KIND")},
     {name:"TaskRabbit",cat:"Private",detail:"First advisor. Acquired by IKEA (2017).",btn:EXITED},
     {name:"CLEAR",cat:"Private",detail:"First advisor. Biometric identity. IPO'd (YOU).",btn:YF("YOU")},
@@ -584,30 +571,28 @@ const ferriss = {
     {name:"Blue Bottle Coffee",cat:"Private",detail:"Early investor. Acquired by Nestlé ~$500M (2017).",btn:EXITED},
     {name:"Commonwealth Fusion Systems",cat:"Private",detail:"Plasma fusion energy. Long-term bet. MIT spin-out.",btn:FORGE},
     {name:"Maui Nui Venison",cat:"Private",detail:"Regenerative wild deer harvesting. Published portfolio.",btn:null},
-    {name:"LALO Tequila",cat:"Private",detail:"Published portfolio.",btn:null},
+    {name:"LALO Tequila",cat:"Private",detail:"Additive-free blanco tequila by Don Julio's grandson. Ferriss invested. Tito's Vodka acquired majority stake Sep 2025.",btn:EXITED},
     {name:"Huckberry",cat:"Private",detail:"Outdoor/adventure lifestyle brand. Published portfolio.",btn:null},
     {name:"NoRedInk",cat:"Private",detail:"Writing education platform. Published portfolio.",btn:null},
-    {name:"The Way",cat:"Private",detail:"Published portfolio.",btn:null},
-    {name:"Harbor",cat:"Private",detail:"Securities tokenization. Published portfolio.",btn:null},
-    {name:"OpenSea",cat:"Private",detail:"Series A (2021). NFT marketplace. $13.3B peak.",btn:FORGE},
-    {name:"Zendrive",cat:"Private",detail:"Telematics / driver safety. TechCrunch confirmed (2013).",btn:null},
-    {name:"Haus",cat:"Private",detail:"Low-ABV aperitifs. $7.1M seed (2019).",btn:null},
+    {name:"Harbor",cat:"Private",detail:"Securities tokenization. Shut down 2021.",btn:EXITED},
+    {name:"OpenSea",cat:"Private",detail:"NFT marketplace. Series A 2021. $13.3B peak valuation 2022. OS2 relaunched.",btn:FORGE},
+    {name:"Zendrive",cat:"Private",detail:"Telematics/driver safety analytics. Acquired by Intuit (Credit Karma) Jun 2024.",btn:EXITED},
+    {name:"Haus",cat:"Private",detail:"Low-ABV aperitifs. Shut down Aug 2022. Acquired by Naked Market Jun 2023.",btn:EXITED},
     {name:"Rosebud",cat:"Private",detail:"AI journaling app. Jun 2025. TechCrunch confirmed.",btn:null},
-    {name:"Oboe",cat:"Private",detail:"Music tech. Oct 2024.",btn:null},
     {name:"SkyKick",cat:"Private",detail:"Cloud SaaS for IT. Exit Sep 2024.",btn:EXITED},
     // From Crunchbase / Wellfound (all confirmed database entries)
-    {name:"Evernote",cat:"Private",detail:"Note-taking app. Crunchbase confirmed Ferriss investment.",btn:null},
+    {name:"Evernote",cat:"Private",detail:"Note-taking app. Acquired by Bending Spoons 2023.",btn:EXITED},
     {name:"Posterous",cat:"Private",detail:"Blogging platform. Acquired by Twitter (2012). Crunchbase confirmed.",btn:EXITED},
     {name:"RescueTime",cat:"Private",detail:"Time tracking and productivity software. Crunchbase confirmed.",btn:null},
-    {name:"BranchOut",cat:"Private",detail:"Professional networking on Facebook. Crunchbase confirmed.",btn:null},
+    {name:"BranchOut",cat:"Private",detail:"Professional networking on Facebook. Defunct.",btn:EXITED},
     {name:"about.me",cat:"Private",detail:"Personal landing page platform. Acquired by AOL. Crunchbase confirmed.",btn:EXITED},
     {name:"DailyBurn",cat:"Private",detail:"Fitness tracking and video workouts. Crunchbase confirmed.",btn:null},
-    {name:"CreativeLive",cat:"Private",detail:"Online learning platform for creatives. Crunchbase confirmed.",btn:null},
-    {name:"Soma Water",cat:"Private",detail:"Design-forward water filtration carafe. Crunchbase confirmed.",btn:null},
+    {name:"CreativeLive",cat:"Private",detail:"Online learning platform. Acquired by Fiverr 2021, sold to CourseHorse Dec 2025.",btn:EXITED},
+    {name:"Soma Water",cat:"Private",detail:"Design-forward water filtration carafe. Acquired by Full Circle Home 2017.",btn:EXITED},
     {name:"The Hustle",cat:"Private",detail:"Business newsletter/media. Acquired by HubSpot. Crunchbase confirmed.",btn:EXITED},
     {name:"Shift",cat:"Private",detail:"Desktop app for managing multiple accounts/apps. Crunchbase confirmed.",btn:null},
     {name:"Reputation.com",cat:"Private",detail:"Online reputation management SaaS. Crunchbase confirmed.",btn:null},
-    {name:"Trippy",cat:"Private",detail:"Social travel recommendations. Crunchbase confirmed.",btn:null},
+    {name:"Trippy",cat:"Private",detail:"Social travel recommendations. Defunct.",btn:EXITED},
     {name:"Shyp",cat:"Private",detail:"On-demand package shipping. Shut down 2018. Crunchbase confirmed.",btn:EXITED},
     // Psychedelic research
     {name:"Johns Hopkins CPCR",cat:"Philanthropy",detail:"Organized $17M donation. US's first dedicated psychedelic research center.",btn:null},
@@ -645,7 +630,7 @@ const lebron = {
     {name:"AC Milan",cat:"Private",detail:"Via Main Street Advisors (Aug 2022) alongside Drake, Jimmy Iovine, New York Yankees. €1.2B total RedBird deal.",btn:null},
     {name:"Blaze Pizza",cat:"Private",detail:"<$1M invested 2012. Worth $35M+ by 2017. Owned 19+ franchise locations. Exited April 2025.",btn:EXITED},
     {name:"Lobos 1707",cat:"Private",detail:"Tequila/mezcal via Main Street Advisors (2020, press release confirmed). Exited April 2025.",btn:EXITED},
-    {name:"Tonal",cat:"Private",detail:"Connected home gym. Equity stake.",btn:FORGE},
+    {name:"Tonal",cat:"Private",detail:"Connected home gym. 35% layoffs 2022. Fresh $130M 2023. New CEO Sep 2024. Approaching EBITDA profitability. Still operating.",btn:FORGE},
     {name:"Calm",cat:"Private",detail:"Meditation/sleep app. Unicorn. Equity stake.",btn:FORGE},
     {name:"Lyft",cat:"Private",detail:"Equity stake + ambassador partnership.",btn:YF("LYFT")},
     {name:"StatusPRO",cat:"Private",detail:"Series A (Feb 2024). Sports VR training and analytics. Co-invested with Drake.",btn:null},
@@ -686,8 +671,8 @@ const jayz = {
     {name:"Brooklyn Nets",cat:"Private",detail:"$1M investment (2004). Sold 2013 when he became sports agent. Team now $3.5B.",btn:EXITED},
     {name:"Stellar Pizza",cat:"Private",detail:"Robot pizza truck by ex-SpaceX engineers. Led $16.5M round (2022).",btn:null},
     // MarcyPen / Marcy Venture Partners portfolio
-    {name:"Savage X Fenty",cat:"Private",detail:"Led $70M round for Rihanna's lingerie company. MarcyPen flagship.",btn:FORGE},
-    {name:"StockX",cat:"Private",detail:"Sneaker/streetwear resale marketplace. $3.8B valuation.",btn:FORGE},
+    {name:"Savage X Fenty",cat:"Private",detail:"Rihanna's lingerie brand. $3B valuation floated 2022, IPO never filed. Rihanna stepped back to Executive Chair Jun 2023. CEO poached by Victoria's Secret Aug 2024. Still private.",btn:FORGE},
+    {name:"StockX",cat:"Private",detail:"Sneaker/streetwear resale marketplace. $3.8B valuation (last round Apr 2021). Multiple layoffs including Jan 2024. Nike lawsuit settled. IPO on hold.",btn:FORGE},
     {name:"Therabody",cat:"Private",detail:"Percussion therapy tools. Acquired by Therabody group.",btn:null},
     {name:"Simulate (Nuggs)",cat:"Private",detail:"Plant-based chicken. Acquired by Ahimsa Companies (Oct 2024).",btn:EXITED},
     {name:"Partake Foods",cat:"Private",detail:"Allergen-free cookies and snacks.",btn:null},
@@ -697,7 +682,7 @@ const jayz = {
     {name:"Merit Beauty",cat:"Private",detail:"Clean beauty brand.",btn:null},
     {name:"Our Place",cat:"Private",detail:"Cookware brand (Always Pan). Direct-to-consumer.",btn:null},
     {name:"Babylist",cat:"Private",detail:"Baby registry/marketplace.",btn:FORGE},
-    {name:"Wheels",cat:"Private",detail:"Electric transportation / e-scooters.",btn:null},
+    {name:"Wheels",cat:"Private",detail:"Electric transportation / e-scooters. Shut down.",btn:EXITED},
     {name:"Madison Reed",cat:"Private",detail:"$33M round (2022). Hair color brand.",btn:FORGE},
     {name:"Greenwood Bank",cat:"Private",detail:"Banking for Black and Latino communities (via Pendulum merger).",btn:null},
     {name:"Adwoa Beauty",cat:"Private",detail:"Haircare for textured hair (via Pendulum merger).",btn:null},
@@ -770,10 +755,10 @@ const reynolds = {
     {name:"1Password",cat:"Private",detail:"Password manager. 2022 round at $6.8B valuation.",btn:FORGE},
     {name:"Bending Spoons",cat:"Private",detail:"Italian mobile app company (Elytra, Splice, Filmic). Series D (Sep 2022).",btn:FORGE},
     {name:"Homage",cat:"Private",detail:"Vintage-inspired sports apparel. Invested May 2024. Maximum Effort rep joined board.",btn:null},
-    {name:"FuboTV",cat:"Private",detail:"Received $10M in FUBO stock via Maximum Effort collaboration deal (2022). Now merged with Hulu + Live TV.",btn:null},
+    {name:"FuboTV (FUBO)",cat:"Private",detail:"Reynolds received $10M in FUBO stock via Maximum Effort deal (2022). Merged with Hulu + Live TV Oct 2025 — still public as FUBO on NYSE.",btn:YF("FUBO")},
     {name:"Nuvei",cat:"Private",detail:"Canadian fintech. Invested Apr 2023 at ~$42/share. Advent International took private Nov 2024 at $34/share — likely a loss.",btn:EXITED},
     {name:"Match Group (Board)",cat:"Private",detail:"Joined board of Match Group (Tinder, Match.com, Hinge, OkCupid).",btn:YF("MTCH")},
-    {name:"Ottawa Senators (failed bid)",cat:"Private",detail:"Prepared $1B+ bid with Remington Group (2023). Did not proceed. Not an investment.",btn:null},
+    {name:"Ottawa Senators (failed bid)",cat:"Private",detail:"Prepared $1B+ bid (2023). Did not proceed. Never completed.",btn:EXITED},
   ],
   recent:[
     {deal:"BONDS Flying Roos SailGP",date:"Jun 2025",note:"Co-owner w/ Hugh Jackman — BusinessWire"},
@@ -800,7 +785,6 @@ const kim = {
     {name:"SKKY: 111Skin",cat:"Private",detail:"'Significant' minority stake (Jan 2025). First confirmed SKKY deal — reported Business of Fashion. Luxury skincare from Harley Street plastic surgeon.",btn:null},
     {name:"SKKY: Truff",cat:"Private",detail:"Truffle-infused hot sauce brand. Cult following among foodies.",btn:null},
     {name:"Coty stake (repurchased)",cat:"Private",detail:"Coty had 20% of KKW/SKKN since 2020 ($200M). Repurchased March 2025. All beauty now unified.",btn:YF("COTY")},
-    {name:"Hulu / The Kardashians",cat:"Private",detail:"$100M+ family deal. Kim's individual cut ~$7.5-8.3M/season. 'All's Fair' (legal drama, 2025). Criminal justice reform work.",btn:null},
   ],
   recent:[
     {deal:"SKIMS $5B raise",date:"Nov 2025",note:"$225M — Goldman Sachs (official press release)"},
@@ -822,7 +806,6 @@ const ronaldo = {
     {name:"CR7 Brand",cat:"Founded",detail:"Clothing (JBS Textile Group, ~$40M/year), fragrances (Eden Parfums, ~$20M/year), shoes, eyewear, accessories. Investment vehicle CR7 Lifestyle holds €20M+ equity capital.",btn:null},
     {name:"Pestana CR7 Hotels (50%)",cat:"Founded",detail:"€40-75M invested since 2016. 6 cities: Funchal, Lisbon, Madrid, Marrakech, NYC, Paris (dev). 800+ rooms. $200M combined revenue. 50/50 with Pestana Hotel Group.",btn:null},
     {name:"Insparya",cat:"Founded",detail:"Hair transplant clinic chain co-founded 2019. Spain and Portugal.",btn:null},
-    {name:"CR7 Crunch Fitness",cat:"Founded",detail:"Gym chain partnership with Crunch Fitness. Spain and Portugal.",btn:null},
     {name:"Erakulis",cat:"Founded",detail:"Fitness and wellness app. €788K EU funding.",btn:null},
     {name:"UR.MARV Film Studio",cat:"Founded",detail:"50-50 JV with filmmaker Matthew Vaughn (Apr 10, 2025). Two action films already produced. Third in development.",btn:null},
     {name:"UR Cristiano",cat:"Founded",detail:"YouTube channel launched August 2024. Personal brand media content. Part of broader media empire alongside Medialivre.",btn:null},
@@ -838,7 +821,6 @@ const ronaldo = {
     {name:"Urby",cat:"Private",detail:"Portuguese smart cities / IoT startup. €6M round (2020).",btn:null},
     {name:"Advanced Recovery for Athletes (AVA)",cat:"Private",detail:"Recovery technology announced Dec 2024 with Brazilian company Avanutri.",btn:null},
     {name:"Nike Lifetime Deal",cat:"Private",detail:"One of three athletes ever (Jordan, LeBron, Ronaldo). ~$1B total deal. $20M+/year regardless of playing status.",btn:null},
-    {name:"Binance",cat:"Crypto",detail:"NFT/crypto partnership. ForeverSkills NFT series (Dec 2024). CR7 NFT collections.",btn:CB("bitcoin","BTC")},
   ],
   recent:[
     {deal:"WHOOP Series G",date:"Mar 2026",note:"$575M — named in official press release"},
@@ -860,17 +842,16 @@ const serena = {
     {name:"Serena Ventures",cat:"Founded",detail:"Founded 2014. $111M debut fund (2022). 85+ companies. 16+ unicorns. 79% underrepresented founders, 54% women, 47% Black. Run by Beth Ferreira.",btn:null},
     {name:"Wyn Beauty",cat:"Founded",detail:"Cosmetics/beauty brand founded 2024.",btn:null},
     {name:"Will Perform",cat:"Founded",detail:"Pain relief/performance brand launched Dec 2022. Available at Target and Walmart.",btn:null},
-    {name:"S by Serena (HSN)",cat:"Founded",detail:"Fashion collaboration line.",btn:null},
-    {name:"Daily Harvest",cat:"Private",detail:"Fresh fruits, vegetables, and organic ingredients delivered weekly or monthly. Serena Ventures portfolio company — named explicitly in PitchBook's deep-dive feature on Serena's VC thesis.",btn:FORGE},
-    {name:"Gobble",cat:"Private",detail:"Meal kit delivery designed to prepare in 15 minutes. Serena Ventures portfolio — named explicitly in PitchBook deep-dive. Also backed by Initialized Capital (Alexis Ohanian's firm).",btn:null},
+    {name:"Daily Harvest",cat:"Private",detail:"Fresh food delivery. Serena Ventures portfolio. Settled $30M+ class action (2024-25) from 2022 tara flour recall that sickened 470+ people. Still operating.",btn:FORGE},
+    {name:"Gobble",cat:"Private",detail:"Meal kit service. Acquired by Intelligent Foods (Sun Basket) Dec 2022.",btn:EXITED},
     {name:"Little Spoon",cat:"Private",detail:"Organic baby food delivery service. Serena Ventures portfolio — named explicitly in PitchBook deep-dive feature on Serena's investment thesis.",btn:FORGE},
-    {name:"Ollie",cat:"Private",detail:"Personalized meal plans for dogs. Serena Ventures portfolio — named explicitly in PitchBook deep-dive on Serena's food/wellness investment pattern.",btn:null},
-    {name:"The Wing",cat:"Private",detail:"Co-working spaces and social clubs for women. $375M+ valuation at peak. Serena Ventures portfolio — named explicitly in PitchBook deep-dive. One of her highest-profile thesis bets on women's community.",btn:null},
-    {name:"Billie",cat:"Private",detail:"Razors and body care products for women. Raised $25M Series A January 2019. Serena Ventures portfolio — named explicitly in PitchBook deep-dive.",btn:null},
-    {name:"Lola",cat:"Private",detail:"Tampons, pads, and reproductive healthcare products delivered to women. $24M valuation at time of investment. Serena Ventures portfolio — named explicitly in PitchBook deep-dive.",btn:null},
-    {name:"MasterClass",cat:"Private",detail:"Found when 8 people in a garage in San Francisco. Now $2.75B+ valuation.",btn:FORGE},
+    {name:"Ollie",cat:"Private",detail:"Fresh dog food subscription. Acquired by Agrolimen Feb 2026.",btn:EXITED},
+    {name:"The Wing",cat:"Private",detail:"Women-focused co-working. Shut down August 2022.",btn:EXITED},
+    {name:"Billie",cat:"Private",detail:"Female-focused razor brand. Acquired by Edgewell Personal Care Nov 2021 for $310M.",btn:EXITED},
+    {name:"Lola",cat:"Private",detail:"Organic feminine care brand. Acquired by Forum Brands late 2023.",btn:EXITED},
+    {name:"MasterClass",cat:"Private",detail:"Celebrity online learning platform. $2.75B valuation (2021). 3+ rounds of layoffs 2022-2025. Still operating ~800 employees.",btn:FORGE},
     {name:"Impossible Foods",cat:"Private",detail:"2019 $300M round alongside Jay-Z, Katy Perry.",btn:FORGE},
-    {name:"Noom",cat:"Private",detail:"Subscription weight management app. Unicorn.",btn:FORGE},
+    {name:"Noom",cat:"Private",detail:"Weight management app. $3.7B valuation (2021). Multiple layoff rounds 2022-25. $56M class action settlement. Pivoting to GLP-1 drugs.",btn:FORGE},
     {name:"Karat",cat:"Private",detail:"Engineer hiring platform. Unicorn.",btn:FORGE},
     {name:"Esusu",cat:"Private",detail:"Rent reporting / credit building platform (2021). Unicorn.",btn:FORGE},
     {name:"HUED",cat:"Private",detail:"Healthcare platform connecting people of color with culturally competent providers.",btn:null},
@@ -915,11 +896,10 @@ const snoop = {
     {name:"Snoop Doggie Doggs",cat:"Founded",detail:"Pet products brand. Dog food, accessories, toys.",btn:null},
     {name:"Snoopadelic Films",cat:"Founded",detail:"TV shows, films, documentaries production company.",btn:null},
     {name:"Doggystyle Records",cat:"Founded",detail:"Independent record label from mid-1990s. Publishing revenue.",btn:null},
-    {name:"19 Crimes Wine",cat:"Private",detail:"Co-owns wine brand with Treasury Wine Estates. Snoop Cali Red and Snoop Cali Rosé lines.",btn:null},
     {name:"Indoggo Gin",cat:"Private",detail:"Co-owns strawberry-flavored gin brand.",btn:null},
     {name:"Still G.I.N.",cat:"Private",detail:"Premium spirits brand co-founded with Dr. Dre.",btn:null},
     {name:"Reddit",cat:"Private",detail:"Invested 2014. Reddit IPO'd March 2024 at $20B+ market cap.",btn:YF("RDDT")},
-    {name:"Klarna",cat:"Private",detail:"Swedish payments giant. Minority shareholder. $15B+ valuation (2024).",btn:FORGE},
+    {name:"Klarna (KLAR)",cat:"Public",detail:"Swedish payments giant. IPO'd NYSE Sep 2025 at $40/share (~$15B valuation). Ticker: KLAR.",btn:YF("KLAR")},
     {name:"Robinhood",cat:"Private",detail:"Pre-IPO investor. Backed before the 2021 GameStop retail trading moment.",btn:YF("HOOD")},
     // Casa Verde portfolio (named investments)
     {name:"Dutchie",cat:"Private",detail:"Dispensary operating platform. Point-of-sale, e-commerce, payments.",btn:FORGE},
@@ -969,21 +949,21 @@ const kutcher = {
     {name:"Robinhood",cat:"Private",detail:"Commission-free trading. IPO'd. Sound Ventures.",btn:YF("HOOD")},
     {name:"Airtable",cat:"Private",detail:"No-code database. $11.7B valuation. Sound Ventures.",btn:FORGE},
     {name:"Brex",cat:"Private",detail:"Corporate spend management. $12B+ valuation.",btn:FORGE},
-    {name:"Flexport",cat:"Private",detail:"Digital freight / logistics. Unicorn.",btn:FORGE},
+    {name:"Flexport",cat:"Private",detail:"Digital freight/logistics. ~$3.5B valuation (down from $8B). Multiple layoff rounds. Still operating.",btn:FORGE},
     {name:"Affirm",cat:"Private",detail:"Buy now, pay later. IPO'd.",btn:YF("AFRM")},
     {name:"Bird",cat:"Private",detail:"E-scooter company. IPO'd, then delisted.",btn:EXITED},
     {name:"GitLab",cat:"Private",detail:"DevOps platform. IPO'd at $15B+. Sound Ventures portfolio. Confirmed Crunchbase.",btn:EXITED},
     {name:"Lemonade",cat:"Private",detail:"AI-powered insurance. IPO'd. Wikipedia: Kutcher invested in 2017 as one of 6 startups he named publicly that year. Confirmed Wikipedia.",btn:YF("LMND")},
-    {name:"Modern Fertility",cat:"Private",detail:"Fertility hormone testing from home. Sound Ventures participated in $15M Series A alongside Union Square Ventures and Maveron. Confirmed Tracxn.",btn:null},
-    {name:"OpenSea",cat:"Private",detail:"NFT marketplace. $13.3B peak valuation.",btn:FORGE},
+    {name:"Modern Fertility",cat:"Private",detail:"Fertility hormone testing. Acquired by Ro 2021.",btn:EXITED},
+    {name:"OpenSea",cat:"Private",detail:"NFT marketplace. $13.3B peak valuation (2022). 50%+ staff cuts 2023. OS2 relaunched. SEC dropped investigation Feb 2025.",btn:FORGE},
     {name:"SoundCloud",cat:"Private",detail:"Music streaming / discovery.",btn:null},
     {name:"Beyond Meat",cat:"Private",detail:"Plant-based meat. IPO'd.",btn:YF("BYND")},
     {name:"MoonPay",cat:"Crypto",detail:"Crypto payments onramp. $3.4B valuation.",btn:FORGE},
     {name:"Pearpop",cat:"Private",detail:"Creator collaboration platform.",btn:null},
     {name:"Veldskoen Shoes",cat:"Private",detail:"South African leather shoe brand.",btn:null},
     {name:"The Fabricant",cat:"Private",detail:"Digital fashion company.",btn:null},
-    {name:"Steakholder Foods",cat:"Private",detail:"3D-printed cultivated meat.",btn:null},
-    {name:"Soho House",cat:"Private",detail:"Private members' club network. Most recent PitchBook confirmed investment (Jan 30, 2026).",btn:FORGE},
+    {name:"Steakholder Foods (STKH)",cat:"Public",detail:"3D-printed cultivated alt-meat and fish. Nasdaq: STKH. Kutcher\x27s Breakthrough Energy-adjacent investment.",btn:YF("STKH")},
+    {name:"Soho House",cat:"Private",detail:"Private members' club network. Went public 2021, taken private Jan 29 2026 at $9/share by MCR/Yucaipa. Ashton Kutcher joined take-private consortium as new equity investor.",btn:null},
   ],
   recent:[
     {deal:"Sound Ventures (active)",date:"Ongoing",note:"$100K–$10M range per deal"},
@@ -1021,7 +1001,7 @@ const cuban = {
     {name:"2929 Entertainment",cat:"Founded",detail:"Co-founded with Todd Wagner 2003. Vertically integrated film production and distribution. Produced Good Night and Good Luck (Oscar nominated), Bubble (Soderbergh). Parent of Magnolia Pictures and Landmark Theatres.",btn:null},
     {name:"AXS TV",cat:"Founded",detail:"Co-founded. Cable TV network — live events, concerts, sports, news. Cuban is Co-CEO, President, and Chairman. Confirmed on PitchBook and official Mark Cuban Companies site.",btn:null},
     {name:"Cost Plus Drugs",cat:"Founded",detail:"Co-founded 2022 as a public benefit corporation. Transparent generic drug pricing: cost + 15% + $3 pharmacy fee + $5 shipping. Now offers 6,000+ therapies, $100M+ annual revenue. 2025 partnerships announced with Humana and TrumpRx.",btn:null},
-    {name:"Fireside Chat",cat:"Founded",detail:"Co-founded. Interactive live streaming platform. Confirmed PitchBook.",btn:null},
+    {name:"Fireside Chat",cat:"Founded",detail:"Interactive live streaming platform. Acquired by Digital Indies.",btn:EXITED},
     {name:"Mark Cuban Foundation",cat:"Philanthropy",detail:"Personal foundation. Launched Fallen Patriot Fund after Iraq War. $6M donation to Indiana University athletics 2024. Runs AI Bootcamps program for underserved youth.",btn:null},
 
     // SPORTS OWNERSHIP
@@ -1041,7 +1021,7 @@ const cuban = {
     {name:"Upstart",cat:"Public",detail:"AI lending platform. Listed on Mark Cuban Companies site. Public company (UPST).",btn:YF("UPST")},
     {name:"Dave",cat:"Public",detail:"#1 personal financial management app in the US per Mark Cuban Companies site listing. Listed on NASDAQ.",btn:YF("DAVE")},
     {name:"Underdog Fantasy",cat:"Private",detail:"Sports fantasy and pick'em platform. Cuban listed as co-owner on PitchBook. Fast-growing sports gaming company.",btn:null},
-    {name:"HomeCourt",cat:"Private",detail:"AI basketball shot-tracking app — confirmed on Mark Cuban Companies site. Acquired by NBA.",btn:null},
+    {name:"HomeCourt",cat:"Private",detail:"AI basketball shot-tracking app. Acquired by NBA.",btn:EXITED},
     {name:"Catalant",cat:"Private",detail:"Strategy-to-execution platform connecting companies with expert talent. Listed on Mark Cuban Companies site.",btn:FORGE},
     {name:"VNTANA",cat:"Private",detail:"First-of-its-kind 3D/hologram infrastructure platform. Listed on Mark Cuban Companies site.",btn:FORGE},
     {name:"SparkCharge",cat:"Private",detail:"Mobile EV charging solution. Cuban is board member per PitchBook. Appeared on Shark Tank.",btn:FORGE},
@@ -1113,7 +1093,7 @@ const durant = {
     {name:"Dutchie",cat:"Private",detail:"Cannabis point-of-sale and tech platform. Confirmed Dapper Labs press release listing KD investments.",btn:FORGE},
     {name:"Sleeper",cat:"Private",detail:"Sports fantasy and social platform. Hit #1 in App Store Sports. Confirmed 35V LinkedIn posts celebrating milestone.",btn:null},
     {name:"Propel (Fresh EBT)",cat:"Private",detail:"SNAP benefits app for low-income families. 35V co-invested with Nas, Andreessen Horowitz, and Omidyar Network in $4M seed 2017. Signal overlap: Nas and Durant co-investors.",btn:null},
-    {name:"SeatGeek",cat:"Private",detail:"Ticket marketplace. Confirmed Sportico/Insider Monkey. Co-invested alongside Nas and Carmelo Anthony. Signal overlap.",btn:FORGE},
+    {name:"SeatGeek",cat:"Private",detail:"Ticket marketplace. ~$1B valuation. Confidential IPO filing Apr 2023. 15% layoffs Feb 2025. IPO expected 2026.",btn:FORGE},
     {name:"Pieology",cat:"Private",detail:"Fast-casual pizza chain with 100+ locations. Deal confirmed PitchBook and AthleteAgent.",btn:null},
     {name:"Jeeves",cat:"Private",detail:"Global spend management platform for startups. Confirmed Insider Monkey.",btn:FORGE},
     {name:"Brigit",cat:"Private",detail:"Fintech cash advance and credit-building app. Confirmed AthleteAgent.",btn:FORGE},
@@ -1163,14 +1143,14 @@ const nas = {
     {name:"mParticle",cat:"Private",detail:"QBVP portfolio. Customer data platform. Exited January 16, 2025 — most recent confirmed QBVP exit per CB Insights.",btn:EXITED},
 
     // ACTIVE PORTFOLIO — PRIVATE
-    {name:"SeatGeek",cat:"Private",detail:"Series B 2014. $35M round also included Carmelo Anthony, Peyton Manning, Eli Manning. Valued at ~$1.26B as of March 2025.",btn:FORGE},
+    {name:"SeatGeek",cat:"Private",detail:"Series B 2014. ~$1B valuation. 15% layoffs Feb 2025. IPO expected 2026.",btn:FORGE},
     {name:"Genius (Rap Genius)",cat:"Private",detail:"One of the first QBVP investments, 2013. Lyrics and annotation platform. Nas was an early true believer.",btn:null},
-    {name:"Tradesy",cat:"Private",detail:"Confirmed QBVP investment per CNBC 2016. Secondhand luxury fashion marketplace.",btn:null},
+    {name:"Tradesy",cat:"Private",detail:"Secondhand luxury fashion. Acquired by Vestiaire Collective 2022.",btn:EXITED},
     {name:"LANDR",cat:"Private",detail:"QBVP Series A 2015 ($6.2M round confirmed by BetaKit press release). Cloud-based AI music mastering platform. Reached $26M Series B in 2019.",btn:null},
     {name:"Parachute",cat:"Private",detail:"D2C home essentials brand. Confirmed QBVP portfolio per Celebrity Net Worth and multiple sources.",btn:null},
-    {name:"General Assembly",cat:"Private",detail:"QBVP diversity investment 2014. Tech education platform. Nas helped fund scholarships for underrepresented groups.",btn:null},
-    {name:"Koru",cat:"Private",detail:"QBVP investment confirmed by PRNewswire press release May 28, 2014. College-to-career training program. Nas Scholarship Fund also established.",btn:null},
-    {name:"FanDuel",cat:"Private",detail:"Confirmed QBVP portfolio per Tracxn. Daily fantasy sports pioneer. Now owned by Flutter Entertainment.",btn:null},
+    {name:"General Assembly",cat:"Private",detail:"Tech education platform. Acquired by Adecco 2018.",btn:EXITED},
+    {name:"Koru",cat:"Private",detail:"College-to-career training program. Shut down.",btn:EXITED},
+    {name:"FanDuel / Flutter (FLUT)",cat:"Private",detail:"Daily fantasy sports pioneer. Acquired by Flutter Entertainment 2018. 100% owned July 2025. Trade FLUT on NYSE for exposure.",btn:YF("FLUT")},
     {name:"Knightscope (KSCP)",cat:"Public",detail:"QBVP portfolio. Security robot company. IPO'd on NASDAQ. Market cap $193M (Tracxn).",btn:YF("KSCP")},
     {name:"MedChart",cat:"Private",detail:"QBVP Series A, April 19, 2021 (CB Insights confirmed). Digital health records platform.",btn:FORGE},
     {name:"Disco.xyz",cat:"Private",detail:"Personal investment June 1, 2024 (PitchBook confirmed). Web3 / financial software platform. Most recent QBVP investment.",btn:FORGE},
@@ -1179,13 +1159,12 @@ const nas = {
     // LEVEL 5 FINDS — Carry1st, Audius, Royal, Propel, Breakr, Magic Spoon
     {name:"Carry1st",cat:"Private",detail:"Angel investor in $20M Series A extension, Jan 2022. Led by a16z, also Google, Riot Games, Avenir. South African mobile gaming publisher — Africa's largest. Confirmed Bloomberg, Hollywood Reporter, a16z official announcement.",btn:FORGE},
     {name:"Audius",cat:"Private",detail:"$5M strategic round, Sep 2021. Blockchain music streaming platform — Nas described it as 'the most important technology to ever hit the music industry.' Confirmed Rolling Stone, Decrypt, Music Business Worldwide.",btn:null},
-    {name:"Royal",cat:"Private",detail:"$55M Series A, Nov 2021. Music royalty NFT platform letting fans co-own streaming rights. Led by a16z with Coinbase Ventures and Founders Fund. Nas joined alongside The Chainsmokers and Kygo. Confirmed Fortune, Billboard, Decrypt.",btn:FORGE},
+    {name:"Royal",cat:"Private",detail:"$55M Series A Nov 2021. Music royalty NFT platform. Investing platform shut down (2024). Website now says 'Royal is reinventing itself' — legacy NFT holders directed to separate claims portal. Effectively inactive.",btn:FORGE},
     {name:"Propel (Fresh EBT)",cat:"Private",detail:"$4M seed round 2017. SNAP benefits app for low-income families. Nas joined Kevin Durant and Andreessen Horowitz. Confirmed by Nas's own tweet and Technical.ly article.",btn:null},
     {name:"Breakr",cat:"Private",detail:"Music creator marketplace connecting artists and brands. Nas confirmed as early investor per Black Enterprise. Founders Anthony and Ameer Brown connected to Nas through General Assembly. Platform has 55M+ creators.",btn:null},
     {name:"Magic Spoon",cat:"Private",detail:"Series B investor. High-protein, low-carb cereal brand. Led by HighPost Capital (Mark Bezos). Nas named explicitly in PE Insights Series B article alongside Russell Westbrook, Shakira, Nick Jonas.",btn:null},
 
     // INFERRED
-    {name:"Resorts World NYC Casino",cat:"Private",detail:"Joined March 2024 as equity partner in $5.5B casino expansion at Aqueduct Racetrack in Queens. Project received unanimous Community Advisory Board approval Sep 2025. Equity stake unconfirmed in public filings.",btn:null},
   ]
 };
 
@@ -1213,13 +1192,13 @@ const oprah = {
     {name:"OW Management",cat:"Founded",detail:"Oprah's family office that manages her investment portfolio. Identified in 2025 reporting as the vehicle behind multiple strategic investments in wellness and health tech.",btn:null},
 
     // MAJOR INVESTMENTS
-    {name:"Weight Watchers / WW (WW)",cat:"Public",detail:"Bought 10% stake (6M+ shares) for $43.5M in Oct 2015. Received board seat and advisory role. Shares rose 1,132% after her announcement. Peak value ~$430M. Has since sold some shares; stepped down from board 2024. Confirmed CNBC, The Org.",btn:YF("WW")},
+    {name:"Weight Watchers / WW",cat:"Exited",detail:"Bought 10% stake 2015 for $43.5M. Shares rose 1,132% on announcement; peak value ~$430M. Oprah left board 2024. WW filed Chapter 11 bankruptcy May 6 2025, delisted Nasdaq May 16 2025. Equity wiped out.",btn:EXITED},
     {name:"True Food Kitchen",cat:"Private",detail:"Equity investment + board seat July 2018. Health-driven restaurant chain founded by Dr. Andrew Weil. Was 23 locations at investment, committed to help double business. Confirmed CNBC, Restaurant Business, press release.",btn:null},
     {name:"Oatly",cat:"Public",detail:"Part of Blackstone Group consortium that acquired 10% stake in Swedish oat milk company for $200M July 2020. Valuing Oatly at $2B. Other investors included Natalie Portman and Jay-Z. Oatly IPO'd on Nasdaq 2021. Confirmed The Org.",btn:YF("OTLY")},
     {name:"Apeel Sciences",cat:"Private",detail:"Participated in $250M funding round June 2020 alongside Katy Perry and others. Edible plant-based coating that extends fruit shelf life 2-3x. Valuation hit $1B at this round. Confirmed The Org.",btn:FORGE},
     {name:"Maven Clinic",cat:"Private",detail:"Women's healthcare unicorn — telehealth, digital tools, and care navigation across pregnancy, menopause, postpartum, and fertility. $1.7B valuation. Series F October 2024. Invested via OW Management. Confirmed Tracxn, 36kr family office report.",btn:FORGE},
     {name:"Guild Education",cat:"Private",detail:"OW Management participated in Series F 2022. Workforce education platform partnering with Fortune 500 companies to provide debt-free degrees for employees (Disney, Walmart, Chipotle). Unicorn. Confirmed 36kr family office deep-dive report on OW Management investments.",btn:FORGE},
-    {name:"Waywire",cat:"Private",detail:"OW Management participated in Waywire's seed round in 2012. Social video startup co-founded by Newark Mayor Cory Booker. One of Oprah's earliest confirmed OW Management investments. Confirmed 36kr exclusive report on OW Management investment timeline 2012-2022.",btn:null},
+    {name:"Waywire",cat:"Private",detail:"Social video startup. Acquired by CNN then shut down.",btn:EXITED},
     {name:"Dr. Barbara Sturm",cat:"Private",detail:"Angel investment April 27, 2023. German luxury skincare brand known for MC1 and molecular cosmetics science. CB Insights confirms Oprah as investor with angel round. Exited January 11, 2024 — brand acquired. Confirmed CB Insights portfolio listing.",btn:EXITED},
     {name:"YOU Wellness",cat:"Private",detail:"AI-powered wellness app. Most recent confirmed Oprah investment via OW Management, April 2026. Identified in News Anyway reporting.",btn:null},
 
@@ -1304,7 +1283,7 @@ const curry = {
     {name:"Curry Brand",cat:"Founded",detail:"Co-founded with Under Armour 2020. Similar to Jordan Brand — Curry is president and holds equity. Signed lifetime deal extension 2023. Revenue from shoe line contributes significantly to net worth.",btn:null},
 
     // TECH INVESTMENTS
-    {name:"TSM (Team SoloMid)",cat:"Private",detail:"SC30 investment 2018 in esports organization. Value grew from $250M to $410M by 2022 — described by Curry as 'one of the most appealing investments of all time.' Confirmed multiple sources.",btn:FORGE},
+    {name:"TSM (Team SoloMid)",cat:"Private",detail:"SC30 investment 2018. Valued $410M in 2022 before FTX $210M sponsorship collapsed Nov 2022. Massive layoffs followed — down to ~8 employees by Jan 2024. Sold LCS slot. Still operating in CS2/Fortnite/Apex with skeleton staff.",btn:FORGE},
     {name:"SnapTravel",cat:"Private",detail:"First major SC30 tech investment. Online hotel booking platform. Series A $21.2M round Dec 2018. Curry met founders during 2016 NBA Playoffs. Confirmed TechCrunch.",btn:FORGE},
     {name:"Guild Education",cat:"Private",detail:"2019 investment. Provides debt-free degrees for frontline workers via Fortune 1000 companies (Disney, Walmart, Taco Bell, Chipotle). Confirmed Basketball Network and multiple sources.",btn:FORGE},
     {name:"Tonal",cat:"Private",detail:"AI-powered home gym and strength training system. Confirmed multiple sources including TWSN and Sportstiger.",btn:null},
@@ -1352,11 +1331,11 @@ const melo = {
 
     // ACTIVE PORTFOLIO
     {name:"DraftKings (DKNG)",cat:"Public",detail:"Daily fantasy sports and sports betting platform. Early Melo7 investment when company was a startup. Now publicly traded. Confirmed Technical.ly and Fortune.",btn:YF("DKNG")},
-    {name:"SeatGeek",cat:"Private",detail:"Event ticketing platform. Melo7 investment — co-invested with Nas and Kevin Durant. Three-way Signal overlap. Confirmed Technical.ly and CB Insights.",btn:FORGE},
+    {name:"SeatGeek",cat:"Private",detail:"Event ticketing platform. Melo7 investment. ~$1B valuation. Confidential IPO filing 2023. IPO expected 2026.",btn:FORGE},
     {name:"Andela",cat:"Private",detail:"Global tech talent sourcing and training platform focused on African developers. Became a unicorn. Confirmed Tracxn — listed as most notable Melo7 portfolio company.",btn:FORGE},
     {name:"Vivino",cat:"Private",detail:"World's largest wine app and marketplace. Melo7 investment. Confirmed Technical.ly.",btn:null},
     {name:"Overtime",cat:"Private",detail:"Youth sports media and leagues platform. Melo7 investment alongside Kevin Durant and Jeff Bezos. Signal overlap with Durant. Confirmed Technical.ly.",btn:null},
-    {name:"Clubhouse",cat:"Private",detail:"Audio-based social networking. Melo7 investment. Confirmed Technical.ly.",btn:null},
+    {name:"Clubhouse",cat:"Private",detail:"Audio-based social networking. Peaked 2021, rapidly declined.",btn:EXITED},
     {name:"Stears News",cat:"Private",detail:"Africa-focused news and data intelligence platform. Melo7 investment October 2022. Confirmed S&P Capital IQ data cited in PE Insights.",btn:FORGE},
   ]
 };
@@ -1391,8 +1370,8 @@ const logan = {
     {name:"Goldin Auctions",cat:"Private",detail:"Premium trading card and collectibles marketplace. Confirmed Crunchbase profile listing. Signal overlap: Kevin Durant also invested in Goldin.",btn:null},
 
     // CAUTIONARY / EXITED
-    {name:"Liquid Marketplace",cat:"Crypto",detail:"Co-founded Apr 2022 — fractional collectibles ownership platform. Faced Canadian regulatory scrutiny for alleged fraud. Logan publicly distanced himself. Users unable to withdraw funds 2024. Status unresolved.",btn:null},
-    {name:"CryptoZoo",cat:"Crypto",detail:"Blockchain game co-founded 2021. Raised millions via NFT sales but failed to deliver playable product. Coffeezilla exposed in Dec 2022 docuseries. Logan refunded $1.3M to investors Jan 2024. Cautionary entry — included for transparency.",btn:null},
+    {name:"Liquid Marketplace",cat:"Crypto",detail:"Fractional collectibles platform. Regulatory fraud scrutiny, funds frozen 2024.",btn:EXITED},
+    {name:"CryptoZoo",cat:"Crypto",detail:"Blockchain game. Failed to deliver — Logan refunded investors 2024.",btn:EXITED},
   ]
 };
 
@@ -1503,7 +1482,7 @@ const bono = {
   ],
   portfolio:[
     // FOUNDED / CO-FOUNDED
-    {name:"Elevation Partners",cat:"Founded",detail:"Co-founded 2004 with Roger McNamee, Fred Anderson, Marc Bodnick, Bret Pearlman. $1.9B fund focused on media, entertainment, and technology. Bono was Managing Director. Closed 2015 after selling last portfolio company. One of the most unusual celebrity investing vehicles in history — Bono was a genuine managing partner, not a figurehead.",btn:null},
+    {name:"Elevation Partners",cat:"Founded",detail:"Co-founded 2004. $1.9B media and entertainment fund. Closed 2015.",btn:EXITED},
     {name:"The Rise Fund",cat:"Founded",detail:"Co-founded 2016/2017 with TPG Growth's Bill McGlashan and Jeff Skoll. $5B+ AUM. Invests in companies aligned with UN Sustainable Development Goals across education, energy, food, financial services, health, infrastructure, and tech. Bono is Special Partner at TPG Growth. Confirmed Environmental Finance, GIIN, TPG official press release.",btn:null},
     {name:"ONE Campaign",cat:"Philanthropy",detail:"Co-founded 2002-2004 with Bobby Shriver. Advocacy organization with 10M+ members fighting extreme poverty and disease. Backed by Bill Gates Foundation, George Soros. Bono left board end of 2023. Confirmed Wikipedia.",btn:null},
     {name:"(RED)",cat:"Philanthropy",detail:"Co-founded 2006 with Bobby Shriver. Licenses brand to companies (Apple, Nike, Microsoft, Starbucks) — % of proceeds go to Global Fund. Generated $650M+ for HIV/AIDS grants as of 2020. Confirmed Wikipedia.",btn:null},
@@ -1520,11 +1499,11 @@ const bono = {
     // ELEVATION INVESTORS II (personal investments after Elevation closed)
     {name:"Airbnb",cat:"Public",detail:"Invested via Elevation Investors II. IPO'd December 2020. Confirmed Elevation Partners official site listing Elevation II investments.",btn:EXITED},
     {name:"Uber",cat:"Public",detail:"Invested via Elevation Investors II. IPO'd May 2019. Confirmed Elevation Partners official site.",btn:EXITED},
-    {name:"Convoy",cat:"Private",detail:"On-demand truck-tracking/logistics company. Bono and The Edge co-invested. Confirmed Crunchbase and multiple reporting.",btn:null},
+    {name:"Convoy",cat:"Private",detail:"On-demand trucking. Shut down October 2023.",btn:EXITED},
 
     // PERSONAL / RISE FUND
     {name:"Varo Money",cat:"Private",detail:"Rise Fund led $45M Series B alongside Warburg Pincus Jan 2018. First consumer fintech to receive national bank charter (2020). Bono quoted in official TPG press release: 'Expanding access to affordable digital banking is one small but important step in the bigger mandate.'",btn:null},
-    {name:"Zipline",cat:"Private",detail:"Autonomous medical drone delivery. Rise Fund investment. Bono joined Zipline board of directors Sep 2019. Confirmed Wikipedia, Environmental Finance.",btn:FORGE},
+    {name:"Zipline",cat:"Private",detail:"Autonomous drone delivery. Rise Fund investment 2019. $7.6B valuation (Jan 2026). $800M Series H raised Jan-Mar 2026. Expanding from medical to consumer delivery in US.",btn:FORGE},
     {name:"Blue Bottle Coffee",cat:"Private",detail:"Personal investment Series C. Nestlé acquired majority stake 2017. Confirmed Crunchbase profile.",btn:EXITED},
     {name:"Varo Money",cat:"Private",detail:"Rise Fund investment — personal Bono quote confirmed in TPG BusinessWire press release.",btn:null},
     {name:"Nuritas",cat:"Private",detail:"Irish food-tech startup using AI to discover peptides with health benefits. Bono and The Edge co-invested. Confirmed multiple sources.",btn:FORGE},
@@ -1563,7 +1542,7 @@ const osaka = {
 
     // ACTIVE PORTFOLIO
     {name:"Hyperice",cat:"Private",detail:"Sports recovery and performance technology brand. Equity stake since August 2019 alongside Lindsey Vonn, Patrick Mahomes and Trae Young. Revenue grew from $10M to $200M in 3 years. Approaching $1B valuation. Signal overlap: Patrick Mahomes also invested in Hyperice. Confirmed Tennis.com, Sportskhabri.",btn:null},
-    {name:"Daring Foods",cat:"Private",detail:"Healthy plant-based food startup. Confirmed Tracxn as portfolio company. Daring listed as a Tracxn portfolio exit — Osaka invested then exited.",btn:null},
+    {name:"Daring Foods",cat:"Private",detail:"Plant-based food startup. Osaka exited.",btn:EXITED},
     {name:"W (grooming)",cat:"Private",detail:"Gender-inclusive grooming brand. Series A July 23, 2024. Most recent confirmed investment per Tracxn and CB Insights.",btn:FORGE},
     {name:"StatusPRO",cat:"Private",detail:"Sports tech platform and gaming company. Confirmed Sportskeeda as part of Osaka's investment portfolio.",btn:FORGE},
     {name:"Athletic Brewing",cat:"Private",detail:"Leading non-alcoholic craft beer company. Confirmed Sportskeeda as part of Osaka's investment portfolio.",btn:null},
@@ -1633,7 +1612,6 @@ const martha = {
     {name:"Marquee Brands (IP equity)",cat:"Founded",detail:"When Marquee Brands (owned by Neuberger Berman) acquired the Martha Stewart and Emeril Lagasse IP from Sequential in April 2019, Stewart retained equity in her own brand. Marquee's portfolio drives $3.5B in annual retail sales across home, food, fashion. The Martha Stewart brand alone hits 100M consumers monthly across platforms. Confirmed WWD, PRNewswire official release.",btn:null},
 
     // RESTAURANTS / CONSUMER
-    {name:"The Bedford by Martha Stewart",cat:"Private",detail:"First-ever Martha Stewart restaurant. Opened Paris Las Vegas August 2022. 194 seats designed to replicate her 1925 Bedford, NY farmhouse including an exact replica of her famous brown faux-bois dining room. French-inspired cuisine. Licensing partnership between Caesars Entertainment, Marquee Brands, and Martha Stewart. Still operating as of April 2026 per Yelp. Confirmed official PRNewswire press release.",btn:null},
     {name:"Martha by Martha Stewart",cat:"Founded",detail:"Premium lifestyle and cookware brand launched via martha.com. Features Copper Collection, Try-Ply Stainless Steel, and Ceramic Nonstick Collections — used by Stewart at home and at The Bedford restaurant. Her self-described 'favorite products I've ever created.' Confirmed Business Traveller.",btn:null},
     {name:"Martha Stewart Kitchen (frozen food)",cat:"Founded",detail:"Martha-branded frozen and fresh food line. Available at Kroger, Publix, Albertsons/Safeway, Hannaford, Meijer, Walmart, and 8+ major grocery chains. Launched 2021. Described as 'as close to homemade as you can get in the freezer aisle.' Partnership with Goldbelly for e-commerce delivery. Kitchen brand projected to reach $1B in retail sales by 2025. Confirmed Bedford New Canaan Magazine.",btn:null},
 
@@ -1642,14 +1620,12 @@ const martha = {
     {name:"Wanderous by Wana (CBD gummies)",cat:"Private",detail:"Martha Stewart-branded CBD gummy line developed within the Canopy Growth ecosystem. Marketed for wellness, sleep, and relaxation. Confirmed multiple sources including TheStreet and R Networth.",btn:null},
 
     // WINE
-    {name:"Martha's Chard — 19 Crimes",cat:"Private",detail:"Co-developed Chardonnay with Treasury Wine Estates' 19 Crimes label. Launched January 2022. French Burgundy style (Aligoté). Stewart was directly involved in winemaking process, working with winemaker Michael Leven. Her version beat competitor blends in consumer testing. $12 price point making it accessible. Confirmed Bedford New Canaan Magazine.",btn:null},
 
     // SPORTS
     {name:"Swansea City AFC",cat:"Sports",detail:"Became minority owner December 22-23, 2025. Welsh Championship soccer club. Joined existing celebrity owners Snoop Dogg and Luka Modrić. Attended Wrexham match before announcement. Official club statement confirmed by majority owners Brett Cravatt and Jason Cohen. Signal overlap: Snoop Dogg in Icons tab.",btn:null},
 
     // BRAND PARTNERSHIPS
     {name:"Still G.I.N.",cat:"Private",detail:"Brand partner for Dr. Dre and Snoop Dogg's Still G.I.N. premium gin spirits venture. Announced 2025 — brings her lifestyle and entertaining expertise to the brand. Stewart, Dre, and Snoop's third cross-venture. Confirmed Food & Beverage Magazine. Signal overlap: Snoop Dogg in Icons tab.",btn:null},
-    {name:"KB Home Partnership",cat:"Private",detail:"Martha Stewart-branded homes designed by Stewart and sold by KB Home. Homes modeled on Stewart's own properties in New York and Maine. Long-running partnership. Confirmed Blue Mountain Eagle, Academy of Achievement.",btn:null},
 
     // MSLO DIGITAL PORTFOLIO (via the company)
     {name:"WeddingWire",cat:"Private",detail:"MSLO took 40% stake in WeddingWire in 2008 with an option to acquire the full company. Digital platform for wedding planning, vendor search, and social sharing. Confirmed via SEC 8-K filing February 2008. MSLO also served as national ad sales force for WeddingWire. Confirmed PitchBook exit records.",btn:EXITED},
@@ -1686,7 +1662,6 @@ const huberman = {
     {name:"Mateína",cat:"Private",detail:"Invested via Tiny's majority acquisition of Mateína, January 2024. Premium yerba mate energy drink with cleaner ingredient profile than traditional energy drinks. Huberman invested alongside Tiny (Andrew Wilkinson's holding company). Confirmed official press release.",btn:null},
 
     // ADVISORY / NOTE
-    {name:"Multiple supplement brand partnerships",cat:"Private",detail:"Huberman has extensive paid partnerships with AG1 (Athletic Greens), Momentous Supplements, Thesis Nootropics, and others — these are sponsorships, not confirmed equity investments. Included for context. Readers should not conflate sponsorship with investment.",btn:null},
   ]
 };
 
@@ -1716,7 +1691,7 @@ const sinclair = {
 
     // CO-FOUNDED COMPANIES
     {name:"InsideTracker / Segterra",cat:"Founded",detail:"Board member since 2011. Segterra/InsideTracker provides personalized health analytics by analyzing blood and DNA biomarkers. Cambridge, MA. Confirmed HMS affiliations page and Levels Health press release.",btn:null},
-    {name:"CohBar (NASDAQ: CWBR)",cat:"Public",detail:"Co-founded 2010. Menlo Park, CA. Develops mitochondria-based therapeutics for fatty liver disease and aging-related diseases. Publicly traded on Nasdaq. Confirmed HMS affiliations page and MarketScreener.",btn:YF("CWBR")},
+    {name:"TuHURA Biosciences (HURA)",cat:"Public",detail:"Formerly CohBar. Merged with Morphogenesis late 2023. Renamed TuHURA Biosciences, ticker HURA on Nasdaq. Pivoted to oncology immunotherapy.",btn:YF("HURA")},
     {name:"Genocea Biosciences (NASDAQ: GNCA)",cat:"Public",detail:"Co-founded 2006. Cambridge, MA. Vaccine-focused biotech. Went public on Nasdaq. Confirmed HMS affiliations page and MarketScreener.",btn:EXITED},
     {name:"Immetas Therapeutics",cat:"Founded",detail:"Co-founded 2018. Boston, MA. Longevity therapeutics. F,I,E,A,B status on official HMS affiliations page — founder, investor, equity, advisor, board.",btn:FORGE},
     {name:"Tally Health",cat:"Founded",detail:"Co-founded 2021-2022. Consumer biological age testing and recommendations — direct-to-consumer longevity insights. Confirmed MarketScreener, HMS affiliations, Crunchbase.",btn:null},
@@ -1785,10 +1760,8 @@ const emma = {
     {name:"Chamberlain Coffee",cat:"Founded",detail:"Co-founded 2020 when Emma was 19. Promoted to co-CEO in 2024 — active operational role, not just figurehead. Raised $22M across 4 rounds from 14 investors including Blazar Capital, UTA Ventures, Volition Capital, Electric Feel Ventures, L.A. Libations. $22M revenue in 2024, projecting $33M in 2025 (53% growth). Available in 8,500+ retail stores (Walmart, Target, Costco, Sprouts). Opened first physical café January 28, 2025 at Westfield Century City Mall — massive lines. Pivoting to profitability in 2025 after 2024 losses. Emma holds estimated 30-50% equity. Confirmed PRNewswire (official press release naming Emma as investor), Arthnova, LA Business Journal.",btn:null},
 
     // ANGEL
-    {name:"1 startup (undisclosed)",cat:"Private",detail:"Tracxn lists Emma Chamberlain as an angel investor in 1 startup beyond Chamberlain Coffee. The specific company is not publicly disclosed. Confirmed Tracxn profile.",btn:null},
 
     // BRAND CONTEXT
-    {name:"Vogue partnership (2024)",cat:"Private",detail:"Long-standing Vogue relationship — red carpet coverage, editorial features. Not equity investment but foundational to her brand value and leverage as a business operator.",btn:null},
   ]
 };
 
@@ -1815,7 +1788,6 @@ const pg = {
   portfolio:[
     // FOUNDED
     {name:"Viaweb",cat:"Founded",detail:"Co-founded 1995 with Robert Morris. One of the first web-based SaaS apps — an e-commerce store builder written in Lisp. Yahoo! acquired for $49.6M in 1998 (renamed Yahoo! Store). The exit that seeded everything that followed. Confirmed Wikipedia.",btn:EXITED},
-    {name:"Y Combinator (institutional)",cat:"Founded",detail:"Co-founded March 2005 with Jessica Livingston, Trevor Blackwell, and Robert Morris. Invented the modern batch accelerator model. 4,000+ companies funded, $600B+ combined valuation, 4.5–5.5% unicorn rate vs 2.5% industry average. YC's most notable bets: Stripe, Airbnb, Dropbox, Coinbase, Reddit, DoorDash, Instacart, Twitch, Cruise, OpenAI. NOTE: these are YC institutional fund positions, not PG personal capital. Garry Tan is current CEO; PG stepped back Feb 2014. Confirmed Wikipedia, YC official.",btn:null},
     {name:"Hacker News",cat:"Founded",detail:"Developer and startup news aggregator. Launched 2007. One of the most influential tech forums in the world — the original distribution layer for YC culture and companies. Confirmed YC official.",btn:null},
     // PERSONAL ANGEL (PG's own capital — confirmed boringbusinessnerd, CB Insights, PitchBook, Tracxn, press releases)
     // NOTE: Full personal portfolio is 34 (Tracxn), 62 (CB Insights), 78 (PitchBook) — lists are paywalled.
@@ -1825,7 +1797,7 @@ const pg = {
     {name:"Replit",cat:"Private",detail:"Collaborative browser IDE. $1.16B unicorn. PG personal angel — top unicorn in Tracxn personal profile. Confirmed Tracxn, boringbusinessnerd.",btn:FORGE},
     {name:"ClassDojo",cat:"Private",detail:"K-12 classroom communication. $1.25B unicorn. PG personal angel — top unicorn Tracxn personal profile. Confirmed Tracxn, boringbusinessnerd.",btn:FORGE},
     {name:"Retool",cat:"Private",detail:"Internal tools builder. $3.2B+ valuation. PG personal angel. Confirmed boringbusinessnerd.",btn:FORGE},
-    {name:"Boom Supersonic",cat:"Private",detail:"Supersonic passenger aircraft. $1B+ valuation. PG personal angel. Confirmed boringbusinessnerd.",btn:FORGE},
+    {name:"Boom Supersonic",cat:"Private",detail:"Supersonic passenger aircraft. XB-1 broke sound barrier Jan 2025 — first privately-funded jet to go supersonic. $300M Series B Dec 2025. $700M total raised. $1.5B valuation. Trump lifted overland supersonic ban Jun 2025.",btn:FORGE},
     {name:"Titan",cat:"Private",detail:"Cash management, investing, and retirement planning app. PG personal angel. Confirmed boringbusinessnerd select investments listing.",btn:FORGE},
     {name:"Pachama",cat:"Private",detail:"High-quality carbon credit marketplace. Climate/AI. PG personal angel. Confirmed boringbusinessnerd select investments listing.",btn:FORGE},
     {name:"Manara",cat:"Private",detail:"Developer talent platform for MENA engineers. PG personal angel. Confirmed boringbusinessnerd.",btn:FORGE},
@@ -1867,7 +1839,6 @@ const garrytan = {
     // FOUNDED
     {name:"Posterous",cat:"Founded",detail:"Co-founded 2007. Simple blogging platform via email. YC S08. Grew to 15M+ users. Twitter acquired 2012 (team acquihire); service shut down 2013. Confirmed Wikipedia.",btn:EXITED},
     {name:"Posthaven",cat:"Founded",detail:"Co-founded with Brett Gibson after Posterous shutdown. Paid continuation service preserving users' sites. Still running. Confirmed Wikipedia.",btn:null},
-    {name:"Initialized Capital (institutional)",cat:"Founded",detail:"Co-founded 2012 with Alexis Ohanian and Harj Taggar. $3.2B+ AUM, 293+ companies, 27 unicorns backed at seed. Signature bets: Coinbase (wrote the first $200K check to Brian Armstrong in 2013), Instacart (seed 2012), Flexport, Rippling, Opendoor, Reddit, Cruise, Algolia, Goat Group, Color Health, Flock Safety, Patreon, Athelas, Ro, Truepill, CoinTracker. Forbes Midas List 2018-2023, #6 seed investor 2023. Tan left for YC CEO 2022; Brett Gibson now leads. NOTE: these are fund positions with external LP capital, not Tan's personal checks. Confirmed Wikipedia, Initialized official.",btn:null},
     // PERSONAL ANGEL (PitchBook board seats + named personal investments confirmed)
     {name:"NewLimit",cat:"Private",detail:"Longevity drug discovery co-founded by Brian Armstrong. Garry Tan's most recent confirmed PitchBook deal (May 6, 2025). Personal angel check — not an Initialized fund investment. Signal overlap: Brian Armstrong in Health & Longevity tab.",btn:FORGE},
     {name:"Safeheron",cat:"Private",detail:"Crypto asset security infrastructure. Garry Tan holds a board seat per PitchBook. Personal position. Confirmed PitchBook board seat.",btn:null},
@@ -1908,16 +1879,16 @@ const eladgil = {
     {name:"Stripe",cat:"Private",detail:"Payments infrastructure. $91.5B+ valuation. Listed on eladgil.com as investor + advisor. Confirmed eladgil.com direct.",btn:FORGE},
     {name:"Airbnb",cat:"Private",detail:"Short-term rental. $75B+ market cap. Listed on eladgil.com as investor + advisor. Confirmed eladgil.com direct.",btn:YF("ABNB")},
     {name:"Coinbase",cat:"Private",detail:"Crypto exchange. Early investor, also served as advisor. Public (COIN). Confirmed eladgil.com, PitchBook bio.",btn:YF("COIN")},
-    {name:"Figma",cat:"Private",detail:"Collaborative design. $12.5B valuation. Listed eladgil.com. Confirmed.",btn:FORGE},
+    {name:"Figma (FIG)",cat:"Public",detail:"Collaborative design platform. IPO'd NYSE Jul 30 2025 at $33/share (~$12B valuation). Ticker: FIG. Adobe $20B deal collapsed 2023.",btn:YF("FIG")},
     {name:"Notion",cat:"Private",detail:"All-in-one workspace. $10B+ valuation. Listed eladgil.com. Confirmed.",btn:FORGE},
     {name:"Airtable",cat:"Private",detail:"No-code database. $11.7B valuation. Listed eladgil.com as investor + advisor. Confirmed.",btn:FORGE},
     {name:"Rippling",cat:"Private",detail:"HR and IT management. $13.5B+ valuation. Served as advisor. Confirmed eladgil.com, PitchBook.",btn:FORGE},
     {name:"Brex",cat:"Private",detail:"Corporate spend management. $12B+ valuation. Listed eladgil.com. Confirmed.",btn:FORGE},
     {name:"Gusto",cat:"Private",detail:"Payroll and HR for SMBs. $9.5B+ valuation. Listed eladgil.com. Confirmed.",btn:FORGE},
     {name:"Retool",cat:"Private",detail:"Internal tools builder. $3.2B+ valuation. Listed eladgil.com. Confirmed.",btn:FORGE},
-    {name:"Flexport",cat:"Private",detail:"Digital freight forwarding. $8B+ valuation. Listed eladgil.com. Confirmed.",btn:FORGE},
-    {name:"Deel",cat:"Private",detail:"Global payroll and compliance. $12B+ valuation. Listed eladgil.com as investor + advisor. Confirmed.",btn:FORGE},
-    {name:"Navan (TripActions)",cat:"Private",detail:"Business travel and expense. $9.2B valuation. Elad holds board seat per PitchBook. Listed eladgil.com as Navan. Confirmed.",btn:FORGE},
+    {name:"Flexport",cat:"Private",detail:"Digital freight forwarding. ~$3.5B valuation (down from $8B). Listed eladgil.com. Still operating.",btn:FORGE},
+    {name:"Deel",cat:"Private",detail:"Global payroll and compliance. $17.3B valuation (Oct 2025). Listed eladgil.com as investor + advisor. DOJ criminal probe re: Rippling espionage opened Jan 2026. Still private.",btn:FORGE},
+    {name:"Navan (NAVN)",cat:"Public",detail:"Business travel and expense management. IPO'd Nasdaq Oct 30 2025 at $25/share (~$6.2B valuation). Ticker: NAVN. Elad Gil advisor/investor.",btn:YF("NAVN")},
     {name:"Rippling",cat:"Private",detail:"HR and IT management platform. $13.5B+ valuation. Confirmed eladgil.com.",btn:FORGE},
     {name:"Samsara",cat:"Public",detail:"IoT operations. Public (IOT). Listed eladgil.com. Confirmed.",btn:YF("IOT")},
     {name:"Checkr",cat:"Private",detail:"Background check platform. $5B+ valuation. Listed eladgil.com. Confirmed.",btn:FORGE},
@@ -1933,7 +1904,7 @@ const eladgil = {
     {name:"Perplexity",cat:"Private",detail:"AI search. $20B+ valuation. Multiple rounds. Listed eladgil.com AI section. Confirmed.",btn:FORGE},
     {name:"Harvey",cat:"Private",detail:"AI legal platform. $300M Series E 2025 (Kleiner + Coatue). Elad co-invested. Listed eladgil.com AI section. Confirmed PitchBook news.",btn:FORGE},
     {name:"Mistral",cat:"Private",detail:"Open-source LLM, Paris. European AI. Listed eladgil.com AI section. Confirmed.",btn:FORGE},
-    {name:"Character.AI",cat:"Private",detail:"Personalized AI chatbots. $1B+ valuation. Listed eladgil.com AI section as led round. Confirmed.",btn:FORGE},
+    {name:"Character.AI",cat:"Private",detail:"AI companion chatbots. Founders returned to Google in Aug 2024 $2.7B licensing deal. Still operates independently under new CEO. Google has no ownership stake.",btn:FORGE},
     {name:"Decagon",cat:"Private",detail:"AI customer support agents. Listed eladgil.com AI section. Confirmed.",btn:FORGE},
     {name:"Pika",cat:"Private",detail:"AI video generation. Listed eladgil.com AI section. Confirmed.",btn:FORGE},
     {name:"Abridge",cat:"Private",detail:"AI ambient clinical notes for doctors. Led round. Listed eladgil.com AI section. Confirmed.",btn:FORGE},
@@ -1979,7 +1950,6 @@ const marc = {
     {name:"Netscape",cat:"Founded",detail:"Co-founded 1994 with Jim Clark as Mosaic Communications, renamed Netscape. Navigator was the dominant browser in the early web. IPO'd August 1995 — first-day valuation nearly $3B. AOL acquired for $4.2B in 1998. The exit that seeded everything. Confirmed Wikipedia.",btn:EXITED},
     {name:"Loudcloud / Opsware",cat:"Founded",detail:"Co-founded September 1999 with Ben Horowitz, Tim Howes, In Sik Rhee. Cloud computing and IT automation. IPO'd 2001. Transformed into Opsware (enterprise software). Hewlett-Packard acquired July 2007 for $1.6B in cash. Confirmed Wikipedia.",btn:EXITED},
     {name:"Ning",cat:"Founded",detail:"Social networking platform — let anyone create their own social network. Co-founded 2004. Reached 90M+ users at peak. Acquired by Glam Media 2011. Confirmed Wikipedia.",btn:EXITED},
-    {name:"Andreessen Horowitz a16z (institutional)",cat:"Founded",detail:"Co-founded July 2009 with Ben Horowitz. Now #1 VC firm by AUM globally — $90B+ across 15+ funds. 1,076+ portfolio companies. 115 unicorns, 35 IPOs, 241 acquisitions. Landmark returns: Coinbase ($25M → $86B IPO), Airbnb ($60M → $47B IPO), GitHub ($7.5B Microsoft), Slack ($27.7B Salesforce), Skype ($8.5B Microsoft). AI bets: OpenAI, Mistral, xAI, Character.AI. Crypto: Coinbase, a16z Crypto I-IV funds. American Dynamism: defense tech, Anduril, Hadrian. NOTE: all named companies are a16z institutional fund positions, not Andreessen personal capital. Confirmed Wikipedia, a16z official, TechCrunch.",btn:null},
     // PRE-a16z PERSONAL (2005-2009 super angel era — confirmed Wikipedia, $80M in ~45 startups)
     {name:"Twitter (pre-a16z)",cat:"Private",detail:"Personal angel investment 2005-2009 super angel era. Marc Andreessen and Ben Horowitz invested $80M across ~45 startups including Twitter before founding a16z. Twitter explicitly named in Wikipedia. a16z later committed $400M to Musk's 2022 Twitter acquisition. Confirmed Wikipedia.",btn:YF("X")},
     {name:"Qik",cat:"Private",detail:"Mobile video streaming app. Named alongside Twitter as a confirmed pre-a16z personal investment in the 2005-2009 super angel era. Wikipedia explicitly names Qik. Acquired by Skype 2011. Confirmed Wikipedia.",btn:EXITED},
@@ -2016,12 +1986,10 @@ const bhorowitz = {
   portfolio:[
     // FOUNDED
     {name:"Loudcloud / Opsware",cat:"Founded",detail:"Co-founded September 1999 with Marc Andreessen, Tim Howes, In Sik Rhee. CEO for the full history of the company. Took Loudcloud public March 2001 — shares went from $6 IPO to $0.35 at nadir, back to $14.25 at sale. Sold Loudcloud's managed services to EDS for $63.5M while pivoting to Opsware software. HP acquired Opsware July 2007 for $1.6B in cash. The defining CEO story behind 'The Hard Thing About Hard Things.' Confirmed Wikipedia.",btn:EXITED},
-    {name:"Andreessen Horowitz a16z (institutional)",cat:"Founded",detail:"Co-founded July 2009 with Marc Andreessen. #1 VC firm by AUM globally — $90B+ across all funds. Ben's board seats at portfolio companies (Databricks, Okta, Lyft, Genius, Anyscale, SnapLogic, Tanium, NationBuilder, CODE2040, SignalFx) are a16z fund seats, not personal capital. Landmark fund wins: Coinbase, Airbnb, GitHub, Slack. NOTE: all named companies are a16z institutional fund positions. Confirmed Wikipedia, a16z official, PitchBook.",btn:null},
     {name:"a16z Cultural Leadership Fund (sub-fund)",cat:"Founded",detail:"Created by Ben Horowitz within a16z. Brings African American cultural leaders into tech as LPs — Nas, Kevin Durant, Will Smith, Quincy Jones, Chance the Rapper, Kevin Hart, Shonda Rhimes, Diddy (pre-2024). 100% of management fees and carried interest donated to nonprofits advancing Black participation in tech. Portfolio company LPs include Lime, Mercury, Overtime, Hipcamp. Ben's deep connection to hip-hop (writes rap lyrics for every blog post) is the origin story. Confirmed a16z CLF official page, a16z.com.",btn:null},
     // PRE-a16z PERSONAL
     {name:"Twitter (pre-a16z)",cat:"Private",detail:"Personal angel investment in the 2005-2009 super angel era. Marc Andreessen and Ben Horowitz together invested $80M across ~45 startups including Twitter before founding a16z. Confirmed Wikipedia (explicitly names both in context of Twitter investment).",btn:YF("X")},
     // NOTE ON COUNT
-    {name:"Note: personal portfolio",cat:"Private",detail:"Ben Horowitz's personal investment portfolio outside a16z is genuinely not well-documented in open sources. Unlike Marc (who has public board disclosures) or Elad Gil (who self-discloses at eladgil.com), Ben's personal positions are not individually named beyond the pre-a16z era. His investment identity is more completely intertwined with a16z than almost any other GP. PitchBook board seats are confirmed a16z institutional seats.",btn:null},
   ],
 };
 
@@ -2053,7 +2021,6 @@ const chamath = {
     {name:"Social Capital",cat:"Founded",detail:"Founded 2011. Went through two distinct eras: (1) 2011-2018 external LP fund era — raised $1.2B+ across 3 funds, invested in Slack, Box, Yammer, SurveyMonkey, Flatiron Health, Glooko, and others. (2) 2018-present personal family office era — returned all external LP capital, now manages $2.147B from $1.4B Chamath paid-in capital (per June 2025 annual letter). Chamath is the sole investing partner as of March 2024 per PitchBook. Confirmed Wikipedia, Social Capital official.",btn:null},
     {name:"8090 Solutions",cat:"Founded",detail:"Co-founded January 2024. AI-powered enterprise software rebuilder — rebuilds enterprise software with 80% of features at 90% less cost using AI + offshore engineering. Launched Software Factory product July 2025 with planned September 2025 launch. Chamath's personal conviction bet against $2T of accumulated enterprise software debt. Confirmed Wikipedia, PitchBook.",btn:null},
     // SOCIAL CAPITAL PRE-2018 ERA (external LP fund — ONE entry per protocol)
-    {name:"Social Capital Fund Era 2011-2018 (institutional)",cat:"Founded",detail:"External LP fund era ($1.2B across 3 funds). Landmark wins: Slack ($20-25M investment → ~$3B return when Salesforce acquired for $27.7B in 2021 — defining career investment), Yammer (Microsoft $1.2B acquisition 2012), Box (cloud storage IPO 2015), SurveyMonkey (IPO 2018), Flatiron Health (cancer data, acquired by Roche), Glooko (diabetes management). NOTE: these are external LP fund positions, not Chamath's personal capital. Chamath returned all external LP capital in 2018. Confirmed Wikipedia, CB Insights, multiple press.",btn:null},
     // SOCIAL CAPITAL POST-2018 PERSONAL (Chamath's own capital)
     {name:"Groq",cat:"Private",detail:"AI inference chip company. Social Capital backed Jonathan Ross (Google TPU inventor) from Groq's founding in 2016 with $60M convertible note. One of the most prescient AI infrastructure bets — Groq became a dominant AI inference speed leader before the AI boom. Named in Chamath's AEXA SPAC founder letter as a proof-of-conviction investment. Confirmed Bloomberg, Wikipedia, Boardroom Alpha citing AEXA letter.",btn:FORGE},
     {name:"Mitra Chem",cat:"Private",detail:"Iron-air battery materials startup. June 6, 2025 — most recent confirmed Social Capital investment per CB Insights. Series B-V round. Board seat per PitchBook. Confirmed CB Insights.",btn:FORGE},
@@ -2064,9 +2031,9 @@ const chamath = {
     {name:"Virgin Galactic (IPOA SPAC)",cat:"Public",detail:"Chamath's first SPAC (IPOA) merged with Richard Branson's space tourism company in 2019. Peaked at $46/share during SPAC mania; fell to $5. Stock down ~98% from SPAC price as of 2025. Confirmed Segler Consulting, Wikipedia.",btn:YF("SPCE")},
     {name:"Opendoor (IPOB SPAC)",cat:"Public",detail:"iBuying real estate platform. IPOB SPAC merger in 2020. Peaked at $30/share; fell to $5. Down ~65% from SPAC price. Public (OPEN). Confirmed Segler Consulting analysis.",btn:YF("OPEN")},
     {name:"Clover Health (IPOC SPAC)",cat:"Public",detail:"Medicare Advantage health insurer. IPOC SPAC merger 2020. Fell from $28 to $4. Down ~74% from SPAC price. Subject to SEC investigation. Public (CLOV). Confirmed Segler Consulting, Wikipedia.",btn:YF("CLOV")},
-    {name:"ProKidney Corp (SPAC)",cat:"Public",detail:"Kidney disease cell therapy. SPAC merger. Down ~74% from SPAC price. Part of the Social Capital SPAC portfolio. Confirmed Motley Fool, Segler Consulting.",btn:null},
-    {name:"Akili (SPAC)",cat:"Public",detail:"Prescription digital therapeutics (video game as medicine for ADHD). SPAC merger. Part of Social Capital portfolio. Confirmed Motley Fool.",btn:null},
-    {name:"AEXA — American Exceptionalism Acquisition Corp",cat:"Public",detail:"Chamath's 11th SPAC. Launched September 2025, raised $345M through IPO + private placement on NYSE (AEXA). Targets: DeFi, AI, defense, energy production. Comes with explicit warnings for retail investors — Chamath's own founder letter says 'no crying in the casino.' Confirmed Boardroom Alpha, TheStreet, Wikipedia.",btn:YF("AEXA")},
+    {name:"ProKidney Corp (PROK)",cat:"Public",detail:"Kidney disease cell therapy. SPAC merger. Chamath Social Capital vehicle. Public on Nasdaq.",btn:YF("PROK")},
+    {name:"Akili (SPAC)",cat:"Public",detail:"Prescription digital therapeutics. SPAC merger. Acquired by Virtual Therapeutics Jul 2024 and delisted from Nasdaq.",btn:EXITED},
+    {name:"AEXA — American Exceptionalism Acquisition Corp",cat:"Public",detail:"Chamath's SPAC launched Sep 26 2025. Raised $345M, NYSE: AEXA. Targets AI/DeFi/defense/energy. No merger target announced as of Apr 2026. 98.7% institutional.",btn:YF("AEXA")},
     // PERSONAL
     {name:"Golden State Warriors",cat:"Private",detail:"Bought ~10% minority stake for $25M in 2011 when franchise was valued at ~$450M. Warriors became a dynasty (3 NBA titles). Franchise now valued at $5.6B+. Sold stake 2022. One of the best sports investments in history — effectively a 100x+ return. Confirmed Wikipedia, multiple sources.",btn:EXITED},
     {name:"Bitcoin",cat:"Crypto",detail:"Early personal buyer around $80-100/coin in 2012-2013, accumulating ~$5M worth. Publicly advocates Bitcoin as 'gold 2.0' and 'schmuck insurance' against government overreach. Has stated 'I own Bitcoin in my fund, I own Bitcoin in my personal account.' Confirmed Bitcoiners Anonymous, multiple public statements.",btn:CB("bitcoin","BTC")},
@@ -2089,13 +2056,13 @@ const altman = {
     {name:"Oklo (OKLO)",cat:"Public",detail:"Nuclear microreactor company. Backed from 2014 seed round through IPO via SPAC (AltC Acquisition Corp, also Altman-backed). Went public May 2024. Board member. Confirmed CB Insights.",btn:YF("OKLO")},
     {name:"Helion Energy",cat:"Private",detail:"Nuclear fusion startup. $375M personal investment in Series E (2021) — his largest ever. Additional $425M in Series F (2024). 'By far the most promising approach to fusion I've seen.' Microsoft signed agreement to buy Helion electricity. Confirmed Altman blog post and CB Insights.",btn:FORGE},
     {name:"Retro Biosciences",cat:"Private",detail:"$180M total personal investment. Anti-aging via cellular reprogramming. Along with Helion, accounted for 'all my liquid net worth' per MIT Technology Review. Confirmed CB Insights.",btn:null},
-    {name:"Boom Supersonic",cat:"Private",detail:"Supersonic commercial flights. Board member. Personal investment confirmed PitchBook. $300M raised December 2025.",btn:FORGE},
+    {name:"Boom Supersonic",cat:"Private",detail:"Supersonic commercial flights. $300M Series B Dec 2025, $700M total raised. XB-1 broke sound barrier Jan 2025. $1.5B valuation. Board member confirmed PitchBook.",btn:FORGE},
     {name:"Worldcoin (WLD)",cat:"Crypto",detail:"Co-founded Tools for Humanity which created Worldcoin. WLD is a live tradeable token on Coinbase and major exchanges. Iris-scan based crypto identity and UBI project. Confirmed Tools for Humanity founding documentation.",btn:CB("worldcoin","WLD")},
     {name:"KoBold Metals",cat:"Private",detail:"AI-powered critical metals mining. $195M round in 2024 via Apollo Projects. Applies AI to finding cobalt, copper, nickel and lithium for EV batteries. Confirmed CB Insights.",btn:null},
     {name:"Stripe",cat:"Private",detail:"Payments infrastructure. Early angel investor. One of the most anticipated IPOs. Actively traded on Forge secondary market. Confirmed multiple sources.",btn:FORGE},
     {name:"Exowatt",cat:"Private",detail:"Solar energy startup providing clean power to data centers. Confirmed via Wikipedia — personal investment alongside nuclear and energy thesis.",btn:null},
     {name:"Gusto",cat:"Private",detail:"HR and payroll software platform. Confirmed personal investment via Crunchbase reporting.",btn:null},
-    {name:"Humane",cat:"Private",detail:"AI wearable device company (Ai Pin). Confirmed 3 rounds from CB Insights research report.",btn:null},
+    {name:"Humane",cat:"Private",detail:"AI wearable (Ai Pin). Product discontinued, company acquired by HP 2025.",btn:EXITED},
     {name:"Airbnb (ABNB)",cat:"Private",detail:"Early YC-era angel investment. IPO'd December 2020 at $47B valuation. Altman's early stake exited at or before IPO. Confirmed CB Insights exits list.",btn:EXITED},
     {name:"Instacart (CART)",cat:"Private",detail:"Early angel investment. IPO'd September 2023. Altman's early stake exited. Confirmed CB Insights exits list.",btn:EXITED},
     {name:"Uber (UBER)",cat:"Private",detail:"Early personal angel investment from YC era. IPO'd May 2019. Stake exited. Confirmed Fortune reporting on Altman early bets.",btn:EXITED},
@@ -2378,7 +2345,7 @@ const ohanian = {
     {name:"Solana (SOL)",cat:"Crypto",detail:"Seven Seven Six and the Solana Foundation partnered for $100M investment in Solana-native social media. Ohanian personally bullish on SOL and has spoken publicly about the investment thesis. Confirmed Solana Foundation announcement.",btn:CB("solana","SOL")},
     {name:"Angel City FC",cat:"Private",detail:"Co-owner of NWSL women's soccer club. One of multiple high-profile investors in women's sports. Valuation has grown significantly since 2020 acquisition. Confirmed Yahoo Finance.",btn:null},
     {name:"Chelsea FC Women",cat:"Private",detail:"Partial ownership stake in Chelsea FC Women. Part of Ohanian's thesis that women's sports valuations are dramatically undervalued. Confirmed Yahoo Finance.",btn:null},
-    {name:"Digg",cat:"Founded",detail:"Acquired March 2025 via leveraged buyout with co-founder Kevin Rose. Relaunching as AI-native community platform. Direct Reddit competitor. Confirmed Benzinga/TechCrunch.",btn:null},
+    {name:"Digg",cat:"Founded",detail:"Rose+Ohanian reacquired 2025. Relaunched Jan 2026, shut down Mar 14 2026 — overwhelmed by bots. Most staff laid off.",btn:EXITED},
     {name:"Mantel",cat:"Founded",detail:"Sports media and content platform. Ohanian helped launch, partnered with Yahoo Sports. Private. Confirmed Yahoo Finance.",btn:null},
   ],
   recent:[
@@ -3743,7 +3710,7 @@ const HORIZON = [
     signal:"Undervalued franchises + personality injection + media rights expansion = repeatable thesis.",
     tier:"WATCH", tierColor:"#f59e0b",
     positions:[
-      {name:"Endeavor Group (EDR)", detail:"Sports, entertainment, and media. UFC, IMG, WME. Proxy for the premium sports media rights thesis.", btn:YF("EDR")},
+      {name:"Endeavor Group (WME)", detail:"Sports, entertainment, and media. Taken private by Silver Lake Mar 24 2025 at $27.50/share. Rebranded WME Group. Delisted NYSE.", btn:EXITED},
       {name:"DraftKings (DKNG)", detail:"Michael Jordan investor. Sports betting infrastructure — benefits directly from sports media rights growth.", btn:YF("DKNG")},
       {name:"Genius Sports (GENI)", detail:"Tony Robbins backed. Official NFL data and technology partner. Royalties on every live sports bet.", btn:YF("GENI")},
     ],
@@ -4276,6 +4243,11 @@ function WatchlistPage({ isPaid, onUpgrade, isMobile }) {
       const cat = Object.entries(ALL).find(([c,invs]) => invs.some(i => i.id === inv.id))?.[0] || "other";
       inv.portfolio.forEach(p => {
         if (p.btn && (p.btn.url || p.btn.t === "exit")) return; // skip investable + exited
+        if (p.cat === "Philanthropy") return; // philanthropies are never investable
+        if (p.cat === "Sports") return; // franchise ownerships aren't retail-investable
+        if (p.name && p.name.includes("(institutional)")) return; // fund-level positions not personal
+        if (p.name && p.name.startsWith("Note:")) return; // meta entries
+        if (p.detail && p.detail.includes("sponsorships, not confirmed equity")) return;
         const key = p.name.toLowerCase().trim();
         if (!posMap[key]) posMap[key] = { name:p.name, backers:[], cat:p.cat, detail:p.detail, investorCats:new Set() };
         if (!posMap[key].backers.includes(inv.name)) {
@@ -4296,7 +4268,6 @@ function WatchlistPage({ isPaid, onUpgrade, isMobile }) {
     { key:"Founded", label:"Founded" },
     { key:"Private", label:"Private" },
     { key:"Crypto", label:"Crypto" },
-    { key:"Philanthropy", label:"Philanthropy" },
   ];
 
   const filtered = filter === "all" ? all : all.filter(p => p.cat === filter);
@@ -4542,10 +4513,10 @@ function HomePage({ navigate, isPaid, onUpgrade }) {
     { key:"athletes", label:"Athletes", count:8 },
     { key:"tracking", label:"Tracking", count:TRACKING.length },
     { key:"themes", label:"Themes", count:THEMES.length },
+    { key:"watchlist", label:"Watchlist", count:null, pro:true },
     { key:"portfolio", label:"Portfolio Builder", count:null, pro:true },
     { key:"radar", label:"Radar", count:null, pro:true },
     { key:"horizon", label:"Horizon", count:null, pro:true },
-    { key:"watchlist", label:"Watchlist", count:null, pro:true },
   ];
 
   return (
