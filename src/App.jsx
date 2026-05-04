@@ -3118,17 +3118,8 @@ const STRIPE_LINK = "https://buy.stripe.com/5kQ5kCdfta7H4Do1vkeAg00";
 
 // Simple auth — store paid status in localStorage after Stripe redirect
 function usePaidStatus() {
-  const [isPaid, setIsPaid] = useState(() => {
-    try { return localStorage.getItem("covet_paid") === "true"; } catch(e) { return false; }
-  });
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("upgraded") === "1") {
-      try { localStorage.setItem("covet_paid", "true"); } catch(e) {}
-      setIsPaid(true);
-      window.history.replaceState({}, "", window.location.pathname);
-    }
-  }, []);
+  const [isPaid, setIsPaid] = useState(() => true);
+  useEffect(() => {}, []);
   return { isPaid, setIsPaid };
 }
 
@@ -3206,47 +3197,43 @@ function PaywallModal({ onClose, onUpgrade }) {
     }}>
       <div style={{
         background: "#0a0a0a", border: "1px solid #2a2a2a", borderRadius: 6,
-        padding: "28px 24px", maxWidth: 440, width: "100%",
+        padding: "28px 24px", maxWidth: 400, width: "100%",
       }}>
         <div style={{ fontSize: 8, color: "#f5c842", letterSpacing: "0.2em", textTransform: "uppercase", fontFamily: "monospace", marginBottom: 12, textAlign: "center" }}>
-          COVET PRO
+          COVET ALERTS
         </div>
         <div style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 22, fontWeight: 700, color: "#f5f5f5", marginBottom: 8, lineHeight: 1.3, textAlign: "center" }}>
-          Build your portfolio.<br/>See where smart money converges.
+          Get notified when<br/>portfolios change.
         </div>
         <div style={{ fontSize: 12, color: "#555", lineHeight: 1.75, marginBottom: 20, textAlign: "center" }}>
-          Three intelligence tools built from 45 investor portfolios.
+          New positions, exits, IPOs, and convergence signals — delivered as they happen.
         </div>
 
         {[
-          { name:"Radar", color:"#f5c842", desc:"Top investable positions ranked by conviction strength — plus a full convergence map showing where 45 investors overlap." },
-          { name:"Portfolio Builder", color:"#f472b6", desc:"Pick your investors or a theme. Get a full actionable allocation with buy buttons. Set alerts when positions change." },
-          { name:"Horizon", color:"#a78bfa", desc:"Forward-looking plays built from documented thesis patterns — full investment thesis and specific positions to act on." },
-          { name:"Watchlist", color:"#2dd4bf", desc:"Every uninvestable position across all 45 investors. Get notified the moment any private company, pre-token protocol, or founded brand opens to retail." },
-          { name:"Themes", color:"#10b981", desc:"6 investment theses across Bitcoin, AI, Nuclear, Sports, Solana, and Fintech — full position lists and buy buttons." },
-          { name:"Watchlist", color:"#2dd4bf", desc:"Every non-investable position across all 45 investors — private companies, pre-token projects, brands yet to IPO — with notifications when they open up." },
-        ].map((f,i) => (
-          <div key={i} style={{ display:"flex", alignItems:"flex-start", gap:12, marginBottom:8, padding:"10px 12px", background:"#080808", borderRadius:3, borderLeft:`2px solid ${f.color}55` }}>
-            <div>
-              <div style={{ fontSize:9, fontWeight:700, color:f.color, letterSpacing:"0.12em", textTransform:"uppercase", fontFamily:"monospace", marginBottom:3 }}>{f.name}</div>
-              <div style={{ fontSize:10, color:"#444", lineHeight:1.55 }}>{f.desc}</div>
-            </div>
+          { icon: "↗", color: "#f5c842", desc: "New position added to a tracked portfolio" },
+          { icon: "✕", color: "#ef4444", desc: "Exit alert — acquisition, IPO, or company goes under" },
+          { icon: "⊕", color: "#a78bfa", desc: "Convergence signal — when 3+ investors hold the same asset" },
+          { icon: "◎", color: "#2dd4bf", desc: "Watchlist alert — when a private company opens to retail" },
+        ].map((f, i) => (
+          <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8, padding: "10px 12px", background: "#080808", borderRadius: 3, borderLeft: `2px solid ${f.color}55` }}>
+            <span style={{ fontSize: 16, color: f.color, flexShrink: 0, width: 20, textAlign: "center" }}>{f.icon}</span>
+            <div style={{ fontSize: 11, color: "#444", lineHeight: 1.55 }}>{f.desc}</div>
           </div>
         ))}
 
         <button onClick={onUpgrade} style={{
-          width: "100%", marginTop: 12, padding: "14px", background: "#f5c842",
+          width: "100%", marginTop: 16, padding: "14px", background: "#f5c842",
           border: "none", borderRadius: 4, cursor: "pointer",
           fontSize: 13, fontWeight: 700, color: "#000", letterSpacing: "0.04em",
         }}>
-          Upgrade — $12/month
+          Enable Alerts — $2/month
         </button>
         <button onClick={onClose} style={{
           display: "block", width: "100%", background: "none", border: "none",
           color: "#333", fontSize: 10, cursor: "pointer", marginTop: 12,
           letterSpacing: "0.08em", textAlign: "center",
         }}>
-          Continue with free access
+          No thanks
         </button>
       </div>
     </div>
@@ -3413,17 +3400,11 @@ function Header({ navigate, isPaid, onUpgrade }) {
             textDecoration: "none", display: "block",
           }}>{b.label} ↗</a>
         ))}
-        {isPaid ? (
-          <div style={{ fontSize: 8, color: "#2d5a2d", fontFamily: "monospace", letterSpacing: "0.1em", padding: "5px 10px", border: "1px solid #1a2e1a", borderRadius: 3 }}>
-            PRO ✓
-          </div>
-        ) : (
-          <button onClick={onUpgrade} style={{
+        <button onClick={onUpgrade} style={{
             fontSize: 9, fontWeight: 700, letterSpacing: "0.08em",
             color: "#000", border: "none", background: "#f5c842",
             padding: "6px 12px", borderRadius: 3, cursor: "pointer",
-          }}>Upgrade $12/mo</button>
-        )}
+          }}>Alerts $2/mo</button>
       </div>
     </div>
   );
@@ -4638,6 +4619,11 @@ function InvestorPage({ slug, navigate, isPaid, onUpgrade }) {
             ← All Investors
           </button>
           <div style={{ fontSize: 9, color: "#1e1e1e", fontFamily: "monospace" }}>covet.vc/investor/{slug}</div>
+        </div>
+        <div style={{ marginTop: 20, paddingTop: 16, borderTop: "1px solid #0d0d0d" }}>
+          <p style={{ fontSize: 9, color: "#222", fontFamily: "monospace", lineHeight: 1.7, maxWidth: 600 }}>
+            Not investment advice. All portfolio data is sourced from public information including interviews, press releases, and SEC filings. Data may be inaccurate or outdated. Covet is a research aggregator, not a financial advisor. Always do your own research before making investment decisions.
+          </p>
         </div>
       </div>
     </div>
